@@ -18,6 +18,7 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Telepon</th>
+                        <th>Role</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
+                        <td>{{$user->role}}</td>
                         <td>
                             <a href="{{route('users.edit', ['user' => $user])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
                             <a href="{{route('users.reset-view', ['user' => $user])}}" class="btn btn-primary btn-icon"><i class="fas fa-unlock"></i></a>
@@ -75,9 +77,12 @@
     $(document).ready(function() {
         $('#users').DataTable({
             responsive: true,
-            columns: [{
+            columns: [
+                null,
+                {
                     width: '20%'
                 },
+                null,
                 null,
                 null,
                 {

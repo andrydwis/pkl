@@ -36,7 +36,8 @@ class RegisteredUserController extends Controller
             'nama' => ['required','string','max:255'],
             'email' => ['required','string','email','max:255','unique:users'],
             'password' => ['required','string','confirmed','min:8'],
-            'telepon' => ['required','numeric']
+            'telepon' => ['required','numeric'],
+            'role' => ['required']
         ]);
 
         User::create([
@@ -44,7 +45,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => '+62' . $request->telepon,
-            'role' => 'servant'
+            'role' => $request->role,
         ]);
 
         session()->flash('status', 'Pegawai ' . $request->nama . ' berhasil ditambahkan');

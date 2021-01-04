@@ -66,6 +66,20 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="role">Role</label>
+                            <select name="role" id="role" class="form-control @error('role'){{'is-invalid'}}@enderror">
+                                <option value="" selected disabled>-- Pilih Role --</option>
+                                <option value="tu">TU</option>
+                                <option value="p2m">P2M</option>
+                                <option value="rehabilitasi">Rehabilitasi</option>
+                            </select>
+                            @error('role')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">
                                 Simpan
                             </button>

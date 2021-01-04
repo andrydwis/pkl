@@ -83,12 +83,14 @@ class UserController extends Controller
         $request->validate([
             'nama' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique(User::class)->ignore($user->id)],
-            'telepon' => ['required', 'numeric']
+            'telepon' => ['required', 'numeric'],
+            'role' => ['required']
         ]);
 
         $user->name = $request->nama;
         $user->email = $request->email;
         $user->phone = '+62' . $request->telepon;
+        $user->role = $request->role;
         $user->save();
 
         session()->flash('status', 'Pegawai ' . $user->name . ' berhasil diupdate');

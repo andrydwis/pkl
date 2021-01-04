@@ -71,6 +71,10 @@ class PengaduanController extends Controller
         $pengaduan->keterangan = $request->keterangan;
         $pengaduan->lampiran_pendukung = $request->file('lampiran_pendukung')->storeAs('pengaduan', 'lampiran_pendukung'.'_'.Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('lampiran_identitas')->extension()) ?? null ;
         $pengaduan->save();
+
+        session()->flash('status', 'Pengaduan berhasil diajukan');
+
+        return back();
     }
 
     /**
