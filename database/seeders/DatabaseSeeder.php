@@ -23,17 +23,5 @@ class DatabaseSeeder extends Seeder
             'phone' => '+62851382348234',
             'role' => 'admin',
         ]);
-
-        DB::table('contacts')->insert([
-            'whatsapp' => '+123',
-            'email' => 'admin@gmail.com',
-            'facebook' => 'Kirigaya Kirito',
-            'twitter' => '@wibu',
-            'instagram' => '@instagram'
-        ]);
-
-        DB::table('abouts')->insert([
-            'address' => 'Sooko',
-        ]);
     }
 }

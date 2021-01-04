@@ -26,14 +26,6 @@
                 <a href="{{route('users.index')}}"><i class="fas fa-users"></i><span>Pegawai</span></a>
             </li>
             @endif
-            @if(auth()->user()->role == 'admin')
-            <li>
-                <a href="{{route('contact.index')}}"><i class="fas fa-address-card"></i><span>Kontak</span></a>
-            </li>
-            <li>
-                <a href="{{route('others.index')}}"><i class="fas fa-info-circle"></i><span>Lain Lain</span></a>
-            </li>
-            @endif
             @endauth
         </ul>
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
