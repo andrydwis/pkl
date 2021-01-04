@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sosialisasi;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class SosialisasiController extends Controller
@@ -14,7 +16,11 @@ class SosialisasiController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'sosialisasis' => Sosialisasi::all()
+        ];
+
+        return view('');
     }
 
     /**
@@ -48,7 +54,16 @@ class SosialisasiController extends Controller
         ]);
 
         $sosialisasi = new Sosialisasi();
-        
+        $sosialisasi->jenis_sosialisasi = $request->jenis_sosialisasi;
+        $sosialisasi->tanggal = $request->nama_penyelenggara;
+        $sosialisasi->jam_pukul = $request->jam_pukul;
+        $sosialisasi->tempat = $request->tempat;
+        $sosialisasi->nama_penanggung_jawab = $request->nama_penanggung_jawab;
+        $sosialisasi->no_hp_penanggung_jawab = $request->no_hp_penanggung_jawab;
+        $sosialisasi->jumlah_peserta = $request->jumlah_peserta;
+        $sosialisasi->keterangan = $request->keterangan;
+        $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi'.'_'.Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('lampiran_identitas')->extension()) ?? null ;;
+        $sosialisasi->save();
         
     }
 

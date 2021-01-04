@@ -13,6 +13,6 @@ class HomeController extends Controller
         $data = [
            
         ];
-        return view('homepage.index', $data);
+        return view('user.index', $data);
     }
 }
