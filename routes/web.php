@@ -1,10 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\UpdateProfileController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OtherController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('init');
-Route::get('/sosialisasi', [SosialisasiController::class, 'create'])->name('sosialisasi.create');
-
+Route::get('sosialisasi', [SosialisasiController::class, 'create'])->name('sosialisasi.create');
+Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.create');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

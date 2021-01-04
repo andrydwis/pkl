@@ -30,6 +30,7 @@ class PengaduanController extends Controller
     public function create()
     {
         //
+        return view('pengaduan.index');
     }
 
     /**
@@ -43,7 +44,7 @@ class PengaduanController extends Controller
         //
         $request->validate([
             'nomer_ktp' => ['required,numeric'],
-            'nama_lengkap' => ['required', 'string', 'max:255'],
+            'nama_lengkap' => ['required,string,max:255'],
             'ttl' => ['required'],
             'alamat' => ['required'],
             'telepon' => ['required'],
