@@ -10,18 +10,16 @@ class Pengaduan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nomer_ktp',
         'nama_lengkap',
         'ttl',
         'alamat',
         'telepon',
-        'email',
-        'lampiran_identitas',
         'pekerjaan',
-        'alamat_instansi',
-        'telepon_instansi',
         'tanggal_kejadian',
         'waktu_kejadian',
-        'keterangan',
-        'lampiran_pendukung'
+        'kategori',
+        'isi_pengaduan',
+        'foto_bukti_kejadian'
     ];
 }

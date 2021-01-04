@@ -15,19 +15,17 @@ class CreatePengaduansTable extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
+            $table->string('nomer_ktp');
             $table->string('nama_lengkap');
             $table->string('ttl');
             $table->string('alamat');
             $table->string('telepon');
-            $table->string('email');
-            $table->string('lampiran_identitas');
             $table->string('pekerjaan');
-            $table->string('alamat_instansi');
-            $table->string('telepon_instansi');
             $table->string('tanggal_kejadian');
             $table->string('waktu_kejadian');
-            $table->text('keterangan')->nullable();
-            $table->string('lampiran_pendukung')->nullable();
+            $table->string('kategori');
+            $table->text('isi_pengaduan');
+            $table->string('foto_bukti_kejadian');
             $table->timestamps();
         });
     }

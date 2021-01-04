@@ -42,34 +42,31 @@ class PengaduanController extends Controller
     {
         //
         $request->validate([
+            'nomer_ktp' => ['required,numeric'],
             'nama_lengkap' => ['required', 'string', 'max:255'],
             'ttl' => ['required'],
             'alamat' => ['required'],
             'telepon' => ['required'],
-            'email' => ['required,email'],
-            'lampiran_identitas' => ['required,mimes:jpg,png,pdf,max:2048'],
             'pekerjaan' => ['required'],
-            'alamat_instansi' => ['required'],
-            'telepon_instansi' => ['required'],
             'tanggal_kejadian' => ['required'],
             'waktu_kejadian' => ['required'],
-            'lampiran_pendukung' => ['mimes:jpg,png,pdf,max:2048']
+            'kategori' => ['required'],
+            'isi_pengaduan' => ['required'],
+            'foto_bukti_kejadian' => ['mimes:jpg,png,pdf,max:2048'],
         ]);
 
         $pengaduan = new Pengaduan();
+        $pengaduan->nomer_ktp = $request->nomer_ktp;
         $pengaduan->nama_lengkap = $request->nama_lengkap;
         $pengaduan->ttl = $request->ttl;
         $pengaduan->alamat = $request->alamat;
         $pengaduan->telepon = $request->telepon;
-        $pengaduan->email = $request->email;
-        $pengaduan->lampiran_identitas = $request->file('lampiran_identitas')->storeAs('pengaduan', 'lampiran_identitas'.'_'.Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('lampiran_identitas')->extension());
         $pengaduan->pekerjaan = $request->pekerjaan;
-        $pengaduan->alamat_instansi = $request->alamat_instansi;
-        $pengaduan->telepon_instansi = $request->telepon_instansi;
         $pengaduan->tanggal_kejadian = $request->tanggal_kejadian;
         $pengaduan->waktu_kejadian = $request->waktu_kejadian;
-        $pengaduan->keterangan = $request->keterangan;
-        $pengaduan->lampiran_pendukung = $request->file('lampiran_pendukung')->storeAs('pengaduan', 'lampiran_pendukung'.'_'.Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('lampiran_identitas')->extension()) ?? null ;
+        $pengaduan->kategori = $request->kategori;
+        $pengaduan->isi_pengaduan = $request->isi_pengaduan;
+        $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('foto_bukti_kejadian')->extension()) ?? null;
         $pengaduan->save();
 
         session()->flash('status', 'Pengaduan berhasil diajukan');
