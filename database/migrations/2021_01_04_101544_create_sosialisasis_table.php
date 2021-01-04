@@ -15,15 +15,15 @@ class CreateSosialisasisTable extends Migration
     {
         Schema::create('sosialisasis', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_sosialisasi');
+            $table->string('kategori');
             $table->string('nama_penyelenggara');
             $table->string('tanggal');
             $table->string('jam_pukul');
             $table->text('tempat');
-            $table->string('nama_penanggung_jawab');
-            $table->string('no_hp_penanggung_jawab');
+            $table->string('nama_pemohon');
+            $table->string('no_hp_pemohon');
             $table->integer('jumlah_peserta');
-            $table->text('keterangan');
+            $table->text('tema_kegiatan');
             $table->string('lampiran_surat_undangan');
             $table->timestamps();
         });

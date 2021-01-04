@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OtherController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SosialisasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('init');
+Route::get('/sosialisasi', [SosialisasiController::class, 'create'])->name('sosialisasi.create');
+
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

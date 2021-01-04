@@ -20,7 +20,7 @@ class SosialisasiController extends Controller
             'sosialisasis' => Sosialisasi::all()
         ];
 
-        return view('');
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class SosialisasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('sosialisasi.index');
     }
 
     /**
@@ -42,25 +42,27 @@ class SosialisasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'jenis_sosialisasi' => ['required'],
+            'kategori' => ['required'],
             'nama_penyelenggara' => ['required'],
             'tanggal' => ['required'],
             'jam_pukul' => ['required'],
             'tempat' => ['required'],
-            'nama_penanggung_jawab' => ['required'],
-            'no_hp_penanggung_jawab' => ['required'],
-            'jumlah_peserta' => ['required'],            
+            'nama_pemohon' => ['required'],
+            'no_hp_pemohon' => ['required'],
+            'jumlah_peserta' => ['required'],
+            'tema_kegiatan'  => ['required'],
             'lampiran_surat_undangan' => ['required,mimes:jpeg,png,jpg,pdf,max:2048']
         ]);
 
         $sosialisasi = new Sosialisasi();
-        $sosialisasi->jenis_sosialisasi = $request->jenis_sosialisasi;
+        $sosialisasi->kategori = $request->kategori;
         $sosialisasi->tanggal = $request->nama_penyelenggara;
         $sosialisasi->jam_pukul = $request->jam_pukul;
         $sosialisasi->tempat = $request->tempat;
-        $sosialisasi->nama_penanggung_jawab = $request->nama_penanggung_jawab;
-        $sosialisasi->no_hp_penanggung_jawab = $request->no_hp_penanggung_jawab;
+        $sosialisasi->nama_pemohon = $request->nama_pemohon;
+        $sosialisasi->no_hp_pemohon = $request->no_hp_pemohon;
         $sosialisasi->jumlah_peserta = $request->jumlah_peserta;
+        $sosialisasi->tema_kegiatan = $request->tema_kegiatan;
         $sosialisasi->keterangan = $request->keterangan;
         $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi'.'_'.Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('lampiran_identitas')->extension()) ?? null ;;
         $sosialisasi->save();
@@ -75,7 +77,7 @@ class SosialisasiController extends Controller
      */
     public function show(Sosialisasi $sosialisasi)
     {
-        //
+        
     }
 
     /**
