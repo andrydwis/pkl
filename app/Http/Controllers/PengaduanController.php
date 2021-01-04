@@ -42,19 +42,34 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'nomer_ktp' => ['required,numeric'],
-            'nama_lengkap' => ['required,string,max:255'],
-            'ttl' => ['required'],
-            'alamat' => ['required'],
-            'telepon' => ['required'],
-            'pekerjaan' => ['required'],
-            'tanggal_kejadian' => ['required'],
-            'waktu_kejadian' => ['required'],
-            'kategori' => ['required'],
-            'isi_pengaduan' => ['required'],
-            'foto_bukti_kejadian' => ['mimes:jpg,png,pdf,max:2048'],
-        ]);
+        if ($request->file('foto_bukti_kejadian') != null) {
+            $request->validate([
+                'nomer_ktp' => ['required', 'numeric'],
+                'nama_lengkap' => ['required', 'string', 'max:255'],
+                'ttl' => ['required'],
+                'alamat' => ['required'],
+                'telepon' => ['required'],
+                'pekerjaan' => ['required'],
+                'tanggal_kejadian' => ['required'],
+                'waktu_kejadian' => ['required'],
+                'kategori' => ['required'],
+                'isi_pengaduan' => ['required'],
+                'foto_bukti_kejadian' => ['mimes:jpg,png,pdf', 'max:2048'],
+            ]);
+        } else {
+            $request->validate([
+                'nomer_ktp' => ['required', 'numeric'],
+                'nama_lengkap' => ['required', 'string', 'max:255'],
+                'ttl' => ['required'],
+                'alamat' => ['required'],
+                'telepon' => ['required'],
+                'pekerjaan' => ['required'],
+                'tanggal_kejadian' => ['required'],
+                'waktu_kejadian' => ['required'],
+                'kategori' => ['required'],
+                'isi_pengaduan' => ['required'],
+            ]);
+        }
 
         $pengaduan = new Pengaduan();
         $pengaduan->nomer_ktp = $request->nomer_ktp;

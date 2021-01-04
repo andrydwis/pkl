@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
             <div class="card card-primary">
-                <div class="card-header flex flex-row justify-content-between">
+                <div class="card-header d-flex d-flex-row justify-content-between">
                     <h4>Tambah</h4>
                     <a href="{{route('users.index')}}" class="btn btn-primary">Kembali</a>
                 </div>

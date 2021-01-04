@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('init');
 Route::get('sosialisasi', [SosialisasiController::class, 'create'])->name('sosialisasi.create');
 Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.create');
+Route::post('pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard
