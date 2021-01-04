@@ -41,14 +41,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('users/{user:name}/reset', [UserController::class, 'resetView'])->name('users.reset-view');
         Route::put('users/{user:name}/reset', [UserController::class, 'reset'])->name('users.reset');
         Route::delete('users/{user:name}', [UserController::class, 'destroy'])->name('users.destroy');
-
-        //contact
-        Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
-        Route::patch('contact/{contact}', [ContactController::class, 'update'])->name('contact.update');
-
-        //about us
-        Route::get('others', [OtherController::class, 'index'])->name('others.index');
-        Route::patch('others/{about}', [OtherController::class, 'update'])->name('others.update');
     });
 });
 
