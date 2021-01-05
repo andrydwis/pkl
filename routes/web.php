@@ -7,6 +7,7 @@ use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\TesUrinePribadiController;
+use App\Http\Controllers\TesUrineInstansiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,8 @@ Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan
 Route::post('pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
 Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'create'])->name('permohonan-tes-urine-pribadi.create');
 Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
+Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'create'])->name('permohonan-tes-urine-instansi.create');
+Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class TesUrineInstansi extends Model
 {
     use HasFactory;
+    protected $guard = ['id'];
 }

@@ -24,7 +24,7 @@ class TesUrineInstansiController extends Controller
      */
     public function create()
     {
-        //
+        return view('tes-urine-instansi.index');
     }
 
     /**
@@ -48,7 +48,18 @@ class TesUrineInstansiController extends Controller
         ]);
 
         $tesUrineInstansi = new TesUrineInstansi();
-        $tesUrineInstansi->save($data);
+        $tesUrineInstansi->nama_instansi = $request->nama_instansi;
+        $tesUrineInstansi->nama_pemohon = $request->nama_pemohon;
+        $tesUrineInstansi->alamat_instansi = $request->alamat_instansi;
+        $tesUrineInstansi->tanggal_pelaksanaan_pemeriksaan = $request->tanggal_pelaksanaan_pemeriksaan;
+        $tesUrineInstansi->waktu_pelaksanaan_pemeriksaan = $request->waktu_pelaksanaan_pemeriksaan;
+        $tesUrineInstansi->contact_person = $request->contact_person;
+        $tesUrineInstansi->jumlah_peserta_laki = $request->jumlah_peserta_laki;
+        $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
+        $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
+        $tesUrineInstansi->save();
+        session()->flash('status', 'Tes urine Instansi Berhasil Diajukan');
+        return back();
     }
 
     /**
