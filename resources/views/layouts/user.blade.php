@@ -56,12 +56,12 @@
                     <li><a href="#sop-services">Alur SOP Layanan</a></li>
                     <li class="drop-down"><a href="#services">Layanan</a>
                         <ul>
-                            <li><a href="#services">Pengaduan Masyarakat</a></li>
-                            <li><a href="#services">Permohonan Sosialisasi</a></li>
-                            <li><a href="#services">Permohonan Rehabilitas</a></li>
-                            <li><a href="#services">Permohonan Tes Urine Instansi</a></li>
-                            <li><a href="#services">Permohonan Tes Urine Mandiri</a></li>
-                            <li><a href="#services">Survey Kepuasan Pasien</a></li>
+                            <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
+                            <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
+                            <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
+                            <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
+                            <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                            <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                         </ul>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
