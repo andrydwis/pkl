@@ -28,7 +28,7 @@ class TesUrinePribadiController extends Controller
     public function create()
     {
         //
-        return view('tes-urine-pribadi.index');
+        return view('tes-urine-pribadi.create');
     }
 
     /**

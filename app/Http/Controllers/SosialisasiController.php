@@ -30,7 +30,7 @@ class SosialisasiController extends Controller
      */
     public function create()
     {
-        return view('sosialisasi.index');
+        return view('sosialisasi.create');
     }
 
     /**
