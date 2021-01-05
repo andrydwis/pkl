@@ -15,6 +15,15 @@ class CreateTesUrineInstansisTable extends Migration
     {
         Schema::create('tes_urine_instansis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_instansi');
+            $table->string('nama_pemohon');
+            $table->text('alamat_instansi');
+            $table->string('tanggal_pelaksanaan_pemeriksaan');
+            $table->string('waktu_pelaksanaan_pemeriksaan');
+            $table->string('contact_person');
+            $table->integer('jumlah_peserta_laki');
+            $table->integer('jumlah_peserta_perempuan');
+            $table->text('lokasi_pemeriksaan');
             $table->timestamps();
         });
     }

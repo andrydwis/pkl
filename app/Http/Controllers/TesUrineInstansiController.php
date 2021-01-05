@@ -35,7 +35,20 @@ class TesUrineInstansiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nama_instansi' => ['required'],
+            'nama_pemohon' => ['required'],
+            'alamat_instansi' => ['required'],
+            'tanggal_pelaksanaan_pemeriksaan' => ['required'],
+            'waktu_pelaksanaan_pemeriksaan' => ['required'],
+            'contact_person' => ['required'],
+            'jumlah_peserta_laki' => ['required'],
+            'jumlah_peserta_perempuan' => ['required'],
+            'lokasi_pemeriksaan' => ['required'],
+        ]);
+
+        $tesUrineInstansi = new TesUrineInstansi();
+        $tesUrineInstansi->save($data);
     }
 
     /**

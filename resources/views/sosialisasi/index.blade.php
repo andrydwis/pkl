@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="tempat" class="control-label">Tempat</label>
-                                    <textarea id="tempat" class="form-control @error('tempat'){{'is-invalid'}}@enderror" name="tempat"></textarea>
+                                    <textarea id="tempat" class="form-control @error('tempat'){{'is-invalid'}}@enderror" name="tempat">{{old('tempat') ?? ''}}</textarea>
                                     @error('tempat')
                                     <div class="invalid-feedback">
                                         {{$message}}
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="tema_kegiatan" class="control-label">Tema Kegiatan</label>
-                                    <textarea id="tema_kegiatan" class="form-control @error('tema_kegiatan'){{'is-invalid'}}@enderror" name="tema_kegiatan"></textarea>
+                                    <textarea id="tema_kegiatan" class="form-control @error('tema_kegiatan'){{'is-invalid'}}@enderror" name="tema_kegiatan">{{old('tema_kegiatan') ?? ''}}</textarea>
                                     @error('tema_kegiatan')
                                     <div class="invalid-feedback">
                                         {{$message}}
