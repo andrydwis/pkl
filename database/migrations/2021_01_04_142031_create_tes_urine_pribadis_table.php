@@ -15,6 +15,16 @@ class CreateTesUrinePribadisTable extends Migration
     {
         Schema::create('tes_urine_pribadis', function (Blueprint $table) {
             $table->id();
+            $table->string('nomer_ktp');
+            $table->string('nama_lengkap');
+            $table->string('tempat_lahir');
+            $table->string('ttl');
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
+            $table->string('alamat');
+            $table->string('telepon');
+            $table->string('pekerjaan');
+            $table->string('tanggal_permohonan');
+            $table->string('keperluan');
             $table->timestamps();
         });
     }

@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class TesUrinePribadi extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nomer_ktp',
+        'nama_lengkap',
+        'tempat_lahir',
+        'ttl',
+        'jenis_kelamin',
+        'alamat',
+        'telepon',
+        'pekerjaan',
+        'tanggal_permohonan',
+        'keperluan'
+    ];
 }

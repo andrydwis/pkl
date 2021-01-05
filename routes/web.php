@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
+use App\Http\Controllers\TesUrinePribadiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ Route::get('sosialisasi', [SosialisasiController::class, 'create'])->name('sosia
 Route::post('sosialisasi', [SosialisasiController::class, 'store'])->name('sosialisasi.store');
 Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.create');
 Route::post('pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
+Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'create'])->name('permohonan-tes-urine-pribadi.create');
+Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

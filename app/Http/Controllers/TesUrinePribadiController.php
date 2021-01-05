@@ -15,6 +15,9 @@ class TesUrinePribadiController extends Controller
     public function index()
     {
         //
+        $data = [
+            'tests' => TesUrinePribadi::all()
+        ];
     }
 
     /**
@@ -25,6 +28,7 @@ class TesUrinePribadiController extends Controller
     public function create()
     {
         //
+        return view('tes-urine-pribadi.index');
     }
 
     /**
@@ -36,6 +40,35 @@ class TesUrinePribadiController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nomer_ktp' => ['required', 'numeric'],
+            'nama_lengkap' => ['required', 'string', 'max:255'],
+            'tempat_lahir' => ['required'],
+            'ttl' => ['required'],
+            'jenis_kelamin' => ['required'],
+            'alamat' => ['required'],
+            'telepon' => ['required'],
+            'pekerjaan' => ['required'],
+            'tanggal_permohonan' => ['required'],
+            'keperluan' => ['required']
+        ]);
+
+        $test = new TesUrinePribadi();
+        $test->nomer_ktp = $request->nomer_ktp;
+        $test->nama_lengkap = $request->nama_lengkap;
+        $test->tempat_lahir = $request->tempat_lahir;
+        $test->ttl = $request->ttl;
+        $test->jenis_kelamin = $request->jenis_kelamin;
+        $test->alamat = $request->alamat;
+        $test->telepon = '+62' . $request->telepon;
+        $test->pekerjaan = $request->pekerjaan;
+        $test->tanggal_permohonan = $request->tanggal_permohonan;
+        $test->keperluan = $request->keperluan;
+        $test->save();
+
+        session()->flash('status', 'Tes urine pribadi berhasil diajukan');
+
+        return back();
     }
 
     /**

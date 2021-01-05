@@ -76,7 +76,7 @@ class PengaduanController extends Controller
         $pengaduan->nama_lengkap = $request->nama_lengkap;
         $pengaduan->ttl = $request->ttl;
         $pengaduan->alamat = $request->alamat;
-        $pengaduan->telepon = $request->telepon;
+        $pengaduan->telepon = '+62' . $request->telepon;
         $pengaduan->pekerjaan = $request->pekerjaan;
         $pengaduan->tanggal_kejadian = $request->tanggal_kejadian;
         $pengaduan->waktu_kejadian = $request->waktu_kejadian;
