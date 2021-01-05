@@ -25,7 +25,7 @@ class CreatePengaduansTable extends Migration
             $table->string('waktu_kejadian');
             $table->string('kategori');
             $table->text('isi_pengaduan');
-            $table->string('foto_bukti_kejadian');
+            $table->string('foto_bukti_kejadian')->nullable();
             $table->timestamps();
         });
     }

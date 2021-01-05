@@ -232,7 +232,7 @@
         <h2>Kontak</h2>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-lg-9 d-inline-flex justify-content-center">
           <div class="info">
             <div class="address">

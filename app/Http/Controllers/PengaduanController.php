@@ -82,7 +82,11 @@ class PengaduanController extends Controller
         $pengaduan->waktu_kejadian = $request->waktu_kejadian;
         $pengaduan->kategori = $request->kategori;
         $pengaduan->isi_pengaduan = $request->isi_pengaduan;
-        $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now() . '_' . $request->file('foto_bukti_kejadian')->extension()) ?? null;
+        if ($request->file('foto_bukti_kejadian') != null) {
+            $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now()->toDateString() . '.' . $request->file('foto_bukti_kejadian')->extension());
+        } else {
+            $pengaduan->foto_bukti_kejadian = null;
+        }
         $pengaduan->save();
 
         session()->flash('status', 'Pengaduan berhasil diajukan');

@@ -8,6 +8,10 @@
 </section>
 <!-- End Hero -->
 
+<div class="container mt-3">
+    @include('layouts.alert')
+</div>
+
 <main id="main">
     <section id="form" class="d-flex justify-content-center">
         <div class="container">
@@ -17,7 +21,7 @@
                         <div class="card-header">
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('pengaduan.store')}}">
+                            <form method="POST" action="{{route('pengaduan.store')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="nomer_ktp">Nomer KTP / NIK</label>
@@ -99,11 +103,11 @@
                                 <div class="form-group">
                                     <label for="kategori">Kategori</label>
                                     <select name="kategori" id="kategori" class="form-control @error('kategori'){{'is-invalid'}}@enderror">
-                                        <option value="" selected disabled>-- Pilih Kategori --</option>
-                                        <option value="masyarakat">Masyarakat</option>
-                                        <option value="pemerintah">pemerintah</option>
-                                        <option value="swasta">Swasta</option>
-                                        <option value="pendidikan">Pendidikan</option>
+                                        <option value="" @if(old('kategori')==null){{'selected'}}@endif disabled>-- Pilih Kategori --</option>
+                                        <option value="masyarakat" @if(old('kategori')=='masyarakat' ){{'selected'}}@endif>Masyarakat</option>
+                                        <option value="pemerintah" @if(old('kategori')=='pemerintah' ){{'selected'}}@endif>pemerintah</option>
+                                        <option value="swasta" @if(old('kategori')=='swasta' ){{'selected'}}@endif>Swasta</option>
+                                        <option value="pendidikan" @if(old('kategori')=='pendidikan' ){{'selected'}}@endif>Pendidikan</option>
                                     </select>
                                     @error('kategori')
                                     <div class="invalid-feedback">
