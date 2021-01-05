@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PengaduansExport;
 use App\Models\Pengaduan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PengaduanController extends Controller
 {
@@ -139,5 +141,10 @@ class PengaduanController extends Controller
     public function destroy(Pengaduan $pengaduan)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new PengaduansExport, 'pengaduan.xlsx');
     }
 }

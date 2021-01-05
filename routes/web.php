@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['tu'])->group(function () {
         Route::get('data-pengaduan', [PengaduanController::class, 'index'])->name('data-pengaduan.index');
+        Route::get('download', [PengaduanController::class, 'export']);
     });
 });
 
