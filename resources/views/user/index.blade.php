@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="" />
+                    <img src="assets/img/bg.svg" class="img-fluid animated" alt="" />
                 </div>
             </div>
         </div>
@@ -76,77 +76,31 @@
                     <h2>Alur SOP Layanan</h2>
                 </div>
 
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Pengaduan Masyarakat</a></h4>
-                            <p>
-                                Voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias excepturi
-                            </p>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-50" src="assets/img/rehab_rawat_jalan.jpeg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-50" src="assets/img/rehab_TAT.jpeg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-50" src="assets/img/skhpn_poster_urin.jpeg" alt="Third slide">
                         </div>
                     </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">Permohonan Sosialisasi</a></h4>
-                            <p>
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Permohonan Rehabilitas</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="400">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-layer"></i></div>
-                            <h4><a href="">Permohonan Tes Urine (Instansi)</a></h4>
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="500">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Permohonan Tes Urine (Mandiri)</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="600">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Survey Kepuasan Pasien</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
-                        </div>
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </section>
