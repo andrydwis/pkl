@@ -20,6 +20,8 @@ class PengaduanController extends Controller
         $data = [
             'pengaduans' => Pengaduan::all()
         ];
+
+        return view('pengaduan.index', $data);
     }
 
     /**
@@ -30,7 +32,7 @@ class PengaduanController extends Controller
     public function create()
     {
         //
-        return view('pengaduan.index');
+        return view('pengaduan.create');
     }
 
     /**

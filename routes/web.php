@@ -52,6 +52,10 @@ Route::middleware(['auth'])->group(function () {
         Route::put('users/{user:name}/reset', [UserController::class, 'reset'])->name('users.reset');
         Route::delete('users/{user:name}', [UserController::class, 'destroy'])->name('users.destroy');
     });
+
+    Route::middleware(['tu'])->group(function () {
+        Route::get('data-pengaduan', [PengaduanController::class, 'index'])->name('data-pengaduan.index');
+    });
 });
 
 require __DIR__ . '/auth.php';
