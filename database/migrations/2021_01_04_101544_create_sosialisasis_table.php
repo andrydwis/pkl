@@ -24,7 +24,7 @@ class CreateSosialisasisTable extends Migration
             $table->string('no_hp_pemohon');
             $table->integer('jumlah_peserta');
             $table->text('tema_kegiatan');
-            $table->string('lampiran_surat_undangan');
+            $table->string('lampiran_surat_undangan')->nullable();
             $table->timestamps();
         });
 

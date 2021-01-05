@@ -10,15 +10,15 @@ class Sosialisasi extends Model
     use HasFactory;
 
     protected $fillable = [
-        'jenis_sosialisasi',
+        'kategori',
         'nama_penyelenggara',
         'tanggal',
         'jam_pukul',
         'tempat',
-        'nama_penanggung_jawab',
-        'no_hp_penanggung_jawab',
+        'nama_pemohon',
+        'no_hp_pemohon',
         'jumlah_peserta',
-        'keterangan',
+        'tema_kegiatan',
         'lampiran_surat_undangan',
     ];
 }

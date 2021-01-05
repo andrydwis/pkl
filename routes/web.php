@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('init');
 Route::get('sosialisasi', [SosialisasiController::class, 'create'])->name('sosialisasi.create');
+Route::post('sosialisasi', [SosialisasiController::class, 'store'])->name('sosialisasi.store');
 Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.create');
 Route::post('pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
 
