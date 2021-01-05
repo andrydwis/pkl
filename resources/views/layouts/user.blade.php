@@ -13,6 +13,10 @@
     <link href="{{ asset('assets/user/assets/img/logo.png') }}" rel="icon" />
     <link href="{{ asset('assets/user/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon" />
 
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -44,41 +48,41 @@
         <div class="container d-flex align-items-center">
             <!-- <h1 class="logo mr-auto"><a href="index.html">Arsha</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.html" class="logo mr-auto"><img src="{{ asset('assets/user/assets/img/logo.png') }}" alt=""
-                    class="img-fluid" />
+            <a href="{{ route('init') }}" class="logo mr-auto"><img src="{{ asset('assets/user/assets/img/logo.png') }}"
+                    alt="" class="img-fluid" />
                 <span class="d-none d-xl-inline">BNN Kota Malang</span>
             </a>
 
             <nav class="nav-menu d-none d-lg-block">
-                @if(Route::is('init'))
-                <ul>
-                    <li class="active"><a href="index.html">Beranda</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#sop-services">Alur SOP Layanan</a></li>
-                    <li class="drop-down"><a href="#services">Layanan</a>
-                        <ul>
-                            <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
-                            <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                            <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
-                            <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
-                            <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
-                            <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
-                        </ul>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
+                @if (Route::is('init'))
+                    <ul>
+                        <li class="active"><a href="index.html">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#sop-services">Alur SOP Layanan</a></li>
+                        <li class="drop-down"><a href="#services">Layanan</a>
+                            <ul>
+                                <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
+                                <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
+                                <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
+                                <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
+                                <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                                <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
+                            </ul>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
                 @else
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li class="drop-down"><a href="#services">Layanan</a>
-                        <ul>
-                            <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
-                            <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                            <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
-                            <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
-                            <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
-                            <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
-                        </ul>
-                </ul>
+                    <ul>
+                        <li><a href="{{ route('init') }}">Beranda</a></li>
+                        <li class="drop-down"><a href="#services">Layanan</a>
+                            <ul>
+                                <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
+                                <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
+                                <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
+                                <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
+                                <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                                <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
+                            </ul>
+                    </ul>
                 @endif
 
             </nav>

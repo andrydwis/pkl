@@ -116,7 +116,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box" id="pengaduan-masyarakat">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <div class="icon"><i class="fas fa-bullhorn"></i></div>
                             <h4><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></h4>
                             <p>
                                 Voluptatum deleniti atque corrupti quos dolores et quas
@@ -128,7 +128,7 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                         data-aos-delay="200">
                         <div class="icon-box" id="permohonan-sosialisasi">
-                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <div class="icon"><i class="fas fa-scroll"></i></div>
                             <h4><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></h4>
                             <p>
                                 Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -140,7 +140,7 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitas">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <div class="icon"><i class="fas fa-scroll"></i></div>
                             <h4><a href="">Permohonan Rehabilitas</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
@@ -152,7 +152,7 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="400">
                         <div class="icon-box" id="permohonan-tes-urine-instansi">
-                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <div class="icon"><i class="far fa-id-card"></i></div>
                             <h4><a href="">Permohonan Tes Urine (Instansi)</a></h4>
                             <p>
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -164,7 +164,7 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="500">
                         <div class="icon-box" id="permohonan-tes-urine-mandiri">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <div class="icon"><i class="far fa-id-card"></i></div>
                             <h4><a href="">Permohonan Tes Urine (Mandiri)</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
@@ -176,7 +176,7 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="600">
                         <div class="icon-box" id="survey-kepuasan-pasien">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <div class="icon"><i class="fas fa-chart-pie"></i></div>
                             <h4><a href="">Survey Kepuasan Pasien</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
