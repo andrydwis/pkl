@@ -50,14 +50,15 @@
             </a>
 
             <nav class="nav-menu d-none d-lg-block">
+                @if(Route::is('init'))
                 <ul>
                     <li class="active"><a href="index.html">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#sop-services">Alur SOP Layanan</a></li>
                     <li class="drop-down"><a href="#services">Layanan</a>
                         <ul>
-                            <li><a href="#pengaduan-masyarakat">Pengaduan Masyarakat</a></li>
-                            <li><a href="#permohonan-sosialisasi">Permohonan Sosialisasi</a></li>
+                            <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
+                            <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
                             <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
                             <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
                             <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
@@ -65,6 +66,21 @@
                         </ul>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
+                @else
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="drop-down"><a href="#services">Layanan</a>
+                        <ul>
+                            <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
+                            <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
+                            <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
+                            <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
+                            <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                            <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
+                        </ul>
+                </ul>
+                @endif
+
             </nav>
             <!-- .nav-menu -->
         </div>
