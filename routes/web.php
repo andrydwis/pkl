@@ -4,10 +4,13 @@ use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\RehabilitasiPribadiController;
+use App\Http\Controllers\RehabilitasiInstansiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\TesUrinePribadiController;
 use App\Http\Controllers\TesUrineInstansiController;
+use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +35,8 @@ Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 
 Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
 Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabiltasi-pribadi.create');
 Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabiltasi-pribadi.store');
+Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'create'])->name('rehabilitasi-instansi.create');
+Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

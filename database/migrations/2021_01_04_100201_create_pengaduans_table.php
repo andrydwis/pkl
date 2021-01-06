@@ -18,7 +18,7 @@ class CreatePengaduansTable extends Migration
             $table->string('nomer_ktp');
             $table->string('nama_lengkap');
             $table->string('ttl');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('telepon');
             $table->string('pekerjaan');
             $table->string('tanggal_kejadian');

@@ -24,7 +24,7 @@ class RehabilitasiInstansiController extends Controller
      */
     public function create()
     {
-        //
+        return view('rehabilitasi-instansi.create');
     }
 
     /**
@@ -35,7 +35,25 @@ class RehabilitasiInstansiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_lengkap_pelapor' => ['required', 'string',],
+            'nama_instansi' => ['required', 'string',],
+            'alamat_instansi' => ['required', 'string',],
+            'nomor_telepon' => ['required'],
+            'jumlah_yang_dicurigai' => ['required','numeric'],
+            'jenis_penyalahgunaan' => ['required']
+        ]);
+
+        $rehabilitasiInstansi = new RehabilitasiInstansi();
+        $rehabilitasiInstansi->nama_lengkap_pelapor = $request->nama_lengkap_pelapor;
+        $rehabilitasiInstansi->nama_instansi = $request->nama_instansi;
+        $rehabilitasiInstansi->alamat_instansi = $request->alamat_instansi;
+        $rehabilitasiInstansi->nomor_telepon ='+62'.$request->nomor_telepon;
+        $rehabilitasiInstansi->jumlah_yang_dicurigai = $request->jumlah_yang_dicurigai;
+        $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
+        $rehabilitasiInstansi->save();
+        session()->flash('status', 'Rehabilitasi Instansi Berhasil Diajukan');
+        return back();
     }
 
     /**

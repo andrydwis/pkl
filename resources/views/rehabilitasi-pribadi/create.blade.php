@@ -1,9 +1,9 @@
 @extends('layouts.user')
 @section('content')
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center" style="background-image:url({{ asset('assets/img/gedung-bnn.png') }}); background-repeat:no-repeat; background-size: cover; background-position: center;">
+<section id="hero" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center">
-        <h1>Form Pengajuan Tes Urine Pribadi</h1>
+        <h1>Form Pengajuan Rehabilitasi Pribadi</h1>
     </div>
 </section>
 <!-- End Hero -->
@@ -21,7 +21,7 @@
                         <div class="card-header">
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('permohonan-tes-urine-pribadi.store')}}">
+                            <form method="POST" action="{{route('rehabilitasi-pribadi.store')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="nomer_ktp">Nomer KTP / NIK</label>
@@ -36,37 +36,6 @@
                                     <label for="nama_lengkap">Nama Lengkap</label>
                                     <input id="nama_lengkap" type="text" class="form-control @error('nama_lengkap'){{'is-invalid'}}@enderror" name="nama_lengkap" value="{{old('nama_lengkap') ?? ''}}">
                                     @error('nama_lengkap')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                    <input id="tempat_lahir" type="text" class="form-control @error('tempat_lahir'){{'is-invalid'}}@enderror" name="tempat_lahir" value="{{old('tempat_lahir') ?? ''}}">
-                                    @error('tempat_lahir')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="ttl">Tanggal Lahir</label>
-                                    <input id="ttl" type="date" class="form-control @error('ttl'){{'is-invalid'}}@enderror" name="ttl" value="{{old('ttl') ?? ''}}">
-                                    @error('ttl')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                                    <select name="jenis_kelamin" id="jenis_kelamin" class="form-control @error('jenis_kelamin'){{'is-invalid'}}@enderror">
-                                        <option value="" @if(old('jenis_kelamin')==null){{'selected'}}@endif disabled>-- Jenis Kelamin --</option>
-                                        <option value="laki-laki" @if(old('jenis_kelamin')=='laki-laki' ){{'selected'}}@endif>Laki - Laki</option>
-                                        <option value="perempuan" @if(old('jenis_kelamin')=='perempuan' ){{'selected'}}@endif>Perempuan</option>
-                                    </select>
-                                    @error('jenis_kelamin')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
@@ -96,27 +65,27 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pekerjaan">Pekerjaan</label>
-                                    <input id="pekerjaan" type="text" class="form-control @error('pekerjaan'){{'is-invalid'}}@enderror" name="pekerjaan" value="{{old('pekerjaan') ?? ''}}">
-                                    @error('pekerjaan')
+                                    <label for="jenis_penyalahgunaan">Jenis Penyalahgunaan</label>
+                                    <input id="jenis_penyalahgunaan" type="text" class="form-control @error('jenis_penyalahgunaan'){{'is-invalid'}}@enderror" name="jenis_penyalahgunaan" value="{{old('jenis_penyalahgunaan') ?? ''}}">
+                                    @error('jenis_penyalahgunaan')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="tanggal_permohonan">Tanggal Permohonan</label>
-                                    <input id="tanggal_permohonan" type="date" class="form-control @error('tanggal_permohonan'){{'is-invalid'}}@enderror" name="tanggal_permohonan" value="{{old('tanggal_permohonan') ?? ''}}">
-                                    @error('tanggal_permohonan')
+                                    <label for="hubungan_dengan_penyalahguna">Hubungan dengan penyalahguna</label>
+                                    <input id="hubungan_dengan_penyalahguna" type="text" class="form-control @error('hubungan_dengan_penyalahguna'){{'is-invalid'}}@enderror" name="hubungan_dengan_penyalahguna" value="{{old('hubungan_dengan_penyalahguna') ?? ''}}">
+                                    @error('hubungan_dengan_penyalahguna')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="keperluan">Keperluan</label>
-                                    <textarea name="keperluan" id="keperluan" class="form-control @error('keperluan'){{'is-invalid'}}@enderror">{{old('keperluan') ?? ''}}</textarea>
-                                    @error('keperluan')
+                                    <label for="rencana_kedatangan_ke_klinik">Rencana kedatangan ke klinik</label>
+                                    <input id="rencana_kedatangan_ke_klinik" type="date" class="form-control @error('rencana_kedatangan_ke_klinik'){{'is-invalid'}}@enderror" name="rencana_kedatangan_ke_klinik" value="{{old('rencana_kedatangan_ke_klinik') ?? ''}}">
+                                    @error('rencana_kedatangan_ke_klinik')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>

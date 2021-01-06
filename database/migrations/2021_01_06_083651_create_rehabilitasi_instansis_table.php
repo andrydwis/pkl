@@ -19,7 +19,7 @@ class CreateRehabilitasiInstansisTable extends Migration
             $table->string('nama_instansi');
             $table->text('alamat_instansi');
             $table->string('nomor_telepon');
-            $table->text('jumlah_yang_dicurigai');
+            $table->integer('jumlah_yang_dicurigai');
             $table->text('jenis_penyalahgunaan');
             $table->timestamps();
         });

@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="ttl">Tempat, Tanggal Lahir</label>
+                                    <label for="ttl">Tanggal Lahir</label>
                                     <input id="ttl" type="date" class="form-control @error('ttl'){{'is-invalid'}}@enderror" name="ttl" value="{{old('ttl') ?? ''}}">
                                     @error('ttl')
                                     <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <input id="alamat" type="text" class="form-control @error('alamat'){{'is-invalid'}}@enderror" name="alamat" value="{{old('alamat') ?? ''}}">
+                                    <textarea name="alamat" id="alamat" class="form-control @error('alamat'){{'is-invalid'}}@enderror">{{old('alamat') ?? ''}}</textarea>
                                     @error('alamat')
                                     <div class="invalid-feedback">
                                         {{$message}}
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="isi_pengaduan">Isi Pengaduan</label>
-                                    <textarea name="isi_pengaduan" id="isi_pengaduan" cols="30" rows="5" class="form-control @error('isi_pengaduan'){{'is-invalid'}}@enderror">{{old('isi_pengaduan') ?? ''}}</textarea>
+                                    <textarea name="isi_pengaduan" id="isi_pengaduan" class="form-control @error('isi_pengaduan'){{'is-invalid'}}@enderror">{{old('isi_pengaduan') ?? ''}}</textarea>
                                     @error('isi_pengaduan')
                                     <div class="invalid-feedback">
                                         {{$message}}
