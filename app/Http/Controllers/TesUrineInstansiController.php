@@ -24,7 +24,7 @@ class TesUrineInstansiController extends Controller
      */
     public function create()
     {
-        return view('tes-urine-instansi.index');
+        return view('tes-urine-instansi.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->alamat_instansi = $request->alamat_instansi;
         $tesUrineInstansi->tanggal_pelaksanaan_pemeriksaan = $request->tanggal_pelaksanaan_pemeriksaan;
         $tesUrineInstansi->waktu_pelaksanaan_pemeriksaan = $request->waktu_pelaksanaan_pemeriksaan;
-        $tesUrineInstansi->contact_person = $request->contact_person;
+        $tesUrineInstansi->contact_person = '+62'.$request->contact_person;
         $tesUrineInstansi->jumlah_peserta_laki = $request->jumlah_peserta_laki;
         $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;

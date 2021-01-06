@@ -75,17 +75,22 @@
                                         {{$message}}
                                     </div>
                                     @enderror
-                                </div>                                
+                                </div>                                                                
                                 <div class="form-group">
-                                    <label for="contact_person" class="control-label">Contact Person</label>
-                                    <input id="contact_person" type="text"
-                                        class="form-control @error('contact_person'){{'is-invalid'}}@enderror"
-                                        name="contact_person">
-                                    @error('contact_person')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
+                                    <label for="contact_person">Contact Person</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">+62</span>
+                                        </div>
+                                        <input id="contact_person" type="number"
+                                            class="form-control @error('contact_person'){{'is-invalid'}}@enderror"
+                                            name="contact_person" value="{{old('contact_person') ?? ''}}">
+                                        @error('contact_person')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
                                     </div>
-                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="jumlah_peserta_laki">Jumlah Peserta Laki-Laki</label>
