@@ -33,8 +33,8 @@ Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'c
 Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
 Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'create'])->name('permohonan-tes-urine-instansi.create');
 Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
-Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabiltasi-pribadi.create');
-Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabiltasi-pribadi.store');
+Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabilitasi-pribadi.create');
+Route::post('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabilitasi-pribadi.store');
 Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'create'])->name('rehabilitasi-instansi.create');
 Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
 

@@ -58,13 +58,19 @@
                         <li class="active"><a href="index.html">Beranda</a></li>
                         <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#sop-services">Alur SOP Layanan</a></li>
-                        <li class="drop-down"><a href="#services">Layanan</a>
+                        <li class="drop-down"><a href="#">Layanan</a>
                             <ul>
                                 <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                                 <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                                <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
-                                <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
-                                <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                                        Pribadi</a></li>
+                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                                        Instansi</a></li>
+                                <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
+                                        Instansi</a></li>
+                                <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
+                                        Pribadi</a>
+                                </li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
                         <li><a href="#contact">Kontak</a></li>
@@ -72,13 +78,19 @@
                 @else
                     <ul class="mr-5">
                         <li><a href="{{ route('init') }}">Beranda</a></li>
-                        <li class="drop-down"><a href="#services">Layanan</a>
+                        <li class="drop-down"><a href="#">Layanan</a>
                             <ul>
                                 <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                                 <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                                <li><a href="#permohonan-rehabilitas">Permohonan Rehabilitas</a></li>
-                                <li><a href="#permohonan-tes-urine-instansi">Permohonan Tes Urine Instansi</a></li>
-                                <li><a href="#permohonan-tes-urine-mandiri">Permohonan Tes Urine Mandiri</a></li>
+                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                                        Pribadi</a></li>
+                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                                        Instansi</a></li>
+                                <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
+                                        Instansi</a></li>
+                                <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
+                                        Pribadi</a>
+                                </li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
                     </ul>
