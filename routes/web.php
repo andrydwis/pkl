@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\RehabilitasiPribadiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\TesUrinePribadiController;
@@ -30,8 +31,8 @@ Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'c
 Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
 Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'create'])->name('permohonan-tes-urine-instansi.create');
 Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
-Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabiltasi-pribadi.create');
-Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabiltasi-pribadi.store');
+Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabilitasi-pribadi.create');
+Route::post('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabilitasi-pribadi.store');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

@@ -26,7 +26,7 @@ class RehabilitasiPribadiController extends Controller
     public function create()
     {
         //
-        return view('rehabiltasi-pribadi.create');
+        return view('rehabilitasi-pribadi.create');
     }
 
     /**
@@ -47,6 +47,20 @@ class RehabilitasiPribadiController extends Controller
             'hubungan_dengan_penyalahguna' => ['required'],
             'rencana_kedatangan_ke_klinik' => ['required']
         ]);
+
+        $rehabilitasi =  new RehabilitasiPribadi();
+        $rehabilitasi->nomer_ktp = $request->nomer_ktp;
+        $rehabilitasi->nama_lengkap = $request->nama_lengkap;
+        $rehabilitasi->alamat = $request->alamat;
+        $rehabilitasi->telepon = '+62' . $request->telepon;
+        $rehabilitasi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
+        $rehabilitasi->hubungan_dengan_penyalahguna = $request->hubungan_dengan_penyalahguna;
+        $rehabilitasi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;
+        $rehabilitasi->save();
+
+        session()->flash('status', 'Rehabilitasi pribadi berhasil diajukan');
+
+        return back();
     }
 
     /**

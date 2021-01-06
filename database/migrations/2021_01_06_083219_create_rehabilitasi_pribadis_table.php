@@ -17,7 +17,7 @@ class CreateRehabilitasiPribadisTable extends Migration
             $table->id();
             $table->string('nomer_ktp');
             $table->string('nama_lengkap');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('telepon');
             $table->string('jenis_penyalahgunaan');
             $table->string('hubungan_dengan_penyalahguna');

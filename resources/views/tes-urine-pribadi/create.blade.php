@@ -51,7 +51,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="ttl">Tempat, Tanggal Lahir</label>
+                                    <label for="ttl">Tanggal Lahir</label>
                                     <input id="ttl" type="date" class="form-control @error('ttl'){{'is-invalid'}}@enderror" name="ttl" value="{{old('ttl') ?? ''}}">
                                     @error('ttl')
                                     <div class="invalid-feedback">
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <input id="alamat" type="text" class="form-control @error('alamat'){{'is-invalid'}}@enderror" name="alamat" value="{{old('alamat') ?? ''}}">
+                                    <textarea name="alamat" id="alamat" class="form-control @error('alamat'){{'is-invalid'}}@enderror">{{old('alamat') ?? ''}}</textarea>
                                     @error('alamat')
                                     <div class="invalid-feedback">
                                         {{$message}}
@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="keperluan">Keperluan</label>
-                                    <textarea name="keperluan" id="keperluan" cols="30" rows="5" class="form-control @error('keperluan'){{'is-invalid'}}@enderror">{{old('keperluan') ?? ''}}</textarea>
+                                    <textarea name="keperluan" id="keperluan" class="form-control @error('keperluan'){{'is-invalid'}}@enderror">{{old('keperluan') ?? ''}}</textarea>
                                     @error('keperluan')
                                     <div class="invalid-feedback">
                                         {{$message}}

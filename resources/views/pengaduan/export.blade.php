@@ -1,3 +1,4 @@
+<h1>Data Pengaduan</h1>
 <table>
     <thead>
         <tr>

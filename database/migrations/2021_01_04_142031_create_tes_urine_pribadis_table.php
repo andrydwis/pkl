@@ -20,11 +20,11 @@ class CreateTesUrinePribadisTable extends Migration
             $table->string('tempat_lahir');
             $table->string('ttl');
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('telepon');
             $table->string('pekerjaan');
             $table->string('tanggal_permohonan');
-            $table->string('keperluan');
+            $table->text('keperluan');
             $table->timestamps();
         });
     }
