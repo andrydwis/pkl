@@ -4,11 +4,16 @@ use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
+<<<<<<< HEAD
 use App\Http\Controllers\RehabilitasiPribadiController;
+=======
+use App\Http\Controllers\RehabilitasiInstansiController;
+>>>>>>> 149205e96568b0447c4ba8b37b17977ecfad633c
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\TesUrinePribadiController;
 use App\Http\Controllers\TesUrineInstansiController;
+use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +36,15 @@ Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'c
 Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
 Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'create'])->name('permohonan-tes-urine-instansi.create');
 Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
+<<<<<<< HEAD
 Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabilitasi-pribadi.create');
 Route::post('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabilitasi-pribadi.store');
+=======
+Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabiltasi-pribadi.create');
+Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabiltasi-pribadi.store');
+Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'create'])->name('rehabilitasi-instansi.create');
+Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
+>>>>>>> 149205e96568b0447c4ba8b37b17977ecfad633c
 
 Route::middleware(['auth'])->group(function () {
     //dashboard
