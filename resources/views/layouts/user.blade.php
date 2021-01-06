@@ -70,7 +70,7 @@
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 @else
-                    <ul>
+                    <ul class="mr-5">
                         <li><a href="{{ route('init') }}">Beranda</a></li>
                         <li class="drop-down"><a href="#services">Layanan</a>
                             <ul>
