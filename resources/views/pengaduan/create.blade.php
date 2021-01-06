@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('content')
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center" style="background-image:url({{ asset('assets/img/gedung-bnn.png')}}); background-repeat:no-repeat; background-size: cover; background-position: center;">
     <div class="container d-flex justify-content-center">
         <h1>Form Pengaduan</h1>
     </div>

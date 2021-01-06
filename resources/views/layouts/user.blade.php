@@ -33,7 +33,6 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/user/assets/css/style.css') }}" rel="stylesheet" />
-
     <!-- =======================================================
   * Template Name: Arsha - v2.3.0
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ 

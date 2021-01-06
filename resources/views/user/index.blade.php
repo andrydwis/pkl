@@ -141,7 +141,19 @@
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitas">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="">Permohonan Rehabilitas</a></h4>
+                            <h4><a href="">Permohonan Rehabilitasi Instansi</a></h4>
+                            <p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <div class="icon-box" id="permohonan-rehabilitas">
+                            <div class="icon"><i class="fas fa-scroll"></i></div>
+                            <h4><a href="">Permohonan Rehabilitasi Mandiri</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                                 qui officia
