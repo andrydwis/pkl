@@ -61,7 +61,11 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware(['tu'])->group(function () {
+        //tu
         Route::get('data-pengaduan', [PengaduanController::class, 'index'])->name('data-pengaduan.index');
+        Route::get('data-pengaduan/{pengaduan}', [PengaduanController::class, 'show'])->name('data-pengaduan.show');
+        Route::get('data-pengaduan/{pengaduan}/edit', [PengaduanController::class, 'edit'])->name('data-pengaduan.edit');
+        Route::patch('data-pengaduan/{pengaduan}', [PengaduanController::class, 'update'])->name('data-pengaduan.update');
         Route::delete('data-pengaduan/{pengaduan}', [PengaduanController::class, 'destroy'])->name('data-pengaduan.destroy');
         Route::get('download', [PengaduanController::class, 'export']);
     });

@@ -6,6 +6,7 @@ use App\Exports\PengaduansExport;
 use App\Models\Pengaduan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -107,6 +108,11 @@ class PengaduanController extends Controller
     public function show(Pengaduan $pengaduan)
     {
         //
+        $data = [
+            'pengaduan' => $pengaduan
+        ];
+
+        return view('pengaduan.show', $data);
     }
 
     /**
@@ -118,6 +124,11 @@ class PengaduanController extends Controller
     public function edit(Pengaduan $pengaduan)
     {
         //
+        $data = [
+            'pengaduan' => $pengaduan
+        ];
+
+        return view('pengaduan.edit', $data);
     }
 
     /**
@@ -130,6 +141,64 @@ class PengaduanController extends Controller
     public function update(Request $request, Pengaduan $pengaduan)
     {
         //
+        if ($request->file('foto_bukti_kejadian') != null) {
+            $request->validate([
+                'nomer_ktp' => ['required', 'min:16', 'max:16'],
+                'nama_lengkap' => ['required', 'string', 'max:255'],
+                'ttl' => ['required'],
+                'alamat' => ['required'],
+                'telepon' => ['required'],
+                'pekerjaan' => ['required'],
+                'tanggal_kejadian' => ['required'],
+                'waktu_kejadian' => ['required'],
+                'kategori' => ['required'],
+                'isi_pengaduan' => ['required'],
+                'foto_bukti_kejadian' => ['mimes:jpg,png,pdf', 'max:2048'],
+            ]);
+        } else {
+            $request->validate([
+                'nomer_ktp' => ['required', 'min:16', 'max:16'],
+                'nama_lengkap' => ['required', 'string', 'max:255'],
+                'ttl' => ['required'],
+                'alamat' => ['required'],
+                'telepon' => ['required'],
+                'pekerjaan' => ['required'],
+                'tanggal_kejadian' => ['required'],
+                'waktu_kejadian' => ['required'],
+                'kategori' => ['required'],
+                'isi_pengaduan' => ['required'],
+            ]);
+        }
+
+        $pengaduan->nomer_ktp = $request->nomer_ktp;
+        $pengaduan->nama_lengkap = $request->nama_lengkap;
+        $pengaduan->ttl = $request->ttl;
+        $pengaduan->alamat = $request->alamat;
+        $pengaduan->telepon = $request->telepon;
+        $pengaduan->pekerjaan = $request->pekerjaan;
+        $pengaduan->tanggal_kejadian = $request->tanggal_kejadian;
+        $pengaduan->waktu_kejadian = $request->waktu_kejadian;
+        $pengaduan->kategori = $request->kategori;
+        $pengaduan->isi_pengaduan = $request->isi_pengaduan;
+        if ($pengaduan->foto_bukti_kejadian) {
+            if ($request->file('foto_bukti_kejadian') != null) {
+                Storage::delete($pengaduan->foto_bukti_kejadian);
+                $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now()->toDateString() . '.' . $request->file('foto_bukti_kejadian')->extension());
+            } else {
+                $pengaduan->foto_bukti_kejadian = $pengaduan->foto_bukti_kejadian;
+            }
+        }else{
+            if ($request->file('foto_bukti_kejadian') != null) {
+                $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now()->toDateString() . '.' . $request->file('foto_bukti_kejadian')->extension());
+            } else {
+                $pengaduan->foto_bukti_kejadian = null;
+            }
+        }
+        $pengaduan->save();
+
+        session()->flash('status', 'Pengaduan berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -141,7 +210,12 @@ class PengaduanController extends Controller
     public function destroy(Pengaduan $pengaduan)
     {
         //
-        $pengaduan->delete();
+        if ($pengaduan->foto_bukti_kejadian) {
+            Storage::delete($pengaduan->foto_bukti_kejadian);
+            $pengaduan->delete();
+        } else {
+            $pengaduan->delete();
+        }
 
         session()->flash('status', 'Pengaduan berhasil dihapus');
 
