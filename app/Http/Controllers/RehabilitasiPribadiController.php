@@ -39,7 +39,7 @@ class RehabilitasiPribadiController extends Controller
     {
         //
         $request->validate([
-            'nomer_ktp' => ['required', 'numeric'],
+            'nomer_ktp' => ['required', 'min:16', 'max:16'],
             'nama_lengkap' => ['required', 'string', 'max:255'],
             'alamat' => ['required'],
             'telepon' => ['required'],
@@ -52,7 +52,7 @@ class RehabilitasiPribadiController extends Controller
         $rehabilitasi->nomer_ktp = $request->nomer_ktp;
         $rehabilitasi->nama_lengkap = $request->nama_lengkap;
         $rehabilitasi->alamat = $request->alamat;
-        $rehabilitasi->telepon = '+62' . $request->telepon;
+        $rehabilitasi->telepon = $request->telepon;
         $rehabilitasi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasi->hubungan_dengan_penyalahguna = $request->hubungan_dengan_penyalahguna;
         $rehabilitasi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;

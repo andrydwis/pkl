@@ -41,7 +41,7 @@ class TesUrinePribadiController extends Controller
     {
         //
         $request->validate([
-            'nomer_ktp' => ['required', 'numeric'],
+            'nomer_ktp' => ['required', 'min:16', 'max:16'],
             'nama_lengkap' => ['required', 'string', 'max:255'],
             'tempat_lahir' => ['required'],
             'ttl' => ['required'],
@@ -60,7 +60,7 @@ class TesUrinePribadiController extends Controller
         $test->ttl = $request->ttl;
         $test->jenis_kelamin = $request->jenis_kelamin;
         $test->alamat = $request->alamat;
-        $test->telepon = '+62' . $request->telepon;
+        $test->telepon = $request->telepon;
         $test->pekerjaan = $request->pekerjaan;
         $test->tanggal_permohonan = $request->tanggal_permohonan;
         $test->keperluan = $request->keperluan;

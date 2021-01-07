@@ -94,12 +94,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telepon">Telepon</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">+62</span>
-                            </div>
-                            <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{substr($pengaduan->telepon, 3)}}" readonly>
-                        </div>
+                        <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{$pengaduan->telepon}}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="pekerjaan">Pekerjaan</label>

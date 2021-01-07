@@ -36,22 +36,17 @@
                         </div>
                         <div class="form-group">
                             <label for="telepon">Telepon</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">+62</span>
-                                </div>
-                                <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? substr($user->phone, 3)}}">
-                                @error('telepon')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                                @enderror
+                            <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? $user->phone}}">
+                            @error('telepon')
+                            <div class="invalid-feedback">
+                                {{$message}}
                             </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
                             <select name="role" id="role" class="form-control @error('role'){{'is-invalid'}}@enderror">
-                                <option value=""disabled>-- Pilih Role --</option>
+                                <option value="" disabled>-- Pilih Role --</option>
                                 <option value="tu" @if($user->role == 'tu'){{'selected'}}@endif>TU</option>
                                 <option value="p2m" @if($user->role == 'p2m'){{'selected'}}@endif>P2M</option>
                                 <option value="rehabilitasi" @if($user->role == 'rehabilitasi'){{'selected'}}@endif>Rehabilitasi</option>

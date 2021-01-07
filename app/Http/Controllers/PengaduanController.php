@@ -48,7 +48,7 @@ class PengaduanController extends Controller
         //
         if ($request->file('foto_bukti_kejadian') != null) {
             $request->validate([
-                'nomer_ktp' => ['required', 'numeric'],
+                'nomer_ktp' => ['required', 'min:16', 'max:16'],
                 'nama_lengkap' => ['required', 'string', 'max:255'],
                 'ttl' => ['required'],
                 'alamat' => ['required'],
@@ -62,7 +62,7 @@ class PengaduanController extends Controller
             ]);
         } else {
             $request->validate([
-                'nomer_ktp' => ['required', 'numeric'],
+                'nomer_ktp' => ['required', 'min:16', 'max:16'],
                 'nama_lengkap' => ['required', 'string', 'max:255'],
                 'ttl' => ['required'],
                 'alamat' => ['required'],
@@ -80,7 +80,7 @@ class PengaduanController extends Controller
         $pengaduan->nama_lengkap = $request->nama_lengkap;
         $pengaduan->ttl = $request->ttl;
         $pengaduan->alamat = $request->alamat;
-        $pengaduan->telepon = '+62' . $request->telepon;
+        $pengaduan->telepon = $request->telepon;
         $pengaduan->pekerjaan = $request->pekerjaan;
         $pengaduan->tanggal_kejadian = $request->tanggal_kejadian;
         $pengaduan->waktu_kejadian = $request->waktu_kejadian;
