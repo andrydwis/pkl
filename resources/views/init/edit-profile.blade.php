@@ -35,17 +35,12 @@
                         </div>
                         <div class="form-group">
                             <label for="telepon">Telepon</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">+62</span>
-                                </div>
-                                <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? substr(auth()->user()->phone, 3)}}">
-                                @error('telepon')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                                @enderror
+                            <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? auth()->user()->phone}}">
+                            @error('telepon')
+                            <div class="invalid-feedback">
+                                {{$message}}
                             </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">Simpan</button>

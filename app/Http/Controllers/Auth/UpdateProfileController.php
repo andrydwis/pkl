@@ -27,7 +27,7 @@ class UpdateProfileController extends Controller
 
         $user->name = $request->nama;
         $user->email = $request->email;
-        $user->phone = '+62' . $request->telepon;
+        $user->phone = $request->telepon;
         $user->save();
 
         session()->flash('status', 'Profil berhasil diupdate');

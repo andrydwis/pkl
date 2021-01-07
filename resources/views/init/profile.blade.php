@@ -22,12 +22,6 @@
                     <div class="form-group">
                         <label for="phone">Telepon</label>
                         <input id="phone" type="number" class="form-control" name="phone" value="{{auth()->user()->phone}}" readonly>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">+62</span>
-                            </div>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
