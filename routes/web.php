@@ -62,6 +62,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['tu'])->group(function () {
         Route::get('data-pengaduan', [PengaduanController::class, 'index'])->name('data-pengaduan.index');
+        Route::delete('data-pengaduan/{pengaduan}', [PengaduanController::class, 'destroy'])->name('data-pengaduan.destroy');
         Route::get('download', [PengaduanController::class, 'export']);
     });
 });

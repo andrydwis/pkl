@@ -141,6 +141,11 @@ class PengaduanController extends Controller
     public function destroy(Pengaduan $pengaduan)
     {
         //
+        $pengaduan->delete();
+
+        session()->flash('status', 'Pengaduan berhasil dihapus');
+
+        return back();
     }
 
     public function export()

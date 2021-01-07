@@ -8,7 +8,7 @@
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
             <h4>Pengaduan</h4>
-            <a href="" class="btn btn-primary">Tambah Data</a>
+            <a href="{{route('pengaduan.create')}}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body">
             <table id="users" class="table table-hover" style="width:100%">
@@ -57,7 +57,7 @@
                 Apa anda yakin ingin menghapus pengaduan ini ?
             </div>
             <div class="modal-footer flex justify-content-center">
-                <form action="" method="post">
+                <form action="{{route('data-pengaduan.destroy', ['pengaduan' => $pengaduan])}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="button" class="btn btn-danger btn-icon" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
