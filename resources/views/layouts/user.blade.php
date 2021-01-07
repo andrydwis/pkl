@@ -70,11 +70,11 @@
                                     Pribadi</a></li>
                             <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
                                     Instansi</a></li>
-                            <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
-                                    Instansi</a></li>
                             <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                     Pribadi</a>
                             </li>
+                            <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
+                                    Instansi</a></li>
                             <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                         </ul>
                     <li><a href="#sop-services">Alur SOP Layanan</a></li>
@@ -95,11 +95,11 @@
                                     Pribadi</a></li>
                             <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
                                     Instansi</a></li>
-                            <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
-                                    Instansi</a></li>
                             <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                     Pribadi</a>
                             </li>
+                            <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
+                                    Instansi</a></li>
                             <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                         </ul>
                     </li>
