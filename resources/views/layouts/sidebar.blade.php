@@ -26,6 +26,11 @@
                 <a href="{{route('users.index')}}"><i class="fas fa-users"></i><span>Pegawai</span></a>
             </li>
             @endif
+            @if(auth()->user()->role == 'tu')
+            <li>
+                <a href="{{route('data-pengaduan.index')}}"><i class="fas fa-bullhorn"></i><span>Data Pengaduan</span></a>
+            </li>
+            @endif
             @endauth
         </ul>
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
