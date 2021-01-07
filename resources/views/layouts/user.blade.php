@@ -33,12 +33,18 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/user/assets/css/style.css') }}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!-- =======================================================
   * Template Name: Arsha - v2.3.0
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ 
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+    {{-- customCSS --}}
+    @yield('customCSS')
+
 </head>
 
 <body>
@@ -55,9 +61,7 @@
             <nav class="nav-menu d-none d-lg-block">
                 @if (Route::is('init'))
                     <ul>
-                        <li class="active"><a href="index.html">Beranda</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#sop-services">Alur SOP Layanan</a></li>
+                        <li class="active"><a href="{{ route('init') }}">Beranda</a></li>
                         <li class="drop-down"><a href="#">Layanan</a>
                             <ul>
                                 <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
@@ -73,6 +77,8 @@
                                 </li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
+                        <li><a href="#sop-services">Alur SOP Layanan</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 @else
@@ -134,8 +140,14 @@
     <script src="{{ asset('assets/user/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/user/assets/vendor/aos/aos.js') }}"></script>
 
+    @yield('CustomJS')
+
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/user/assets/js/main.js') }}"></script>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
 </body>
 
 </html>

@@ -1,5 +1,30 @@
 @extends('layouts.user')
+@section('customCSS')
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .carousel-cell {
+            width: 50%;
+            padding: 1rem;
+        }
+
+    </style>
+@endsection
 @section('content')
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
@@ -26,85 +51,6 @@
     <!-- End Hero -->
 
     <main id="main">
-        <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Tentang Kami</h2>
-                </div>
-
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <ul>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat
-                            </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Duis aute irure dolor in
-                                reprehenderit in voluptate velit
-                            </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                        </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End About Us Section -->
-
-        <!-- ======= SOP Services Section ======= -->
-        <section id="sop-services" class="services section-bg">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Alur SOP Layanan</h2>
-                </div>
-
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-50" src="assets/img/rehab_rawat_jalan.jpeg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-50" src="assets/img/rehab_TAT.jpeg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-50" src="assets/img/skhpn_poster_urin.jpeg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- End SOP Services Section -->
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
@@ -201,6 +147,78 @@
         </section>
         <!-- End Services Section -->
 
+        <!-- ======= SOP Services Section ======= -->
+        <section id="sop-services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Alur SOP Layanan</h2>
+                </div>
+
+                <div class="carousel" data-flickity='{ "autoPlay": true }'>
+                    <div class="carousel-cell">
+                        <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
+                    </div>
+                    <div class="carousel-cell">
+                        <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
+                    </div>
+                    <div class="carousel-cell">
+                        <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
+                    </div>
+                    <div class="carousel-cell">
+                        <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
+                    </div>
+                    <div class="carousel-cell">
+                        <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End SOP Services Section -->
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Tentang Kami</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i> Duis aute irure dolor in
+                                reprehenderit in voluptate velit
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                            aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About Us Section -->
+
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
@@ -239,4 +257,8 @@
         <!-- End Contact Section -->
     </main>
     <!-- End #main -->
+@endsection
+
+@section('customJS')
+
 @endsection
