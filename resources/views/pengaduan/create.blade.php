@@ -61,17 +61,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="telepon">Telepon</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">+62</span>
-                                        </div>
-                                        <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? ''}}">
-                                        @error('telepon')
-                                        <div class="invalid-feedback">
-                                            {{$message}}
-                                        </div>
-                                        @enderror
+                                    <input id="telepon" type="number" class="form-control @error('telepon'){{'is-invalid'}}@enderror" name="telepon" value="{{old('telepon') ?? ''}}">
+                                    @error('telepon')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
                                     </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="pekerjaan">Pekerjaan</label>
