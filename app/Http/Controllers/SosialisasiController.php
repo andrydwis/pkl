@@ -78,7 +78,7 @@ class SosialisasiController extends Controller
         $sosialisasi->jam_pukul = $request->jam_pukul;
         $sosialisasi->tempat = $request->tempat;
         $sosialisasi->nama_pemohon = $request->nama_pemohon;
-        $sosialisasi->no_hp_pemohon = '+62'.$request->no_hp_pemohon;
+        $sosialisasi->no_hp_pemohon = $request->no_hp_pemohon;
         $sosialisasi->jumlah_peserta = $request->jumlah_peserta;
         $sosialisasi->tema_kegiatan = $request->tema_kegiatan;                
         if ($request->file('lampiran_surat_undangan') != null) {

@@ -59,11 +59,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="nomor_telepon">Nomor Telepon</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">+62</span>
-                                            </div>
-                                            <input id="nomor_telepon" type="number"
+                                        <input id="nomor_telepon" type="number"
                                                 class="form-control @error('nomor_telepon'){{ 'is-invalid' }}@enderror"
                                                 name="nomor_telepon" value="{{ old('nomor_telepon') ?? '' }}">
                                             @error('nomor_telepon')
@@ -71,7 +67,6 @@
                                                     {{ $message }}
                                                 </div>
                                             @enderror
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="jumlah_yang_dicurigai">Jumlah Yang Dicurigai</label>

@@ -48,7 +48,7 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->nama_lengkap_pelapor = $request->nama_lengkap_pelapor;
         $rehabilitasiInstansi->nama_instansi = $request->nama_instansi;
         $rehabilitasiInstansi->alamat_instansi = $request->alamat_instansi;
-        $rehabilitasiInstansi->nomor_telepon ='+62'.$request->nomor_telepon;
+        $rehabilitasiInstansi->nomor_telepon = $request->nomor_telepon;
         $rehabilitasiInstansi->jumlah_yang_dicurigai = $request->jumlah_yang_dicurigai;
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
