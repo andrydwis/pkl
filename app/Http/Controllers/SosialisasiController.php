@@ -20,6 +20,7 @@ class SosialisasiController extends Controller
             'sosialisasis' => Sosialisasi::all()
         ];
 
+        return view('sosialisasi.index', $data);
         
     }
 
