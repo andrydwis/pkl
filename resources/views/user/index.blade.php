@@ -132,6 +132,18 @@
                     </div>
 
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="500">
+                        <div class="icon-box" id="skhpn">
+                            <div class="icon"><i class="far fa-id-card"></i></div>
+                            <h4><a href="">SKHPN</a></h4>
+                            <p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="600">
                         <div class="icon-box" id="survey-kepuasan-pasien">
                             <div class="icon"><i class="fas fa-chart-pie"></i></div>
