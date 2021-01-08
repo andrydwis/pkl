@@ -13,10 +13,16 @@ class PengaduansExport implements FromView, ShouldAutoSize
      * @return \Illuminate\Support\Collection
      */
 
+    public function __construct(string $date_from, string $date_to)
+    {
+        $this->date_from = $date_from;
+        $this->date_to = $date_to;
+    }
+
     public function view(): View
     {
         return view('pengaduan.export', [
-            'pengaduans' => Pengaduan::all()
+            'pengaduans' => Pengaduan::whereBetween('created_at', [$this->date_from , $this->date_to])->get()
         ]);
     }
 }

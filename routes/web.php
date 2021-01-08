@@ -67,7 +67,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-pengaduan/{pengaduan}/edit', [PengaduanController::class, 'edit'])->name('data-pengaduan.edit');
         Route::patch('data-pengaduan/{pengaduan}', [PengaduanController::class, 'update'])->name('data-pengaduan.update');
         Route::delete('data-pengaduan/{pengaduan}', [PengaduanController::class, 'destroy'])->name('data-pengaduan.destroy');
-        Route::get('download', [PengaduanController::class, 'export']);
+        Route::post('data-pengaduan/export', [PengaduanController::class, 'export'])->name('data-pengaduan.export');
 
         Route::get('data-sosialisasi', [SosialisasiController::class, 'index'])->name('data-sosialisasi.index');
         Route::get('data-sosialisasi/{sosialisasi}', [SosialisasiController::class, 'show'])->name('data-sosialisasi.show');

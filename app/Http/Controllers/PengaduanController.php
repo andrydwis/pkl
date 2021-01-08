@@ -187,7 +187,7 @@ class PengaduanController extends Controller
             } else {
                 $pengaduan->foto_bukti_kejadian = $pengaduan->foto_bukti_kejadian;
             }
-        }else{
+        } else {
             if ($request->file('foto_bukti_kejadian') != null) {
                 $pengaduan->foto_bukti_kejadian = $request->file('foto_bukti_kejadian')->storeAs('pengaduan', 'foto_bukti_kejadian' . '_' . Str::slug($request->nama_lengkap) . '_' . Carbon::now()->toDateString() . '.' . $request->file('foto_bukti_kejadian')->extension());
             } else {
@@ -222,8 +222,13 @@ class PengaduanController extends Controller
         return back();
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        return Excel::download(new PengaduansExport, 'pengaduan.xlsx');
+        $request->validate([
+            'tanggal_dari' => ['required'],
+            'tanggal_sampai' => ['required', 'after_or_equal:tanggal_dari']
+        ]);
+
+        return Excel::download(new PengaduansExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'pengaduan.xlsx');
     }
 }

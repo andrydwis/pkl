@@ -10,7 +10,7 @@
             <h4>Export Data</h4>
         </div>
         <div class="card-body">
-            <form method="POST" action="">
+            <form method="POST" action="{{route('data-pengaduan.export')}}">
                 @csrf
                 <div class="row">
                     <div class="col-6">
@@ -27,7 +27,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="tanggal_sampai">Tanggal sampai</label>
-                            <input id="tanggal_sampai" type="date" class="form-control @error('tanggal_sampai'){{'is-invalid'}}@enderror" name="tanggal_dari" value="{{old('tanggal_dari') ?? ''}}" autofocus>
+                            <input id="tanggal_sampai" type="date" class="form-control @error('tanggal_sampai'){{'is-invalid'}}@enderror" name="tanggal_sampai" value="{{old('tanggal_dari') ?? ''}}">
                             @error('tanggal_sampai')
                             <div class="invalid-feedback">
                                 {{$message}}
