@@ -85,9 +85,9 @@
 
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
-                        <div class="icon-box" id="permohonan-rehabilitas">
+                        <div class="icon-box" id="permohonan-rehabilitasi-pribadi">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="">Permohonan Rehabilitasi Instansi</a></h4>
+                            <h4><a href="{{route('rehabilitasi-pribadi.create')}}">Permohonan Rehabilitasi Pribadi</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                                 qui officia
@@ -97,9 +97,9 @@
 
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
-                        <div class="icon-box" id="permohonan-rehabilitas">
+                        <div class="icon-box" id="permohonan-rehabilitasi-instansi">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="">Permohonan Rehabilitasi Mandiri</a></h4>
+                            <h4><a href="{{route('rehabilitasi-instansi.create')}}">Permohonan Rehabilitasi Instansi</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                                 qui officia
@@ -111,7 +111,7 @@
                         data-aos-delay="400">
                         <div class="icon-box" id="permohonan-tes-urine-instansi">
                             <div class="icon"><i class="far fa-id-card"></i></div>
-                            <h4><a href="">Permohonan Tes Urine (Instansi)</a></h4>
+                            <h4><a href="{{route('permohonan-tes-urine-pribadi.create')}}">Permohonan Tes Urine Pribadi</a></h4>
                             <p>
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis
@@ -123,7 +123,7 @@
                         data-aos-delay="500">
                         <div class="icon-box" id="permohonan-tes-urine-mandiri">
                             <div class="icon"><i class="far fa-id-card"></i></div>
-                            <h4><a href="">Permohonan Tes Urine (Mandiri)</a></h4>
+                            <h4><a href="{{route('permohonan-tes-urine-instansi.create')}}">Permohonan Tes Urine Instansi</a></h4>
                             <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                                 qui officia

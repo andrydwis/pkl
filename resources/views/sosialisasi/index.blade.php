@@ -1,49 +1,12 @@
+
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
     <h1>Data Pengaduan</h1>
 </div>
 @include('layouts.alert')
+
 <div class="section-body">
-    <div class="card card-primary">
-        <div class="card-header flex-row justify-content-between">
-            <h4>Export Data</h4>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="">
-                @csrf
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="tanggal_dari">Tanggal dari</label>
-                            <input id="tanggal_dari" type="date" class="form-control @error('tanggal_dari'){{'is-invalid'}}@enderror" name="tanggal_dari" value="{{old('tanggal_dari') ?? ''}}" autofocus>
-                            @error('tanggal_dari')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="tanggal_sampai">Tanggal sampai</label>
-                            <input id="tanggal_sampai" type="date" class="form-control @error('tanggal_sampai'){{'is-invalid'}}@enderror" name="tanggal_dari" value="{{old('tanggal_dari') ?? ''}}" autofocus>
-                            @error('tanggal_sampai')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
-                        Export
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
             <h4>Pengaduan</h4>

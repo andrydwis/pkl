@@ -60,6 +60,7 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 @if (Route::is('init'))
+
                     <ul>
                         <li class="active"><a href="{{ route('init') }}">Beranda</a></li>
                         @auth
@@ -69,16 +70,15 @@
                             <ul>
                                 <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                                 <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitasi
                                         Pribadi</a></li>
-                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                         Instansi</a></li>
                                 <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                         Pribadi</a>
                                 </li>
                                 <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
                                         Instansi</a></li>
-                                <li><a href="#survey-kepuasan-pasien">SKHPN</a></li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
                         <li><a href="#sop-services">Alur SOP Layanan</a></li>
@@ -95,16 +95,15 @@
                             <ul>
                                 <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                                 <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                                <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitasi
                                         Pribadi</a></li>
-                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                                <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                         Instansi</a></li>
                                 <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                         Pribadi</a>
                                 </li>
                                 <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
                                         Instansi</a></li>
-                                <li><a href="#survey-kepuasan-pasien">SKHPN</a></li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
                         </li>
