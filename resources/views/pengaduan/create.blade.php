@@ -100,7 +100,7 @@
                                     <select name="kategori" id="kategori" class="form-control @error('kategori'){{'is-invalid'}}@enderror">
                                         <option value="" @if(old('kategori')==null){{'selected'}}@endif disabled>-- Pilih Kategori --</option>
                                         <option value="masyarakat" @if(old('kategori')=='masyarakat' ){{'selected'}}@endif>Masyarakat</option>
-                                        <option value="pemerintah" @if(old('kategori')=='pemerintah' ){{'selected'}}@endif>pemerintah</option>
+                                        <option value="pemerintah" @if(old('kategori')=='pemerintah' ){{'selected'}}@endif>Pemerintah</option>
                                         <option value="swasta" @if(old('kategori')=='swasta' ){{'selected'}}@endif>Swasta</option>
                                         <option value="pendidikan" @if(old('kategori')=='pendidikan' ){{'selected'}}@endif>Pendidikan</option>
                                     </select>

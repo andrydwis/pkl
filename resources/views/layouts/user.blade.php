@@ -66,9 +66,9 @@
                         <ul>
                             <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                             <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                            <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                            <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitasi
                                     Pribadi</a></li>
-                            <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                            <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                     Instansi</a></li>
                             <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                     Pribadi</a>
@@ -91,9 +91,9 @@
                         <ul>
                             <li><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></li>
                             <li><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></li>
-                            <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitas
+                            <li><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitasi
                                     Pribadi</a></li>
-                            <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitas
+                            <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                     Instansi</a></li>
                             <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
                                     Pribadi</a>
