@@ -7,6 +7,11 @@
             <th>Tanggal Lahir</th>
             <th>Alamat</th>
             <th>Telepon</th>
+            <th>Pekerjaan</th>
+            <th>Tanggal Kejadian</th>
+            <th>Waktu Kejadian</th>
+            <th>Kategori</th>
+            <th>Isi Pengaduan</th>
         </tr>
     </thead>
     <tbody>
@@ -15,9 +20,14 @@
             <td>{{$loop->index+1}}</td>
             <td>{{$pengaduan->nomer_ktp}}</td>
             <td>{{$pengaduan->nama_lengkap}}</td>
-            <td>{{$pengaduan->ttl}}</td>
+            <td>{{ date('d-m-Y', strtotime($pengaduan->ttl)) }}</td>
             <td>{{$pengaduan->alamat}}</td>
-            <td>‘{{$pengaduan->telepon}}</td>
+            <td>{{$pengaduan->telepon}}</td>
+            <td>{{$pengaduan->pekerjaan}}</td>
+            <td>{{$pengaduan->tanggal_kejadian}}</td>
+            <td>{{$pengaduan->waktu_kejadian}}</td>
+            <td>{{$pengaduan->kategori}}</td>
+            <td>{{$pengaduan->isi_pengaduan}}</td>
         </tr>
         @endforeach
     </tbody>

@@ -16,11 +16,29 @@
         </div>
     </div>
     <div class="my-5"></div>
-    <h2>Rangkuman data pengaduan</h2>
     <div class="row">
-        <div class="col-12 col-sm-6">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card card-statistic-2">
+                <div class="card-stats">
+                    <div class="card-stats-title">
+                        Rangkuman Data Pengaduan
+                    </div>
+                    <div class="card-stats-items">
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$pengaduan['total_day']}}</div>
+                            <div class="card-stats-item-label">Hari ini</div>
+                        </div>
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$pengaduan['total_month']}}</div>
+                            <div class="card-stats-item-label">Bulan ini</div>
+                        </div>
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$pengaduan['total_year']}}</div>
+                            <div class="card-stats-item-label">Tahun ini</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-icon shadow-primary bg-primary">
                     <i class="fas fa-bullhorn"></i>
                 </div>
                 <div class="card-wrap">
@@ -33,51 +51,41 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-bullhorn"></i>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card card-statistic-2">
+                <div class="card-stats">
+                    <div class="card-stats-title">
+                        Rangkuman Data Rehabilitasi Pribadi
+                    </div>
+                    <div class="card-stats-items">
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$rehabilitasi_pribadi['total_day']}}</div>
+                            <div class="card-stats-item-label">Hari ini</div>
+                        </div>
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$rehabilitasi_pribadi['total_month']}}</div>
+                            <div class="card-stats-item-label">Bulan ini</div>
+                        </div>
+                        <div class="card-stats-item">
+                            <div class="card-stats-item-count">{{$rehabilitasi_pribadi['total_year']}}</div>
+                            <div class="card-stats-item-label">Tahun ini</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-icon shadow-primary bg-primary">
+                    <i class="fas fa-ambulance"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Pengaduan Tahun Ini</h4>
+                        <h4>Total Rehabilitasi Pribadi</h4>
                     </div>
                     <div class="card-body">
-                        {{$pengaduan['total_year']}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Pengaduan Bulan Ini</h4>
-                    </div>
-                    <div class="card-body">
-                        {{$pengaduan['total_month']}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Pengaduan Hari Ini</h4>
-                    </div>
-                    <div class="card-body">
-                        {{$pengaduan['total_day']}}
+                        {{$rehabilitasi_pribadi['total_all']}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

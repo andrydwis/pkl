@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label for="ttl">Tanggal Lahir</label>
-                    <input id="ttl" type="date" class="form-control" name="ttl" value="{{$pengaduan->ttl}}" readonly>
+                    <input id="ttl" type="text" class="form-control" name="ttl" value="{{ date('d-m-Y', strtotime($pengaduan->ttl)) }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tanggal_kejadian">Tanggal Kejadian</label>
-                    <input id="tanggal_kejadian" type="date" class="form-control" name="tanggal_kejadian" value="{{$pengaduan->tanggal_kejadian}}" readonly>
+                    <input id="tanggal_kejadian" type="text" class="form-control" name="tanggal_kejadian" value="{{ date('d-m-Y', strtotime($pengaduan->tanggal_kejadian)) }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="waktu_kejadian">Waktu Kejadian</label>

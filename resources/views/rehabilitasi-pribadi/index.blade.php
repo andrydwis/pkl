@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
-    <h1>Data Pengaduan</h1>
+    <h1>Data Rehabilitasi Pribadi</h1>
 </div>
 @include('layouts.alert')
 <div class="section-body">
@@ -10,7 +10,7 @@
             <h4>Export Data</h4>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('data-pengaduan.export')}}">
+            <form method="POST" action="{{route('data-rehabilitasi-pribadi.export')}}">
                 @csrf
                 <div class="row">
                     <div class="col-6">
@@ -46,8 +46,8 @@
     </div>
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
-            <h4>Pengaduan</h4>
-            <a href="{{route('pengaduan.create')}}" class="btn btn-primary">Tambah Data</a>
+            <h4>Rehabilitasi Pribadi</h4>
+            <a href="{{route('rehabilitasi-pribadi.create')}}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body">
             <table id="users" class="table table-hover" style="width:100%">
@@ -56,25 +56,23 @@
                         <th>No</th>
                         <th>Nomer KTP</th>
                         <th>Nama Lengkap</th>
-                        <th>Tanggal Lahir</th>
                         <th>Alamat</th>
                         <th>Telepon</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($pengaduans as $pengaduan)
+                    @foreach($rehabilitasis as $rehabilitasi)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{$pengaduan->nomer_ktp}}</td>
-                        <td>{{$pengaduan->nama_lengkap}}</td>
-                        <td>{{ date('d-m-Y', strtotime($pengaduan->ttl)) }}</td>
-                        <td>{{$pengaduan->alamat}}</td>
-                        <td>{{$pengaduan->telepon}}</td>
+                        <td>{{$rehabilitasi->nomer_ktp}}</td>
+                        <td>{{$rehabilitasi->nama_lengkap}}</td>
+                        <td>{{$rehabilitasi->alamat}}</td>
+                        <td>{{$rehabilitasi->telepon}}</td>
                         <td>
-                            <a href="{{route('data-pengaduan.show', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
-                            <a href="{{route('data-pengaduan.edit', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
-                            <button class="btn btn-icon btn-danger" id="modal-destroy-{{$pengaduan->id}}" data-toggle="modal" data-target="#modal-destroy-{{$pengaduan->id}}"><i class="fas fa-trash"></i></button>
+                            <a href="{{route('data-rehabilitasi-pribadi.show', ['rehabilitasiPribadi' => $rehabilitasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
+                            <a href="{{route('data-rehabilitasi-pribadi.edit', ['rehabilitasiPribadi' => $rehabilitasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
+                            <button class="btn btn-icon btn-danger" id="modal-destroy-{{$rehabilitasi->id}}" data-toggle="modal" data-target="#modal-destroy-{{$rehabilitasi->id}}"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -85,18 +83,18 @@
 </div>
 @endsection
 <!-- modal -->
-@foreach($pengaduans as $pengaduan)
-<div class="modal fade" tabindex="-1" role="dialog" id="modal-destroy-{{$pengaduan->id}}" aria-hidden="true" style="display: none;">
+@foreach($rehabilitasis as $rehabilitasi)
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-destroy-{{$rehabilitasi->id}}" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Hapus Pengaduan</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span><i class="fas fa-times-circle"></i></span></button>
+                <h5 class="modal-title">Hapus Permohonan Rehabilitasi Pribadi</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span><i class="fas fa-times-circle"></i></span></button>
             </div>
             <div class="modal-body">
-                Apa anda yakin ingin menghapus pengaduan ini ?
+                Apa anda yakin ingin menghapus permohonan rehabilitasi pribadi ini ?
             </div>
             <div class="modal-footer flex justify-content-center">
-                <form action="{{route('data-pengaduan.destroy', ['pengaduan' => $pengaduan])}}" method="post">
+                <form action="{{route('data-rehabilitasi-pribadi.destroy', ['rehabilitasiPribadi' => $rehabilitasi])}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="button" class="btn btn-danger btn-icon" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
@@ -121,7 +119,6 @@
             columns: [{
                     width: '5%'
                 },
-                null,
                 null,
                 null,
                 null,
