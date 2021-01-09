@@ -74,9 +74,7 @@
                                         Pribadi</a></li>
                                 <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                         Instansi</a></li>
-                                <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
-                                        Pribadi</a>
-                                </li>
+                                <li><a href="{{ route('skhpn.create') }}">SKHPN</a></li>
                                 <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
                                         Instansi</a></li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
@@ -99,9 +97,7 @@
                                         Pribadi</a></li>
                                 <li><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi
                                         Instansi</a></li>
-                                <li><a href="{{ route('permohonan-tes-urine-pribadi.create') }}">Permohonan Tes Urine
-                                        Pribadi</a>
-                                </li>
+                                        <li><a href="{{ route('skhpn.create') }}">SKHPN</a></li>
                                 <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
                                         Instansi</a></li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>

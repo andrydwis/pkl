@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TesUrinePribadi;
+use App\Models\Skhpn;
 use Illuminate\Http\Request;
+use PhpOffice\PhpWord\TemplateProcessor;
 
-class TesUrinePribadiController extends Controller
+class SkhpnController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class TesUrinePribadiController extends Controller
     {
         //
         $data = [
-            'tests' => TesUrinePribadi::all()
+            'skhpn' => Skhpn::all()
         ];
     }
 
@@ -28,7 +29,7 @@ class TesUrinePribadiController extends Controller
     public function create()
     {
         //
-        return view('tes-urine-pribadi.create');
+        return view('skhpn.create');
     }
 
     /**
@@ -53,20 +54,20 @@ class TesUrinePribadiController extends Controller
             'keperluan' => ['required']
         ]);
 
-        $test = new TesUrinePribadi();
-        $test->nomer_ktp = $request->nomer_ktp;
-        $test->nama_lengkap = $request->nama_lengkap;
-        $test->tempat_lahir = $request->tempat_lahir;
-        $test->ttl = $request->ttl;
-        $test->jenis_kelamin = $request->jenis_kelamin;
-        $test->alamat = $request->alamat;
-        $test->telepon = $request->telepon;
-        $test->pekerjaan = $request->pekerjaan;
-        $test->tanggal_permohonan = $request->tanggal_permohonan;
-        $test->keperluan = $request->keperluan;
-        $test->save();
+        $skhpn = new Skhpn();
+        $skhpn->nomer_ktp = $request->nomer_ktp;
+        $skhpn->nama_lengkap = $request->nama_lengkap;
+        $skhpn->tempat_lahir = $request->tempat_lahir;
+        $skhpn->ttl = $request->ttl;
+        $skhpn->jenis_kelamin = $request->jenis_kelamin;
+        $skhpn->alamat = $request->alamat;
+        $skhpn->telepon = $request->telepon;
+        $skhpn->pekerjaan = $request->pekerjaan;
+        $skhpn->tanggal_permohonan = $request->tanggal_permohonan;
+        $skhpn->keperluan = $request->keperluan;
+        $skhpn->save();
 
-        session()->flash('status', 'Tes urine pribadi berhasil diajukan');
+        session()->flash('status', 'SKHPN berhasil diajukan');
 
         return back();
     }
@@ -77,7 +78,7 @@ class TesUrinePribadiController extends Controller
      * @param  \App\Models\TesUrinePribadi  $tesUrinePribadi
      * @return \Illuminate\Http\Response
      */
-    public function show(TesUrinePribadi $tesUrinePribadi)
+    public function show(Skhpn $skhpn)
     {
         //
     }
@@ -88,7 +89,7 @@ class TesUrinePribadiController extends Controller
      * @param  \App\Models\TesUrinePribadi  $tesUrinePribadi
      * @return \Illuminate\Http\Response
      */
-    public function edit(TesUrinePribadi $tesUrinePribadi)
+    public function edit(Skhpn $skhpn)
     {
         //
     }
@@ -100,7 +101,7 @@ class TesUrinePribadiController extends Controller
      * @param  \App\Models\TesUrinePribadi  $tesUrinePribadi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TesUrinePribadi $tesUrinePribadi)
+    public function update(Request $request, Skhpn $skhpn)
     {
         //
     }
@@ -111,8 +112,27 @@ class TesUrinePribadiController extends Controller
      * @param  \App\Models\TesUrinePribadi  $tesUrinePribadi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TesUrinePribadi $tesUrinePribadi)
+    public function destroy(Skhpn $skhpn)
     {
         //
+    }
+
+    public function word()
+    {
+        $template = public_path('template/template.docx');
+
+        $templateProcessor = new TemplateProcessor($template);
+
+        $templateProcessor->setValue('nama_lengkap', 'Andry Dwi S');
+        $templateProcessor->setValue('nim', '0123');
+
+        $filename = 'output.docx';
+        header("Content-Description: File Transfer");
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+        header('Content-Transfer-Encoding: binary');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Expires: 0');
+        $templateProcessor->saveAs('php://output');
     }
 }

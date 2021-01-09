@@ -6,11 +6,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\RehabilitasiPribadiController;
 use App\Http\Controllers\RehabilitasiInstansiController;
+use App\Http\Controllers\SkhpnController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
-use App\Http\Controllers\TesUrinePribadiController;
 use App\Http\Controllers\TesUrineInstansiController;
-use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,14 +28,16 @@ Route::get('sosialisasi', [SosialisasiController::class, 'create'])->name('sosia
 Route::post('sosialisasi', [SosialisasiController::class, 'store'])->name('sosialisasi.store');
 Route::get('pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.create');
 Route::post('pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
-Route::get('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'create'])->name('permohonan-tes-urine-pribadi.create');
-Route::post('permohonan-tes-urine-pribadi', [TesUrinePribadiController::class, 'store'])->name('permohonan-tes-urine-pribadi.store');
+Route::get('skhpn', [SkhpnController::class, 'create'])->name('skhpn.create');
+Route::post('skhpn', [SkhpnController::class, 'store'])->name('skhpn.store');
 Route::get('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'create'])->name('permohonan-tes-urine-instansi.create');
 Route::post('permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'store'])->name('permohonan-tes-urine-instansi.store');
 Route::get('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'create'])->name('rehabilitasi-pribadi.create');
 Route::post('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'store'])->name('rehabilitasi-pribadi.store');
 Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'create'])->name('rehabilitasi-instansi.create');
 Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
+
+Route::get('skhpn/cetak', [TesUrinePribadiController::class, 'word']);
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

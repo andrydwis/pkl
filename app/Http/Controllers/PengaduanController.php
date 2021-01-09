@@ -229,6 +229,6 @@ class PengaduanController extends Controller
             'tanggal_sampai' => ['required', 'after_or_equal:tanggal_dari']
         ]);
 
-        return Excel::download(new PengaduansExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'pengaduan.xlsx');
+        return Excel::download(new PengaduansExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'pengaduan ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
     }
 }

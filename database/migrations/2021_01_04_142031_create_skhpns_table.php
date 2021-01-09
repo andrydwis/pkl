@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTesUrinePribadisTable extends Migration
+class CreateSkhpnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTesUrinePribadisTable extends Migration
      */
     public function up()
     {
-        Schema::create('tes_urine_pribadis', function (Blueprint $table) {
+        Schema::create('skhpns', function (Blueprint $table) {
             $table->id();
             $table->string('nomer_ktp');
             $table->string('nama_lengkap');
@@ -36,6 +36,6 @@ class CreateTesUrinePribadisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tes_urine_pribadis');
+        Schema::dropIfExists('skhpns');
     }
 }

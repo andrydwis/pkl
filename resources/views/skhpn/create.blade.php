@@ -3,7 +3,7 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center" style="background-image:url({{ asset('assets/img/gedung-bnn.png') }}); background-repeat:no-repeat; background-size: cover; background-position: center;">
     <div class="container d-flex justify-content-center">
-        <h1>Form Pengajuan Tes Urine Pribadi</h1>
+        <h1>Form Pengajuan SKHPN</h1>
     </div>
 </section>
 <!-- End Hero -->
@@ -21,7 +21,7 @@
                         <div class="card-header">
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('permohonan-tes-urine-pribadi.store')}}">
+                            <form method="POST" action="{{route('skhpn.store')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="nomer_ktp">Nomer KTP / NIK</label>
