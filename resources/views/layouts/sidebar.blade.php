@@ -29,6 +29,7 @@
             @if(auth()->user()->role == 'tu')
             <li>
                 <a href="{{route('data-pengaduan.index')}}"><i class="fas fa-bullhorn"></i><span>Data Pengaduan</span></a>
+                <a href="{{route('data-sosialisasi.index')}}"><i class="fas fa-chalkboard-teacher"></i><span>Data Permohonan Sosialisasi</span></a>
                 <a href="{{route('data-rehabilitasi-pribadi.index')}}"><i class="fas fa-ambulance"></i><span>Data Rehabilitasi Pribadi</span></a>
                 <a href="{{route('data-skhpn.index')}}"><i class="fas fa-file-invoice"></i><span>Data SKHPN</span></a>
             </li>
