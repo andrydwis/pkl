@@ -2,42 +2,81 @@
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
-    <h1>Data Pengaduan</h1>
+    <h1>Data Sosialisasi</h1>
 </div>
 @include('layouts.alert')
 
 <div class="section-body">
+<div class="card card-primary">
+        <div class="card-header flex-row justify-content-between">
+            <h4>Export Data</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{route('data-sosialisasi.export')}}">
+                @csrf
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="tanggal_dari">Tanggal dari</label>
+                            <input id="tanggal_dari" type="date" class="form-control @error('tanggal_dari'){{'is-invalid'}}@enderror" name="tanggal_dari" value="{{old('tanggal_dari') ?? ''}}" autofocus>
+                            @error('tanggal_dari')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="tanggal_sampai">Tanggal sampai</label>
+                            <input id="tanggal_sampai" type="date" class="form-control @error('tanggal_sampai'){{'is-invalid'}}@enderror" name="tanggal_sampai" value="{{old('tanggal_dari') ?? ''}}">
+                            @error('tanggal_sampai')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        Export
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
-            <h4>Pengaduan</h4>
-            <a href="{{route('pengaduan.create')}}" class="btn btn-primary">Tambah Data</a>
+            <h4>Sosialisasi</h4>
+            <a href="{{route('sosialisasi.create')}}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body">
             <table id="users" class="table table-hover" style="width:100%">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomer KTP</th>
-                        <th>Nama Lengkap</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Alamat</th>
-                        <th>Telepon</th>
+                        <th>Kategori</th>
+                        <th>Nama Penyelenggara</th>
+                        <th>Tanggal</th>
+                        <th>Tempat</th>
+                        <th>Nama Pemohon</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($pengaduans as $pengaduan)
+                    @foreach($sosialisasis as $sosialisasi)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{$pengaduan->nomer_ktp}}</td>
-                        <td>{{$pengaduan->nama_lengkap}}</td>
-                        <td>{{$pengaduan->ttl}}</td>
-                        <td>{{$pengaduan->alamat}}</td>
-                        <td>{{$pengaduan->telepon}}</td>
+                        <td>{{$sosialisasi->kategori}}</td>
+                        <td>{{$sosialisasi->nama_penyelenggara}}</td>
+                        <td>{{$sosialisasi->tanggal}}</td>
+                        <td>{{$sosialisasi->tempat}}</td>
+                        <td>{{$sosialisasi->nama_pemohon}}</td>
                         <td>
-                            <a href="{{route('data-pengaduan.show', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
-                            <a href="{{route('data-pengaduan.edit', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
-                            <button class="btn btn-icon btn-danger" id="modal-destroy-{{$pengaduan->id}}" data-toggle="modal" data-target="#modal-destroy-{{$pengaduan->id}}"><i class="fas fa-trash"></i></button>
+                            <a href="{{route('data-sosialisasi.show', ['sosialisasi' => $sosialisasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
+                            <a href="{{route('data-sosialisasi.edit', ['sosialisasi' => $sosialisasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
+                            <button class="btn btn-icon btn-danger" id="modal-destroy-{{$sosialisasi->id}}" data-toggle="modal" data-target="#modal-destroy-{{$sosialisasi->id}}"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -48,18 +87,18 @@
 </div>
 @endsection
 <!-- modal -->
-@foreach($pengaduans as $pengaduan)
-<div class="modal fade" tabindex="-1" role="dialog" id="modal-destroy-{{$pengaduan->id}}" aria-hidden="true" style="display: none;">
+@foreach($sosialisasis as $sosialisasi)
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-destroy-{{$sosialisasi->id}}" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Hapus Pengaduan</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span><i class="fas fa-times-circle"></i></span></button>
+                <h5 class="modal-title">Hapus Sosialisasi</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span><i class="fas fa-times-circle"></i></span></button>
             </div>
             <div class="modal-body">
-                Apa anda yakin ingin menghapus pengaduan ini ?
+                Apa anda yakin ingin menghapus sosialisasi ini ?
             </div>
             <div class="modal-footer flex justify-content-center">
-                <form action="{{route('data-pengaduan.destroy', ['pengaduan' => $pengaduan])}}" method="post">
+                <form action="{{route('data-sosialisasi.destroy', ['sosialisasi' => $sosialisasi])}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="button" class="btn btn-danger btn-icon" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>

@@ -22,7 +22,7 @@
 
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{ route('sosialisasi.store') }}">
+                            <form method="POST" action="{{ route('sosialisasi.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="kategori">Kategori</label>
@@ -114,12 +114,11 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="lampiran_surat_undangan" class="control-label">Lampiran Surat
-                                        Undangan</label>
-                                    <input id="lampiran_surat_undangan" type="file" class="form-control @error('lampiran_surat_undangan'){{ 'is-invalid' }}@enderror" name="lampiran_surat_undangan">
+                                    <label for="lampiran_surat_undangan">Lampiran Surat Undangan</label>
+                                    <input id="lampiran_surat_undangan" type="file" class="form-control @error('lampiran_surat_undangan'){{'is-invalid'}}@enderror" name="lampiran_surat_undangan">
                                     @error('lampiran_surat_undangan')
                                     <div class="invalid-feedback">
-                                        {{ $message }}
+                                        {{$message}}
                                     </div>
                                     @enderror
                                 </div>
