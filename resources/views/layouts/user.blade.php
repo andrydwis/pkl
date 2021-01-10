@@ -79,7 +79,7 @@
                                         Instansi</a></li>
                                 <li><a href="#survey-kepuasan-pasien">Survey Kepuasan Pasien</a></li>
                             </ul>
-                        <li><a href="#sop-services">Alur SOP Layanan</a></li>
+                        {{-- <li><a href="#sop-services">Alur SOP Layanan</a></li> --}}
                         <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
