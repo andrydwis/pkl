@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RehabilitasiInstansiExport;
 use App\Models\RehabilitasiInstansi;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RehabilitasiInstansiController extends Controller
 {
@@ -14,7 +16,12 @@ class RehabilitasiInstansiController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'rehabilitasis' => RehabilitasiInstansi::all(),
+        ];
+        // dd($data);
+        
+        return view('rehabilitasi-instansi.index', $data);
     }
 
     /**
@@ -64,7 +71,9 @@ class RehabilitasiInstansiController extends Controller
      */
     public function show(RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        //
+        $data = ['rehabilitasi' => $rehabilitasiInstansi];
+        // return $data;
+        return view('rehabilitasi-instansi.show', $data);
     }
 
     /**
@@ -75,7 +84,8 @@ class RehabilitasiInstansiController extends Controller
      */
     public function edit(RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        //
+        $data = ['rehabilitasi' => $rehabilitasiInstansi];
+        return view('rehabilitasi-instansi.edit', $data);
     }
 
     /**
@@ -87,7 +97,24 @@ class RehabilitasiInstansiController extends Controller
      */
     public function update(Request $request, RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        //
+        $request->validate([
+            'nama_lengkap_pelapor' => ['required', 'string',],
+            'nama_instansi' => ['required', 'string',],
+            'alamat_instansi' => ['required', 'string',],
+            'nomor_telepon' => ['required'],
+            'jumlah_yang_dicurigai' => ['required','numeric'],
+            'jenis_penyalahgunaan' => ['required']
+        ]);
+        
+        $rehabilitasiInstansi->nama_lengkap_pelapor = $request->nama_lengkap_pelapor;
+        $rehabilitasiInstansi->nama_instansi = $request->nama_instansi;
+        $rehabilitasiInstansi->alamat_instansi = $request->alamat_instansi;
+        $rehabilitasiInstansi->nomor_telepon = $request->nomor_telepon;
+        $rehabilitasiInstansi->jumlah_yang_dicurigai = $request->jumlah_yang_dicurigai;
+        $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
+        $rehabilitasiInstansi->save();
+        session()->flash('status', 'Rehabilitasi Instansi Berhasil diupdate');
+        return back();
     }
 
     /**
@@ -98,6 +125,17 @@ class RehabilitasiInstansiController extends Controller
      */
     public function destroy(RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        //
+        $rehabilitasiInstansi->delete();
+        session()->flash('status', 'Rehabilitasi Instansi Berhasil Dihapus');
+        return back();
+    }
+    public function export(Request $request)
+    {
+        $request->validate([
+            'tanggal_dari' => ['required'],
+            'tanggal_sampai' => ['required', 'after_or_equal:tanggal_dari']
+        ]);
+
+        return Excel::download(new RehabilitasiInstansiExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'rehabilitasi-instansi ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
     }
 }

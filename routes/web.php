@@ -10,6 +10,7 @@ use App\Http\Controllers\SkhpnController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\TesUrineInstansiController;
+use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,6 +84,13 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'update'])->name('data-rehabilitasi-pribadi.update');
         Route::delete('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'destroy'])->name('data-rehabilitasi-pribadi.destroy');
         Route::post('data-rehabilitasi-pribadi/export', [RehabilitasiPribadiController::class, 'export'])->name('data-rehabilitasi-pribadi.export');
+        
+        Route::get('data-rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'index'])->name('data-rehabilitasi-instansi.index');
+        Route::get('data-rehabilitasi-instansi/{rehabilitasiInstansi}', [RehabilitasiInstansiController::class, 'show'])->name('data-rehabilitasi-instansi.show');
+        Route::get('data-rehabilitasi-instansi/{rehabilitasiInstansi}/edit', [RehabilitasiInstansiController::class, 'edit'])->name('data-rehabilitasi-instansi.edit');
+        Route::patch('data-rehabilitasi-instansi/{rehabilitasiInstansi}', [RehabilitasiInstansiController::class, 'update'])->name('data-rehabilitasi-instansi.update');
+        Route::delete('data-rehabilitasi-instansi/{rehabilitasiInstansi}', [RehabilitasiInstansiController::class, 'destroy'])->name('data-rehabilitasi-instansi.destroy');
+        Route::post('data-rehabilitasi-instansi/export', [RehabilitasiInstansiController::class, 'export'])->name('data-rehabilitasi-instansi.export');
 
         Route::get('data-skhpn', [SkhpnController::class, 'index'])->name('data-skhpn.index');
         Route::get('data-skhpn/{skhpn}', [SkhpnController::class, 'show'])->name('data-skhpn.show');
