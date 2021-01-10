@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
-                    <input id="alamat" type="text" class="form-control" name="alamat" value="{{$rehabilitasi->alamat}}" readonly>
+                    <textarea name="alamat" id="alamat" class="form-control" readonly>{{$rehabilitasi->alamat}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="telepon">Telepon</label>
@@ -41,7 +41,6 @@
                     <label for="rencana_kedatangan_ke_klinik">Rencana Kedatangan Ke Klinik</label>
                     <input id="rencana_kedatangan_ke_klinik" type="text" class="form-control" name="rencana_kedatangan_ke_klinik" value="{{ date('d-m-Y', strtotime($rehabilitasi->rencana_kedatangan_ke_klinik)) }}" readonly>
                 </div>
-                
             </form>
         </div>
     </div>

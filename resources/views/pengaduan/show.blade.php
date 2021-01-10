@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
-                    <input id="alamat" type="text" class="form-control" name="alamat" value="{{$pengaduan->alamat}}" readonly>
+                    <textarea name="isi_pengaduan" id="isi_pengaduan" class="form-control" readonly>{{$pengaduan->alamat}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="telepon">Telepon</label>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <label for="isi_pengaduan">Isi Pengaduan</label>
-                    <textarea name="isi_pengaduan" id="isi_pengaduan" cols="30" rows="5" class="form-control" readonly>{{$pengaduan->isi_pengaduan}}</textarea>
+                    <textarea name="isi_pengaduan" id="isi_pengaduan" class="form-control" readonly>{{$pengaduan->isi_pengaduan}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="foto_bukti_kejadian">Foto / Bukti Kejadian</label>

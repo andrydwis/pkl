@@ -82,6 +82,13 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'update'])->name('data-rehabilitasi-pribadi.update');
         Route::delete('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'destroy'])->name('data-rehabilitasi-pribadi.destroy');
         Route::post('data-rehabilitasi-pribadi/export', [RehabilitasiPribadiController::class, 'export'])->name('data-rehabilitasi-pribadi.export');
+
+        Route::get('data-skhpn', [SkhpnController::class, 'index'])->name('data-skhpn.index');
+        Route::get('data-skhpn/{skhpn}', [SkhpnController::class, 'show'])->name('data-skhpn.show');
+        Route::get('data-skhpn/{skhpn}/edit', [SkhpnController::class, 'edit'])->name('data-skhpn.edit');
+        Route::patch('data-skhpn/{skhpn}', [SkhpnController::class, 'update'])->name('data-skhpn.update');
+        Route::delete('data-skhpn/{skhpn}', [SkhpnController::class, 'destroy'])->name('data-skhpn.destroy');
+        Route::post('data-skhpn/export', [SkhpnController::class, 'export'])->name('data-skhpn.export');
     });
 });
 
