@@ -2,7 +2,6 @@
 
 namespace App\Exports;
 
-use App\Models\Pengaduan;
 use App\Models\Sosialisasi;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;

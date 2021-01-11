@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tanggal_pelaksanaan_pemeriksaan">Tanggal Pelaksanaan</label>
-                    <input id="tanggal_pelaksanaan_pemeriksaan" type="date" class="form-control" name="tanggal_pelaksanaan_pemeriksaan_pemeriksaan" value="{{$tes_urine_instansi->tanggal_pelaksanaan_pemeriksaan}}" readonly>
+                    <input id="tanggal_pelaksanaan_pemeriksaan" type="text" class="form-control" name="tanggal_pelaksanaan_pemeriksaan_pemeriksaan" value="{{ date('d-m-Y', strtotime($tes_urine_instansi->tanggal_pelaksanaan_pemeriksaan)) }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="waktu_pelaksanaan_pemeriksaan">Waktu Pemeriksaan</label>

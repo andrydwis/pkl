@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal</label>
-                    <input id="tanggal" type="date" class="form-control" name="tanggal" value="{{$sosialisasi->tanggal}}" readonly>
+                    <input id="tanggal" type="text" class="form-control" name="tanggal" value="{{ date('d-m-Y', strtotime($sosialisasi->tangal)) }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="jam_pukul">Jam Pukul</label>

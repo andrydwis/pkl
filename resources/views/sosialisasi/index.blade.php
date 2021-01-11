@@ -70,7 +70,7 @@
                         <td>{{$loop->index+1}}</td>
                         <td>{{$sosialisasi->kategori}}</td>
                         <td>{{$sosialisasi->nama_penyelenggara}}</td>
-                        <td>{{$sosialisasi->tanggal}}</td>
+                        <td>{{ date('d-m-Y', strtotime($sosialisasi->tangal)) }}</td>
                         <td>{{$sosialisasi->tempat}}</td>
                         <td>{{$sosialisasi->nama_pemohon}}</td>
                         <td>

@@ -71,7 +71,7 @@
                         <td>{{$tes_urine_instansi->nama_instansi}}</td>
                         <td>{{$tes_urine_instansi->nama_pemohon}}</td>
                         <td>{{$tes_urine_instansi->alamat_instansi}}</td>
-                        <td>{{$tes_urine_instansi->tanggal_pelaksanaan_pemeriksaan}}</td>
+                        <td>{{ date('d-m-Y', strtotime($tes_urine_instansi->tanggal_pelaksanaan_pemeriksaan)) }}</td>
                         <td>{{$tes_urine_instansi->contact_person}}</td>
                         <td>
                             <a href="{{route('data-permohonan-tes-urine-instansi.show', ['tesUrineInstansi' => $tes_urine_instansi ])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>

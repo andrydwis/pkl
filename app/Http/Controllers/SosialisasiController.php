@@ -72,7 +72,6 @@ class SosialisasiController extends Controller
             ]);
         }
 
-
         $sosialisasi = new Sosialisasi();
         $sosialisasi->kategori = $request->kategori;
         $sosialisasi->nama_penyelenggara = $request->nama_penyelenggara;
@@ -88,7 +87,6 @@ class SosialisasiController extends Controller
         } else {
             $sosialisasi->lampiran_surat_undangan = null;
         }
-        // dd($request);
         $sosialisasi->save();
 
         session()->flash('status', 'Sosialisasi berhasil diajukan');
@@ -103,8 +101,10 @@ class SosialisasiController extends Controller
      */
     public function show(Sosialisasi $sosialisasi)
     {
-        $data = ['sosialisasi' => $sosialisasi];
-        // return $data;
+        $data = [
+            'sosialisasi' => $sosialisasi
+        ];
+
         return view('sosialisasi.show', $data);
     }
 
@@ -116,7 +116,10 @@ class SosialisasiController extends Controller
      */
     public function edit(Sosialisasi $sosialisasi)
     {
-        $data = ['sosialisasi' => $sosialisasi];
+        $data = [
+            'sosialisasi' => $sosialisasi
+        ];
+
         return view('sosialisasi.edit', $data);
     }
 
@@ -156,7 +159,6 @@ class SosialisasiController extends Controller
             ]);
         }
 
-        
         $sosialisasi->kategori = $request->kategori;
         $sosialisasi->nama_penyelenggara = $request->nama_penyelenggara;
         $sosialisasi->tanggal = $request->tanggal;
@@ -174,18 +176,17 @@ class SosialisasiController extends Controller
             } else {
                 $sosialisasi->lampiran_surat_undangan = $request->lampiran_surat_undangan;
             }
-        }else{
+        } else {
             if ($request->file('lampiran_surat_undangan') != null) {
                 $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_undangan')->extension());
-            }else{
+            } else {
                 $sosialisasi->lampiran_surat_undangan = null;
             }
         }
-
-        // $data = compact('request','sosialisasi');
-        // dd($data);
         $sosialisasi->save();
-        session()->flash('status','Sosialisasi Berhasil diupdate');
+
+        session()->flash('status', 'Sosialisasi Berhasil diupdate');
+
         return back();
     }
 
@@ -203,7 +204,9 @@ class SosialisasiController extends Controller
         } else {
             $sosialisasi->delete();
         }
+
         session()->flash('status', 'Sosialisasi Berhasil Dihapus');
+
         return redirect()->back();
     }
 
@@ -213,6 +216,7 @@ class SosialisasiController extends Controller
             'tanggal_dari' => ['required'],
             'tanggal_sampai' => ['required', 'after_or_equal:tanggal_dari']
         ]);
+        
         return Excel::download(new SosialisasiExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'permohonan sosialisasi ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
     }
 }

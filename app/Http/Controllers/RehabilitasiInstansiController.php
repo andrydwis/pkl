@@ -19,8 +19,7 @@ class RehabilitasiInstansiController extends Controller
         $data = [
             'rehabilitasis' => RehabilitasiInstansi::all(),
         ];
-        // dd($data);
-        
+
         return view('rehabilitasi-instansi.index', $data);
     }
 
@@ -47,7 +46,7 @@ class RehabilitasiInstansiController extends Controller
             'nama_instansi' => ['required', 'string',],
             'alamat_instansi' => ['required', 'string',],
             'nomor_telepon' => ['required'],
-            'jumlah_yang_dicurigai' => ['required','numeric'],
+            'jumlah_yang_dicurigai' => ['required', 'numeric'],
             'jenis_penyalahgunaan' => ['required']
         ]);
 
@@ -59,7 +58,9 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jumlah_yang_dicurigai = $request->jumlah_yang_dicurigai;
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
+
         session()->flash('status', 'Rehabilitasi Instansi Berhasil Diajukan');
+
         return back();
     }
 
@@ -72,7 +73,7 @@ class RehabilitasiInstansiController extends Controller
     public function show(RehabilitasiInstansi $rehabilitasiInstansi)
     {
         $data = ['rehabilitasi' => $rehabilitasiInstansi];
-        // return $data;
+
         return view('rehabilitasi-instansi.show', $data);
     }
 
@@ -84,7 +85,10 @@ class RehabilitasiInstansiController extends Controller
      */
     public function edit(RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        $data = ['rehabilitasi' => $rehabilitasiInstansi];
+        $data = [
+            'rehabilitasi' => $rehabilitasiInstansi
+        ];
+
         return view('rehabilitasi-instansi.edit', $data);
     }
 
@@ -102,10 +106,10 @@ class RehabilitasiInstansiController extends Controller
             'nama_instansi' => ['required', 'string',],
             'alamat_instansi' => ['required', 'string',],
             'nomor_telepon' => ['required'],
-            'jumlah_yang_dicurigai' => ['required','numeric'],
+            'jumlah_yang_dicurigai' => ['required', 'numeric'],
             'jenis_penyalahgunaan' => ['required']
         ]);
-        
+
         $rehabilitasiInstansi->nama_lengkap_pelapor = $request->nama_lengkap_pelapor;
         $rehabilitasiInstansi->nama_instansi = $request->nama_instansi;
         $rehabilitasiInstansi->alamat_instansi = $request->alamat_instansi;
@@ -113,7 +117,9 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jumlah_yang_dicurigai = $request->jumlah_yang_dicurigai;
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
+
         session()->flash('status', 'Rehabilitasi Instansi Berhasil diupdate');
+
         return back();
     }
 
@@ -126,7 +132,9 @@ class RehabilitasiInstansiController extends Controller
     public function destroy(RehabilitasiInstansi $rehabilitasiInstansi)
     {
         $rehabilitasiInstansi->delete();
+
         session()->flash('status', 'Rehabilitasi Instansi Berhasil Dihapus');
+        
         return back();
     }
     public function export(Request $request)

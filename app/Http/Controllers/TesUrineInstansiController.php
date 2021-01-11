@@ -16,8 +16,10 @@ class TesUrineInstansiController extends Controller
      */
     public function index()
     {
-        $data = ['tes_urine_instansis' => TesUrineInstansi::all()];
-        // return $data;
+        $data = [
+            'tes_urine_instansis' => TesUrineInstansi::all()
+        ];
+
         return view('tes-urine-instansi.index', $data);
     }
 
@@ -62,7 +64,9 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
+
         session()->flash('status', 'Tes urine Instansi Berhasil Diajukan');
+        
         return back();
     }
 
@@ -74,8 +78,10 @@ class TesUrineInstansiController extends Controller
      */
     public function show(TesUrineInstansi $tesUrineInstansi)
     {
-        $data = ['tes_urine_instansi' => $tesUrineInstansi];
-        // return $data;
+        $data = [
+            'tes_urine_instansi' => $tesUrineInstansi
+        ];
+
         return view('tes-urine-instansi.show', $data);
     }
 
@@ -87,7 +93,10 @@ class TesUrineInstansiController extends Controller
      */
     public function edit(TesUrineInstansi $tesUrineInstansi)
     {
-        $data = ['tes_urine_instansi' => $tesUrineInstansi];
+        $data = [
+            'tes_urine_instansi' => $tesUrineInstansi
+        ];
+
         return view('tes-urine-instansi.edit', $data);
     }
 
@@ -122,7 +131,9 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
+
         session()->flash('status', 'Tes urine Instansi Berhasil Diupdate');
+
         return back();
     }
 
@@ -135,7 +146,9 @@ class TesUrineInstansiController extends Controller
     public function destroy(TesUrineInstansi $tesUrineInstansi)
     {
         $tesUrineInstansi->delete();
+
         session()->flash('status', 'Tes urine Instansi Berhasil Dihapus');
+        
         return back();
     }
 
