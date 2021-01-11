@@ -98,6 +98,14 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('data-skhpn/{skhpn}', [SkhpnController::class, 'update'])->name('data-skhpn.update');
         Route::delete('data-skhpn/{skhpn}', [SkhpnController::class, 'destroy'])->name('data-skhpn.destroy');
         Route::post('data-skhpn/export', [SkhpnController::class, 'export'])->name('data-skhpn.export');
+
+        Route::get('data-permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'index'])->name('data-permohonan-tes-urine-instansi.index');
+        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'show'])->name('data-permohonan-tes-urine-instansi.show');
+        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}/edit', [TesUrineInstansiController::class, 'edit'])->name('data-permohonan-tes-urine-instansi.edit');
+        Route::patch('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'update'])->name('data-permohonan-tes-urine-instansi.update');
+        Route::delete('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'destroy'])->name('data-permohonan-tes-urine-instansi.destroy');
+        Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
+        
     });
 });
 
