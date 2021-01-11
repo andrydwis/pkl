@@ -26,7 +26,7 @@
                                 <div class="form-group">
                                     <label for="nomer_ktp">Nomer KTP / NIK</label>
                                     <input id="nomer_ktp" type="number" class="form-control @error('nomer_ktp'){{ 'is-invalid' }}@enderror" name="nomer_ktp" value="{{ old('nomer_ktp') ?? '' }}" autofocus>
-                                    @error('nama_lengkap')
+                                    @error('nomer_ktp')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
