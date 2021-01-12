@@ -3,7 +3,6 @@
 <div class="section-header">
     <h1>Dashboard</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     <div class="row">
         <div class="col-12">

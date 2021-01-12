@@ -3,7 +3,6 @@
 <div class="section-header">
     <h1>Edit Profil</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-5 col-lg-6">

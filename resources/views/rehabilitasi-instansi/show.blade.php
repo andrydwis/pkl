@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
-    <h1>Data Rhabilitasi Instansi</h1>
+    <h1>Data Rehabilitasi Instansi</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">

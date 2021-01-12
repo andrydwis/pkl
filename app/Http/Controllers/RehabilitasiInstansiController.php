@@ -59,9 +59,7 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
 
-        session()->flash('status', 'Rehabilitasi Instansi Berhasil Diajukan');
-
-        return back();
+        return back()->withSuccess('Rehabilitasi instansi berhasil diajukan');
     }
 
     /**
@@ -118,9 +116,7 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
 
-        session()->flash('status', 'Rehabilitasi Instansi Berhasil diupdate');
-
-        return back();
+        return back()->withSuccess('Rehabilitasi instansi berhasil diupdate');
     }
 
     /**
@@ -132,10 +128,8 @@ class RehabilitasiInstansiController extends Controller
     public function destroy(RehabilitasiInstansi $rehabilitasiInstansi)
     {
         $rehabilitasiInstansi->delete();
-
-        session()->flash('status', 'Rehabilitasi Instansi Berhasil Dihapus');
         
-        return back();
+        return back()->withSuccess('Rehabilitasi instansi berhasil dihapus');
     }
     public function export(Request $request)
     {

@@ -64,9 +64,7 @@ class RehabilitasiPribadiController extends Controller
         $rehabilitasi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;
         $rehabilitasi->save();
 
-        session()->flash('status', 'Rehabilitasi pribadi berhasil diajukan');
-
-        return back();
+        return back()->withSuccess('Rehabilitasi pribadi berhasil diajukan');
     }
 
     /**
@@ -130,9 +128,7 @@ class RehabilitasiPribadiController extends Controller
         $rehabilitasiPribadi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;
         $rehabilitasiPribadi->save();
 
-        session()->flash('status', 'Rehabilitasi pribadi berhasil diupdate');
-
-        return back();
+        return back()->withSuccess('Rehabilitasi pribadi berhasil diupdate');
     }
 
     /**
@@ -148,7 +144,7 @@ class RehabilitasiPribadiController extends Controller
 
         session()->flash('status', 'Rehabilitasi pribadi berhasil dihapus');
 
-        return back();
+        return back()->withSuccess('Rehabilitasi pribadi berhasil dihapus');
     }
 
     public function export(Request $request)

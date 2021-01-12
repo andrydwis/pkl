@@ -71,9 +71,7 @@ class SkhpnController extends Controller
         $skhpn->keperluan = $request->keperluan;
         $skhpn->save();
 
-        session()->flash('status', 'SKHPN berhasil diajukan');
-
-        return back();
+        return back()->withSuccess('SKHPN berhasil diajukan');
     }
 
     /**
@@ -143,9 +141,7 @@ class SkhpnController extends Controller
         $skhpn->keperluan = $request->keperluan;
         $skhpn->save();
 
-        session()->flash('status', 'SKHPN berhasil diupdate');
-
-        return back();
+        return back()->withSuccess('SKHPN berhasil diupdate');
     }
 
     /**
@@ -159,9 +155,7 @@ class SkhpnController extends Controller
         //
         $skhpn->delete();
 
-        session()->flash('status', 'SKHPN berhasil dihapus');
-
-        return back();
+        return back()->withSuccess('SKHPN berhasil dihapus');
     }
 
     public function export(Request $request)

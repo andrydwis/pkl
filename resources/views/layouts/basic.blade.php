@@ -38,7 +38,8 @@
 
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
-
+    
+    @include('sweetalert::alert')
 </body>
 
 </html>

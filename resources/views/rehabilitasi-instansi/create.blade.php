@@ -9,10 +9,6 @@
     </section>
     <!-- End Hero -->
 
-    <div class="container mt-3">
-        @include('layouts.alert')
-    </div>
-
     <main id="main">
         <section id="form" class="d-flex justify-content-center">
             <div class="container">

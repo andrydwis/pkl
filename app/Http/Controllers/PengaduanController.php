@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PengaduanController extends Controller
 {
@@ -94,9 +95,7 @@ class PengaduanController extends Controller
         }
         $pengaduan->save();
 
-        session()->flash('status', 'Pengaduan berhasil diajukan');
-
-        return back();
+        return back()->withSuccess('Pengaduan berhasil diajukan');
     }
 
     /**
@@ -196,9 +195,7 @@ class PengaduanController extends Controller
         }
         $pengaduan->save();
 
-        session()->flash('status', 'Pengaduan berhasil diupdate');
-
-        return back();
+        return back()->withSuccess('Pengaduan berhasil diupdate');
     }
 
     /**
@@ -217,9 +214,7 @@ class PengaduanController extends Controller
             $pengaduan->delete();
         }
 
-        session()->flash('status', 'Pengaduan berhasil dihapus');
-
-        return back();
+        return back()->withSuccess('Pengaduan berhasil dihapus');
     }
 
     public function export(Request $request)

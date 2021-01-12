@@ -3,7 +3,6 @@
 <div class="section-header">
     <h1>Daftar Pegawai</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">

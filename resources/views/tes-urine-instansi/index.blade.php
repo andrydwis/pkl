@@ -1,13 +1,10 @@
-
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
     <h1>Data Tes Urine Instansi</h1>
 </div>
-@include('layouts.alert')
-
 <div class="section-body">
-<div class="card card-primary">
+    <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
             <h4>Export Data</h4>
         </div>

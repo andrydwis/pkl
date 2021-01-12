@@ -3,7 +3,6 @@
 <div class="section-header" data-aos="fade-up" data-aos-delay="500">
     <h1>Update Pegawai</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-6">

@@ -32,6 +32,6 @@ class UpdateProfileController extends Controller
 
         session()->flash('status', 'Profil berhasil diupdate');
 
-        return redirect()->route('edit-profile.edit');
+        return redirect()->route('edit-profile.edit')->withSuccess('Profil berhasil diupdate');
     }
 }

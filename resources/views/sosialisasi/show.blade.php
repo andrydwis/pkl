@@ -3,7 +3,6 @@
 <div class="section-header">
     <h1>Data Sosialisasi</h1>
 </div>
-@include('layouts.alert')
 <div class="section-body">
     
     <div class="card card-primary">

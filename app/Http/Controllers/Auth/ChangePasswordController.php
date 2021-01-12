@@ -29,8 +29,6 @@ class ChangePasswordController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        session()->flash('status', 'Password berhasil diganti');
-
-        return redirect()->route('change-password');
+        return redirect()->route('change-password')->withSuccess('Password berhasil diganti');
     }
 }

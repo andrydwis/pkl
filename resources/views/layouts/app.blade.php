@@ -20,6 +20,7 @@
 
     <!-- CustomCSS -->
     @yield('customCSS')
+    
 </head>
 
 <body>
@@ -50,6 +51,8 @@
 
     <!-- CustomJS -->
     @yield('customJS')
+    
+    @include('sweetalert::alert')
 </body>
 
 </html>

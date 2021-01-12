@@ -93,9 +93,7 @@ class UserController extends Controller
         $user->role = $request->role;
         $user->save();
 
-        session()->flash('status', 'Pegawai ' . $user->name . ' berhasil diupdate');
-
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess('Pegawai ' . $user->name . ' berhasil diupdate');
     }
 
     /**
@@ -107,11 +105,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
-        session()->flash('status', 'Pegawai ' . $user->name . ' berhasil dihapus');
-
         $user->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess('Pegawai berhasil dihapus');
     }
 
     public function resetView(User $user)
@@ -131,8 +127,6 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        session()->flash('status', 'Password ' . $user->name . ' berhasil direset');
-
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess('Password ' . $user->name . ' berhasil direset');
     }
 }

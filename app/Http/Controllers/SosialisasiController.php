@@ -89,8 +89,7 @@ class SosialisasiController extends Controller
         }
         $sosialisasi->save();
 
-        session()->flash('status', 'Sosialisasi berhasil diajukan');
-        return back();
+        return back()->withSuccess('Sosialisasi berhasil diajukan');
     }
 
     /**
@@ -185,9 +184,7 @@ class SosialisasiController extends Controller
         }
         $sosialisasi->save();
 
-        session()->flash('status', 'Sosialisasi Berhasil diupdate');
-
-        return back();
+        return back()->withSuccess('Sosialisasi berhasil diupdate');
     }
 
     /**
@@ -205,9 +202,7 @@ class SosialisasiController extends Controller
             $sosialisasi->delete();
         }
 
-        session()->flash('status', 'Sosialisasi Berhasil Dihapus');
-
-        return redirect()->back();
+        return redirect()->back()->withSuccess('Sosialisasi berhasil dihapus');
     }
 
     public function export(Request $request)

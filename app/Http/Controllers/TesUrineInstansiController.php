@@ -64,10 +64,8 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
-
-        session()->flash('status', 'Tes urine Instansi Berhasil Diajukan');
         
-        return back();
+        return back()->withSuccess('Tes urine instansi berhasil diajukan');
     }
 
     /**
@@ -132,9 +130,7 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
 
-        session()->flash('status', 'Tes urine Instansi Berhasil Diupdate');
-
-        return back();
+        return back()->withSuccess('Tes urine instansi berhasil diupdate');
     }
 
     /**
@@ -146,10 +142,8 @@ class TesUrineInstansiController extends Controller
     public function destroy(TesUrineInstansi $tesUrineInstansi)
     {
         $tesUrineInstansi->delete();
-
-        session()->flash('status', 'Tes urine Instansi Berhasil Dihapus');
         
-        return back();
+        return back()->withSuccess('Tes urine instansi berhasil dihapus');
     }
 
     public function export(Request $request)
