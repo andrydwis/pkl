@@ -9,6 +9,7 @@ use App\Http\Controllers\RehabilitasiInstansiController;
 use App\Http\Controllers\SkhpnController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
+use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\TesUrineInstansiController;
 use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +39,8 @@ Route::post('rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'stor
 Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'create'])->name('rehabilitasi-instansi.create');
 Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
 
-Route::get('skhpn/cetak', [TesUrinePribadiController::class, 'word']);
+Route::get('survey', [SurveyController::class, 'index'])->name('survey.index');
+Route::post('survey', [SurveyController::class, 'verify'])->name('survey.verify');
 
 Route::middleware(['auth'])->group(function () {
     //dashboard

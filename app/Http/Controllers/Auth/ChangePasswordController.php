@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ChangePasswordController extends Controller
 {
@@ -29,6 +29,8 @@ class ChangePasswordController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->route('change-password')->withSuccess('Password berhasil diganti');
+        Alert::success('Password berhasil diganti');
+
+        return redirect()->route('change-password');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -93,7 +94,9 @@ class UserController extends Controller
         $user->role = $request->role;
         $user->save();
 
-        return redirect()->route('users.index')->withSuccess('Pegawai ' . $user->name . ' berhasil diupdate');
+        Alert::success('Pegawai ' . $user->name . ' berhasil diupdate');
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -105,9 +108,11 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+        Alert::success('Pegawai ' . $user->name . ' berhasil dihapus');
+
         $user->delete();
 
-        return redirect()->route('users.index')->withSuccess('Pegawai berhasil dihapus');
+        return redirect()->route('users.index');
     }
 
     public function resetView(User $user)
@@ -127,6 +132,8 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->route('users.index')->withSuccess('Password ' . $user->name . ' berhasil direset');
+        Alert::success('Password ' . $user->name . ' berhasil direset');
+
+        return redirect()->route('users.index');
     }
 }

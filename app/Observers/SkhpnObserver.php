@@ -3,8 +3,10 @@
 namespace App\Observers;
 
 use App\Models\Skhpn;
+use App\Models\Survey;
 use App\Models\User;
 use App\Notifications\NewSkhpn;
+use Illuminate\Support\Str;
 
 class SkhpnObserver
 {
@@ -19,9 +21,17 @@ class SkhpnObserver
         //
         $users = User::where('role', 'tu')->get();
 
-        foreach($users as $user){
+        foreach ($users as $user) {
             $user->notify(new NewSkhpn($skhpn));
         }
+
+        $token = 'BNN/' . Str::random(5);
+
+        $survey = new Survey();
+        $survey->token = $token;
+        $survey->status = 'available';
+        $survey->save();
+
     }
 
     /**

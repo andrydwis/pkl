@@ -6,6 +6,7 @@ use App\Exports\RehabilitasiInstansiExport;
 use App\Models\RehabilitasiInstansi;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RehabilitasiInstansiController extends Controller
 {
@@ -59,7 +60,9 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
 
-        return back()->withSuccess('Rehabilitasi instansi berhasil diajukan');
+        Alert::success('Rehabilitasi instansi berhasil diajukan');
+
+        return back();
     }
 
     /**
@@ -116,7 +119,9 @@ class RehabilitasiInstansiController extends Controller
         $rehabilitasiInstansi->jenis_penyalahgunaan = $request->jenis_penyalahgunaan;
         $rehabilitasiInstansi->save();
 
-        return back()->withSuccess('Rehabilitasi instansi berhasil diupdate');
+        Alert::success('Rehabilitasi instansi berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -128,8 +133,10 @@ class RehabilitasiInstansiController extends Controller
     public function destroy(RehabilitasiInstansi $rehabilitasiInstansi)
     {
         $rehabilitasiInstansi->delete();
+
+        Alert::success('Rehabilitasi instansi berhasil dihapus');
         
-        return back()->withSuccess('Rehabilitasi instansi berhasil dihapus');
+        return back();
     }
     public function export(Request $request)
     {

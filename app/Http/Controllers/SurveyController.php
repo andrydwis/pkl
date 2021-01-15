@@ -4,82 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Models\Survey;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SurveyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //
     public function index()
     {
-        //
+        return view('survey.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function verify(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'token' => ['required']
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Survey  $survey
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Survey $survey)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Survey  $survey
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Survey $survey)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Survey  $survey
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Survey $survey)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Survey  $survey
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Survey $survey)
-    {
-        //
+        $verify = Survey::where('token', $request->token)->first();
+        if ($verify == null) {
+            Alert::error('Token tidak valid');
+            return back();
+        } elseif ($verify->status == 'used') {
+            Alert::error('Token telah dipakai');
+            return back();
+        }
     }
 }

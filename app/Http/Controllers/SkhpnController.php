@@ -7,6 +7,7 @@ use App\Models\Skhpn;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpWord\TemplateProcessor;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SkhpnController extends Controller
 {
@@ -71,7 +72,9 @@ class SkhpnController extends Controller
         $skhpn->keperluan = $request->keperluan;
         $skhpn->save();
 
-        return back()->withSuccess('SKHPN berhasil diajukan');
+        Alert::success('SKHPN berhasil diajukan');
+
+        return back();
     }
 
     /**
@@ -141,7 +144,9 @@ class SkhpnController extends Controller
         $skhpn->keperluan = $request->keperluan;
         $skhpn->save();
 
-        return back()->withSuccess('SKHPN berhasil diupdate');
+        Alert::success('SKHPN berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -155,7 +160,9 @@ class SkhpnController extends Controller
         //
         $skhpn->delete();
 
-        return back()->withSuccess('SKHPN berhasil dihapus');
+        Alert::success('SKHPN berhasil dihapus');
+
+        return back();
     }
 
     public function export(Request $request)

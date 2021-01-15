@@ -15,7 +15,6 @@
                 <div class="col-12 col-sm-8">
                     <div class="card card-primary">
                         <div class="card-header">
-
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{ route('sosialisasi.store') }}" enctype="multipart/form-data">

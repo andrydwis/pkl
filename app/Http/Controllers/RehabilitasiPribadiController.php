@@ -6,6 +6,7 @@ use App\Exports\RehabilitasiPribadiExport;
 use App\Models\RehabilitasiPribadi;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RehabilitasiPribadiController extends Controller
 {
@@ -64,7 +65,9 @@ class RehabilitasiPribadiController extends Controller
         $rehabilitasi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;
         $rehabilitasi->save();
 
-        return back()->withSuccess('Rehabilitasi pribadi berhasil diajukan');
+        Alert::success('Rehabilitasi pribadi berhasil diajukan');
+
+        return back();
     }
 
     /**
@@ -128,7 +131,9 @@ class RehabilitasiPribadiController extends Controller
         $rehabilitasiPribadi->rencana_kedatangan_ke_klinik = $request->rencana_kedatangan_ke_klinik;
         $rehabilitasiPribadi->save();
 
-        return back()->withSuccess('Rehabilitasi pribadi berhasil diupdate');
+        Alert::success('Rehabilitasi pribadi berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -142,9 +147,9 @@ class RehabilitasiPribadiController extends Controller
         //
         $rehabilitasiPribadi->delete();
 
-        session()->flash('status', 'Rehabilitasi pribadi berhasil dihapus');
+        Alert::success('Rehabilitasi pribadi berhasil dihapus');
 
-        return back()->withSuccess('Rehabilitasi pribadi berhasil dihapus');
+        return back();
     }
 
     public function export(Request $request)

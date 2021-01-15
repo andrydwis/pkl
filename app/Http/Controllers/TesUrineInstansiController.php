@@ -6,6 +6,7 @@ use App\Exports\TesUrineInstansiExport;
 use App\Models\TesUrineInstansi;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TesUrineInstansiController extends Controller
 {
@@ -64,8 +65,10 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->jumlah_peserta_perempuan = $request->jumlah_peserta_perempuan;
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
+
+        Alert::success('Tes urine instansi berhasil diajukan');
         
-        return back()->withSuccess('Tes urine instansi berhasil diajukan');
+        return back();
     }
 
     /**
@@ -130,6 +133,8 @@ class TesUrineInstansiController extends Controller
         $tesUrineInstansi->lokasi_pemeriksaan = $request->lokasi_pemeriksaan;
         $tesUrineInstansi->save();
 
+        Alert::success('Tes urine instansi berhasil diupdate');
+
         return back()->withSuccess('Tes urine instansi berhasil diupdate');
     }
 
@@ -142,8 +147,10 @@ class TesUrineInstansiController extends Controller
     public function destroy(TesUrineInstansi $tesUrineInstansi)
     {
         $tesUrineInstansi->delete();
+
+        Alert::success('Tes urine instansi berhasil dihapus');
         
-        return back()->withSuccess('Tes urine instansi berhasil dihapus');
+        return back();
     }
 
     public function export(Request $request)

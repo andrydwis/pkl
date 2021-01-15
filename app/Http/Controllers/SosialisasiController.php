@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SosialisasiController extends Controller
 {
@@ -89,7 +90,9 @@ class SosialisasiController extends Controller
         }
         $sosialisasi->save();
 
-        return back()->withSuccess('Sosialisasi berhasil diajukan');
+        Alert::success('Sosialisasi berhasil diajukan');
+
+        return back();
     }
 
     /**
@@ -184,7 +187,9 @@ class SosialisasiController extends Controller
         }
         $sosialisasi->save();
 
-        return back()->withSuccess('Sosialisasi berhasil diupdate');
+        Alert::success('Sosialisasi berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -202,7 +207,9 @@ class SosialisasiController extends Controller
             $sosialisasi->delete();
         }
 
-        return redirect()->back()->withSuccess('Sosialisasi berhasil dihapus');
+        Alert::success('Sosialisasi berhasil dihapus');
+
+        return redirect()->back();
     }
 
     public function export(Request $request)

@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,7 +33,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect(RouteServiceProvider::HOME)->withSuccess('Login berhasil');
+        Alert::success('Login berhasil');
+
+        return redirect(RouteServiceProvider::HOME);
     }
 
     /**
@@ -49,6 +52,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/')->withSuccess('Logout berhasil');
+        Alert::success('Logout berhasil');
+
+        return redirect('/');
     }
 }

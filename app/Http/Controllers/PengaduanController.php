@@ -95,7 +95,9 @@ class PengaduanController extends Controller
         }
         $pengaduan->save();
 
-        return back()->withSuccess('Pengaduan berhasil diajukan');
+        Alert::success('Pengaduan berhasil diajukan');
+
+        return back();
     }
 
     /**
@@ -195,7 +197,9 @@ class PengaduanController extends Controller
         }
         $pengaduan->save();
 
-        return back()->withSuccess('Pengaduan berhasil diupdate');
+        Alert::success('Pengaduan berhasil diupdate');
+
+        return back();
     }
 
     /**
@@ -214,7 +218,9 @@ class PengaduanController extends Controller
             $pengaduan->delete();
         }
 
-        return back()->withSuccess('Pengaduan berhasil dihapus');
+        Alert::success('Pengaduan berhasil dihapus');
+
+        return back();
     }
 
     public function export(Request $request)

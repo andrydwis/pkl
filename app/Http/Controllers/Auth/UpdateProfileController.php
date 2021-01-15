@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UpdateProfileController extends Controller
 {
@@ -30,8 +31,8 @@ class UpdateProfileController extends Controller
         $user->phone = $request->telepon;
         $user->save();
 
-        session()->flash('status', 'Profil berhasil diupdate');
+        Alert::success('Profil berhasil diupdate');
 
-        return redirect()->route('edit-profile.edit')->withSuccess('Profil berhasil diupdate');
+        return redirect()->route('edit-profile.edit');
     }
 }

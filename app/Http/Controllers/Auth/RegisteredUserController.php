@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -47,6 +48,8 @@ class RegisteredUserController extends Controller
 
         session()->flash('status', 'Pegawai ' . $request->nama . ' berhasil ditambahkan');
 
-        return redirect()->route('create-users')->withSuccess('Pegawai ' . $request->nama . ' berhasil ditambahkan');
+        Alert::success('Pegawai ' . $request->nama . ' berhasil ditambahkan');
+
+        return redirect()->route('create-users');
     }
 }
