@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Mail\SkhpnMail;
 use App\Models\Skhpn;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -44,8 +45,7 @@ class NewSkhpn extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->line('Ada 1 Skhpn baru dari ' . $this->skhpn->nama_lengkap);
+        return (new SkhpnMail($this->skhpn));          
     }
 
     /**
