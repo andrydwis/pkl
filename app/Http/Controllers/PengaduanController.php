@@ -233,4 +233,29 @@ class PengaduanController extends Controller
 
         return Excel::download(new PengaduansExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'pengaduan ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
     }
+
+    public function processView(Pengaduan $pengaduan)
+    {
+        $data = [
+            'pengaduan' => $pengaduan
+        ];
+
+        return view('pengaduan.process', $data);
+    }
+
+    public function process(Pengaduan $pengaduan, Request $request)
+    {
+        $request->validate([
+            'status' => ['required'],
+            'keterangan' => ['required']
+        ]);
+
+        $pengaduan->status = $request->status;
+        $pengaduan->keterangan = $request->keterangan;
+        $pengaduan->save();
+
+        Alert::success('Pengaduan berhasil diproses');
+
+        return back();
+    }
 }

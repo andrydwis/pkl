@@ -74,6 +74,7 @@
                             <a href="{{route('data-pengaduan.show', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
                             <a href="{{route('data-pengaduan.edit', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>
                             <button class="btn btn-icon btn-danger" id="modal-destroy-{{$pengaduan->id}}" data-toggle="modal" data-target="#modal-destroy-{{$pengaduan->id}}"><i class="fas fa-trash"></i></button>
+                            <a href="{{route('data-pengaduan.process-view', ['pengaduan' => $pengaduan])}}" class="btn btn-success btn-icon"><i class="fas fa-play"></i></a>
                         </td>
                     </tr>
                     @endforeach
