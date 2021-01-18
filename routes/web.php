@@ -107,6 +107,8 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'update'])->name('data-permohonan-tes-urine-instansi.update');
         Route::delete('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'destroy'])->name('data-permohonan-tes-urine-instansi.destroy');
         Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
+
+        
         
     });
 });
