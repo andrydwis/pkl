@@ -93,6 +93,7 @@ class PengaduanController extends Controller
         } else {
             $pengaduan->foto_bukti_kejadian = null;
         }
+        $pengaduan->status = 'diajukan';
         $pengaduan->save();
 
         Alert::success('Pengaduan berhasil diajukan');

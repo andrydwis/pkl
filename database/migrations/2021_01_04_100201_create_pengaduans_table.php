@@ -26,6 +26,8 @@ class CreatePengaduansTable extends Migration
             $table->string('kategori');
             $table->text('isi_pengaduan');
             $table->string('foto_bukti_kejadian')->nullable();
+            $table->enum('status', ['diajukan', 'diterima', 'ditolak']);
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
