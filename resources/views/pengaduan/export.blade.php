@@ -12,6 +12,8 @@
             <th>Waktu Kejadian</th>
             <th>Kategori</th>
             <th>Isi Pengaduan</th>
+            <th>Status</th>
+            <th>Keterangan</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +30,8 @@
             <td>{{$pengaduan->waktu_kejadian}}</td>
             <td>{{$pengaduan->kategori}}</td>
             <td>{{$pengaduan->isi_pengaduan}}</td>
+            <td>{{$pengaduan->status}}</td>
+            <td>{{$pengaduan->keterangan}}</td>
         </tr>
         @endforeach
     </tbody>

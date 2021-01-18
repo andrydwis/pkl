@@ -81,6 +81,8 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('data-sosialisasi/{sosialisasi}', [SosialisasiController::class, 'update'])->name('data-sosialisasi.update');
         Route::delete('data-sosialisasi/{sosialisasi}', [SosialisasiController::class, 'destroy'])->name('data-sosialisasi.destroy');
         Route::post('data-sosialisasi/export', [SosialisasiController::class, 'export'])->name('data-sosialisasi.export');
+        Route::get('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'processView'])->name('data-sosialisasi.process-view');
+        Route::post('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'process'])->name('data-sosialisasi.process');
         
         Route::get('data-rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'index'])->name('data-rehabilitasi-pribadi.index');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'show'])->name('data-rehabilitasi-pribadi.show');

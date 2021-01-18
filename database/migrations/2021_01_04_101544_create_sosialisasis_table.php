@@ -25,6 +25,8 @@ class CreateSosialisasisTable extends Migration
             $table->integer('jumlah_peserta');
             $table->text('tema_kegiatan');
             $table->string('lampiran_surat_undangan')->nullable();
+            $table->enum('status', ['diajukan', 'diterima', 'ditolak']);
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
 

@@ -32,6 +32,7 @@ class SkhpnObserver
         $survey->status = 'available';
         $survey->save();
 
+        session()->flash('token', $token);
     }
 
     /**

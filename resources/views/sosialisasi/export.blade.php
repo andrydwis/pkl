@@ -10,7 +10,9 @@
             <th>Nama Pemohon</th>
             <th>No HP Pemohon</th>
             <th>Jumlah Peserta</th>
-            <th>Tema Kegiatan</th>            
+            <th>Tema Kegiatan</th>     
+            <th>Status</th>       
+            <th>Keterangan</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +28,8 @@
             <td>{{$sosialisasi->no_hp_pemohon}}</td>
             <td>{{$sosialisasi->jumlah_peserta}}</td>
             <td>{{$sosialisasi->tema_kegiatan}}</td>
+            <td>{{$sosialisasi->status}}</td>
+            <td>{{$sosialisasi->keterangan}}</td>
         </tr>
         @endforeach
     </tbody>

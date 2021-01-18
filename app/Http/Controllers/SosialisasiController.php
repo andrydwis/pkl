@@ -185,6 +185,7 @@ class SosialisasiController extends Controller
                 $sosialisasi->lampiran_surat_undangan = null;
             }
         }
+        $sosialisasi->status = 'diajukan';
         $sosialisasi->save();
 
         Alert::success('Sosialisasi berhasil diupdate');
@@ -220,5 +221,30 @@ class SosialisasiController extends Controller
         ]);
         
         return Excel::download(new SosialisasiExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'permohonan sosialisasi ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
+    }
+
+    public function processView(Sosialisasi $sosialisasi)
+    {
+        $data = [
+            'sosialisasi' => $sosialisasi
+        ];
+
+        return view('sosialisasi.process', $data);
+    }
+
+    public function process(Sosialisasi $sosialisasi, Request $request)
+    {
+        $request->validate([
+            'status' => ['required'],
+            'keterangan' => ['required']
+        ]);
+
+        $sosialisasi->status = $request->status;
+        $sosialisasi->keterangan = $request->keterangan;
+        $sosialisasi->save();
+
+        Alert::success('Sosialisasi berhasil diproses');
+
+        return back();
     }
 }
