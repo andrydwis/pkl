@@ -45,7 +45,7 @@ class NewSkhpn extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new SkhpnMail($this->skhpn));          
+        return (new SkhpnMail($this->skhpn))->to($notifiable->email);;          
     }
 
     /**
