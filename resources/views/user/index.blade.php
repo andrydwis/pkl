@@ -30,6 +30,10 @@
             width: 400px;
         }
 
+        .card {
+            background-color: #f7f7f7;
+        }
+
     </style>
 @endsection
 @section('content')
@@ -162,57 +166,67 @@
                 <div class="section-title">
                     <h2>Tentang Kami</h2>
                 </div>
-
-                <div class="">
-                    <p>
-                        Badan Narkotika Nasional Kota Malang adalah Lembaga Pemerintah Vertikal yang berkedudukan di bawah
-                        dan bertanggungjawab kepada Badan Narkotika Nasional Propinsi dan Badan Narkotika Nasional. Badan
-                        Narkotika Nasional merupakan lembaga yang bertujuan untuk melakukan Program Pencegahan dan
-                        Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkoba (P4GN) dengan berbagai kegiatan melalui
-                        Bidang Pencegahan, Bidang Pemberdayaan Masyarakat, dan Bidang Pemberantasan.
-                    </p>
-                    <p>
-                        Sebelum vertikalisasi, Badan Narkotika Nasional Kota Malang merupakan sebuah Badan atau SKPD (Satuan
-                        Kerja Perangkat Daerah) yang berada di bawah Pemerintah Kota Malang dikepalai oleh Ketua Badan
-                        Narkotika Kota Malang yang dijabat oleh Wakil Walikota Malang Drs. BAMBANG PRIYO UTOMO, B.Sc.
-                    </p>
-                    <p>
-                        Pembeharuan Surat Keputusan tersebut antara lain adalah adanya jabatan Kepala Pelaksana Harian
-                        (Kalakhar) yang dijabat oleh Komisaris Polisi Drs. BAMBANG ANDJAR SOEPENO, S.H, M.Si. adapun tugas
-                        sehari-hari adalah melaksanakan fungsi pelaksana harian Ketua Badan Narkotika Kota Malang. Sedangkan
-                        anggota dari BNK Kota Malang adalah dari berbagai unsur Pemerintahan, Kepolisian, Kejaksaan,
-                        Pengadilan Negeri, Lapas, dan Militer yang terkait dengan Pencegahan dan Pemberantasan Narkoba.
-                    </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <p class="m-3">
+                                Badan Narkotika Nasional Kota Malang adalah Lembaga Pemerintah Vertikal yang berkedudukan di
+                                bawah
+                                dan bertanggungjawab kepada Badan Narkotika Nasional Propinsi dan Badan Narkotika Nasional.
+                                Badan
+                                Narkotika Nasional merupakan lembaga yang bertujuan untuk melakukan Program Pencegahan dan
+                                Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkoba (P4GN) dengan berbagai kegiatan
+                                melalui
+                                Bidang Pencegahan, Bidang Pemberdayaan Masyarakat, dan Bidang Pemberantasan.
+                            </p>
+                            <p class="m-3">
+                                Sebelum vertikalisasi, Badan Narkotika Nasional Kota Malang merupakan sebuah Badan atau SKPD
+                                (Satuan
+                                Kerja Perangkat Daerah) yang berada di bawah Pemerintah Kota Malang dikepalai oleh Ketua
+                                Badan
+                                Narkotika Kota Malang yang dijabat oleh Wakil Walikota Malang Drs. BAMBANG PRIYO UTOMO,
+                                B.Sc.
+                            </p>
+                            <p class="m-3">
+                                Pembeharuan Surat Keputusan tersebut antara lain adalah adanya jabatan Kepala Pelaksana
+                                Harian
+                                (Kalakhar) yang dijabat oleh Komisaris Polisi Drs. BAMBANG ANDJAR SOEPENO, S.H, M.Si. adapun
+                                tugas
+                                sehari-hari adalah melaksanakan fungsi pelaksana harian Ketua Badan Narkotika Kota Malang.
+                                Sedangkan
+                                anggota dari BNK Kota Malang adalah dari berbagai unsur Pemerintahan, Kepolisian, Kejaksaan,
+                                Pengadilan Negeri, Lapas, dan Militer yang terkait dengan Pencegahan dan Pemberantasan
+                                Narkoba.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <br>
-                <div class="row content">
+
+
+                <div class="row content d-flex align-items-center">
                     <div class="col-lg-6 text-primary">
-                        <h1 style="text-align: center; font-size: 70px;">
+                        <h1 style="text-align: center; font-size: 70px; ">
                             Visi
                         </h1>
-
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
+                    <br>
+                    <div class="col shadow p-3 mb-5 bg-white rounded">
+                        <p class="m-3">
                             Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran gelap
                             narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang berkualitas dan
                             kompetitif di segala bidang.
                         </p>
                     </div>
                 </div>
-                <br>
-                <br>
-                <br>
                 <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
+                    <div class="col shadow p-3 mb-5 bg-white rounded">
+                        <p class="m-3">
                             Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang dengan
                             melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan, Pemberantasan
                             serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
                         </p>
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 text-primary">
+                    <div class="col-lg-6 pt-4 pt-lg-0 text-primary align-self-center">
                         <h1 style="text-align: center; font-size: 70px;">
                             Misi
                         </h1>
