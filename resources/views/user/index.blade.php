@@ -21,6 +21,15 @@
             padding: 1rem;
         }
 
+        .icon {
+            text-align: center;
+        }
+
+        .icon-box {
+            height: 250px;
+            width: 400px;
+        }
+
     </style>
 @endsection
 @section('content')
@@ -39,7 +48,7 @@
                         <a href="https://bnn.go.id/" class="btn-get-started scrollto">Web BNN Pusat</a>
                         <a href="https://www.youtube.com/watch?v=c0-5Oxb5oyE" class="venobox btn-watch-video"
                             data-vbtype="video" data-autoplay="true">
-                            Watch Video <i class="icofont-play-alt-2"></i></a>
+                            Lihat Profil Video <i class="icofont-play-alt-2"></i></a>
                     </div>
                 </div>
                 <!-- ======= SOP Services ======= -->
@@ -82,11 +91,8 @@
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box" id="pengaduan-masyarakat">
                             <div class="icon"><i class="fas fa-bullhorn"></i></div>
-                            <h4><a href="{{ route('pengaduan.create') }}">Pengaduan Masyarakat</a></h4>
-                            <p>
-                                Voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias excepturi
-                            </p>
+                            <h2 style="text-align: center;"><a href="{{ route('pengaduan.create') }}">Pengaduan
+                                    Masyarakat</a></h2>
                         </div>
                     </div>
 
@@ -94,11 +100,8 @@
                         data-aos-delay="200">
                         <div class="icon-box" id="permohonan-sosialisasi">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="{{ route('sosialisasi.create') }}">Permohonan Sosialisasi</a></h4>
-                            <p>
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore
-                            </p>
+                            <h2 style="text-align: center;"><a href="{{ route('sosialisasi.create') }}">Permohonan
+                                    Sosialisasi</a></h2>
                         </div>
                     </div>
 
@@ -106,12 +109,9 @@
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitasi-pribadi">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan Rehabilitasi Pribadi</a>
-                            </h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
+                            <h2 style="text-align: center;"><a href="{{ route('rehabilitasi-pribadi.create') }}">Permohonan
+                                    Rehabilitasi Pribadi</a>
+                            </h2>
                         </div>
                     </div>
 
@@ -119,12 +119,9 @@
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitasi-instansi">
                             <div class="icon"><i class="fas fa-scroll"></i></div>
-                            <h4><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan Rehabilitasi Instansi</a>
-                            </h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
+                            <h2 style="text-align: center;"><a href="{{ route('rehabilitasi-instansi.create') }}">Permohonan
+                                    Rehabilitasi Instansi</a>
+                            </h2>
                         </div>
                     </div>
 
@@ -132,11 +129,7 @@
                         data-aos-delay="500">
                         <div class="icon-box" id="skhpn">
                             <div class="icon"><i class="far fa-id-card"></i></div>
-                            <h4><a href="{{ route('skhpn.create') }}">SKHPN</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
+                            <h2 style="text-align: center;"><a href="{{ route('skhpn.create') }}">SKHPN</a></h2>
                         </div>
                     </div>
 
@@ -144,11 +137,9 @@
                         data-aos-delay="500">
                         <div class="icon-box" id="permohonan-tes-urine-mandiri">
                             <div class="icon"><i class="far fa-id-card"></i></div>
-                            <h4><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
-                                    Instansi</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
+                            <h2 style="text-align: center;"><a
+                                    href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
+                                    Instansi</a></h2>
                             </p>
                         </div>
                     </div>
@@ -157,31 +148,13 @@
                         data-aos-delay="600">
                         <div class="icon-box" id="survey-kepuasan-pasien">
                             <div class="icon"><i class="fas fa-chart-pie"></i></div>
-                            <h4><a href="">Survey Kepuasan Pasien</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
+                            <h2 style="text-align: center;"><a href="">Survey Kepuasan Pasien</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- End Services Section -->
-
-        {{--
-        <!-- ======= SOP Services Section ======= -->
-        <section id="sop-services" class="services section-bg">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Alur SOP Layanan</h2>
-                </div>
-
-
-
-            </div>
-        </section>
-        <!-- End SOP Services Section --> --}}
 
         <!-- ======= About Us Section ======= -->
         <section id="about" class="about">
@@ -190,36 +163,59 @@
                     <h2>Tentang Kami</h2>
                 </div>
 
+                <div class="">
+                    <p>
+                        Badan Narkotika Nasional Kota Malang adalah Lembaga Pemerintah Vertikal yang berkedudukan di bawah
+                        dan bertanggungjawab kepada Badan Narkotika Nasional Propinsi dan Badan Narkotika Nasional. Badan
+                        Narkotika Nasional merupakan lembaga yang bertujuan untuk melakukan Program Pencegahan dan
+                        Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkoba (P4GN) dengan berbagai kegiatan melalui
+                        Bidang Pencegahan, Bidang Pemberdayaan Masyarakat, dan Bidang Pemberantasan.
+                    </p>
+                    <p>
+                        Sebelum vertikalisasi, Badan Narkotika Nasional Kota Malang merupakan sebuah Badan atau SKPD (Satuan
+                        Kerja Perangkat Daerah) yang berada di bawah Pemerintah Kota Malang dikepalai oleh Ketua Badan
+                        Narkotika Kota Malang yang dijabat oleh Wakil Walikota Malang Drs. BAMBANG PRIYO UTOMO, B.Sc.
+                    </p>
+                    <p>
+                        Pembeharuan Surat Keputusan tersebut antara lain adalah adanya jabatan Kepala Pelaksana Harian
+                        (Kalakhar) yang dijabat oleh Komisaris Polisi Drs. BAMBANG ANDJAR SOEPENO, S.H, M.Si. adapun tugas
+                        sehari-hari adalah melaksanakan fungsi pelaksana harian Ketua Badan Narkotika Kota Malang. Sedangkan
+                        anggota dari BNK Kota Malang adalah dari berbagai unsur Pemerintahan, Kepolisian, Kejaksaan,
+                        Pengadilan Negeri, Lapas, dan Militer yang terkait dengan Pencegahan dan Pemberantasan Narkoba.
+                    </p>
+                </div>
+                <br>
+                <br>
                 <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <ul>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat
-                            </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Duis aute irure dolor in
-                                reprehenderit in voluptate velit
-                            </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat
-                            </li>
-                        </ul>
+                    <div class="col-lg-6 text-primary">
+                        <h1 style="text-align: center; font-size: 70px;">
+                            Visi
+                        </h1>
+
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
+                            Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran gelap
+                            narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang berkualitas dan
+                            kompetitif di segala bidang.
                         </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <p>
+                            Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang dengan
+                            melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan, Pemberantasan
+                            serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 text-primary">
+                        <h1 style="text-align: center; font-size: 70px;">
+                            Misi
+                        </h1>
                     </div>
                 </div>
             </div>
