@@ -29,11 +29,27 @@
             @if(auth()->user()->role == 'tu')
             <li>
                 <a href="{{route('data-pengaduan.index')}}"><i class="fas fa-bullhorn"></i><span>Data Pengaduan</span></a>
-                <a href="{{route('data-sosialisasi.index')}}"><i class="fas fa-chalkboard-teacher"></i><span>Data Permohonan Sosialisasi</span></a>
+            </li>
+            <li>
+                <a href="{{route('data-sosialisasi.index')}}"><i class="fas fa-chalkboard-teacher"></i><span>Data Sosialisasi</span></a>
+            </li>
+            <li>
                 <a href="{{route('data-rehabilitasi-pribadi.index')}}"><i class="fas fa-ambulance"></i><span>Data Rehabilitasi Pribadi</span></a>
+            </li>
+            <li>
                 <a href="{{route('data-rehabilitasi-instansi.index')}}"><i class="fas fa-hospital-alt"></i><span>Data Rehabilitasi Instansi</span></a>
+            </li>
+            <li>
                 <a href="{{route('data-skhpn.index')}}"><i class="fas fa-file-invoice"></i><span>Data SKHPN</span></a>
-                <a href="{{route('data-permohonan-tes-urine-instansi.index')}}"><i class="fas fa-file-medical"></i><span>Data Permohonan Tes Urine Instansi</span></a>
+            </li>
+            <li>
+                <a href="{{route('data-permohonan-tes-urine-instansi.index')}}"><i class="fas fa-file-medical"></i><span>Data Tes Urine Instansi</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Data Survey</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route('pertanyaan-survey.index')}}">Data Pertanyaan Survey</a></li>
+                </ul>
             </li>
             @endif
             @endauth
