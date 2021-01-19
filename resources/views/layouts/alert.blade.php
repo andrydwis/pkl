@@ -3,10 +3,12 @@
     <h4 class="alert-heading">Terima Kasih Telah Menggunakan Layanan Kami</h4>
     <p>
         Token Survey :
-    <div class="btn-group" role="group">
-        <button class="btn btn-light"><strong>{{session()->get('token')}}</strong></button>
-        <button class="btn btn-primary"><i class="far fa-copy"></i></button>
-    </div>
+        <div class="input-group">
+            <input id="token" type="text" class="form-control" disabled aria-describedby="basic-addon2" value="<?php echo session()->get('token')?>">
+            <div class="input-group-append">
+                <button onclick="CopyFunction()" onmouseout="outFunc()"class="btn btn-primary" type="button"><i id="myTooltip" class="far fa-copy"></i></button>
+            </div>
+        </div>
     </p>
     <hr>
     <p class="mb-0">Anda dapat melakukan survey dengan token tersebut <strong><a href="{{route('survey.index')}}" class="text-success">Disini</a></strong></p>

@@ -149,6 +149,22 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     @include('sweetalert::alert')
+    <script>
+        function CopyFunction() {
+            var copyText = document.getElementById("token");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("Copy Token");
+
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Berhasil Copy: " + copyText.value;
+        }
+
+        function outFunc() {
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copy Token";
+        }
+    </script>
 </body>
 
 </html>
