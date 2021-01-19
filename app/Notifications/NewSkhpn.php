@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewSkhpn extends Notification
+class NewSkhpn extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -45,7 +45,7 @@ class NewSkhpn extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new SkhpnMail($this->skhpn))->to($notifiable->email);;          
+        return (new SkhpnMail($this->skhpn))->to($notifiable->email);          
     }
 
     /**
