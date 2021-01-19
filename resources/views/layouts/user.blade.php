@@ -154,7 +154,7 @@
             var copyText = document.getElementById("token");
             copyText.select();
             copyText.setSelectionRange(0, 99999);
-            document.execCommand("Copy Token");
+            document.execCommand("copy");
 
             var tooltip = document.getElementById("myTooltip");
             tooltip.innerHTML = "Berhasil Copy: " + copyText.value;

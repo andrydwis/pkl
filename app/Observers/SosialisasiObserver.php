@@ -3,6 +3,10 @@
 namespace App\Observers;
 
 use App\Models\Sosialisasi;
+use App\Models\Survey;
+use App\Models\User;
+use App\Notifications\NewSosialisasi;
+use Illuminate\Support\Str;
 
 class SosialisasiObserver
 {
@@ -14,7 +18,20 @@ class SosialisasiObserver
      */
     public function created(Sosialisasi $sosialisasi)
     {
-        //
+        $users = User::where('role', 'tu')->get();
+
+        foreach ($users as $user) {
+            $user->notify(new NewSosialisasi($sosialisasi));
+        }
+
+        $token = 'BNN/' . Str::random(5);
+
+        $survey = new Survey();
+        $survey->token = $token;
+        $survey->status = 'available';
+        $survey->save();
+
+        session()->flash('token', $token);
     }
 
     /**

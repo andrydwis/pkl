@@ -33,7 +33,7 @@ class TesUrineInstansiMail extends Mailable
     {
         return $this->view('email.template')->with([
             'type' => 'Tes Urine Instansi',
-            'nama_lengkap' => $this->tesUrineInstansi->nama_lengkap
+            'nama_lengkap' => $this->tesUrineInstansi->nama_pemohon
         ]);;
     }
 }

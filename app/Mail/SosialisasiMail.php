@@ -33,7 +33,7 @@ class SosialisasiMail extends Mailable
     {
         return $this->view('email.template')->with([
             'type' => 'Sosialisasi',
-            'nama_lengkap' => $this->sosialisasi->nama_lengkap
+            'nama_lengkap' => $this->sosialisasi->nama_pemohon
         ]);;
     }
 }

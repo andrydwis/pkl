@@ -33,7 +33,7 @@ class RehabilitasiInstansiMail extends Mailable
     {
         return $this->view('email.template')->with([
             'type' => 'Rehabilitasi Instansis',
-            'nama_lengkap' => $this->rehabilitasiInstansi->nama_lengkap
+            'nama_lengkap' => $this->rehabilitasiInstansi->nama_lengkap_pelapor
         ]);;
     }
 }
