@@ -4,9 +4,12 @@
     <p>
         Token Survey :
         <div class="input-group">
-            <input id="token" type="text" class="form-control" disabled aria-describedby="basic-addon2" value="<?php echo session()->get('token')?>">
+            <input id="token" type="text" readonly="true" class="form-control"  value="{{session()->get('token')}}">
             <div class="input-group-append">
-                <button onclick="CopyFunction()" onmouseout="outFunc()"class="btn btn-primary" type="button"><i id="myTooltip" class="far fa-copy"></i></button>
+            <button 
+                onclick="CopyFunction()" onmouseout="outFunc()" class="btn btn-primary" type="button">
+                <span class="tooltiptext" id="myTooltip">Copy</span>                
+            </button>
             </div>
         </div>
     </p>
