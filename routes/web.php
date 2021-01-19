@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RehabilitasiPribadiController;
 use App\Http\Controllers\RehabilitasiInstansiController;
 use App\Http\Controllers\SkhpnController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SosialisasiController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\TesUrineInstansiController;
-use App\Models\RehabilitasiInstansi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,14 +83,14 @@ Route::middleware(['auth'])->group(function () {
         Route::post('data-sosialisasi/export', [SosialisasiController::class, 'export'])->name('data-sosialisasi.export');
         Route::get('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'processView'])->name('data-sosialisasi.process-view');
         Route::post('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'process'])->name('data-sosialisasi.process');
-        
+
         Route::get('data-rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'index'])->name('data-rehabilitasi-pribadi.index');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'show'])->name('data-rehabilitasi-pribadi.show');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}/edit', [RehabilitasiPribadiController::class, 'edit'])->name('data-rehabilitasi-pribadi.edit');
         Route::patch('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'update'])->name('data-rehabilitasi-pribadi.update');
         Route::delete('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'destroy'])->name('data-rehabilitasi-pribadi.destroy');
         Route::post('data-rehabilitasi-pribadi/export', [RehabilitasiPribadiController::class, 'export'])->name('data-rehabilitasi-pribadi.export');
-        
+
         Route::get('data-rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'index'])->name('data-rehabilitasi-instansi.index');
         Route::get('data-rehabilitasi-instansi/{rehabilitasiInstansi}', [RehabilitasiInstansiController::class, 'show'])->name('data-rehabilitasi-instansi.show');
         Route::get('data-rehabilitasi-instansi/{rehabilitasiInstansi}/edit', [RehabilitasiInstansiController::class, 'edit'])->name('data-rehabilitasi-instansi.edit');
@@ -112,8 +112,12 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'destroy'])->name('data-permohonan-tes-urine-instansi.destroy');
         Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
 
-        
-        
+        Route::get('pertanyaan-survey', [PertanyaanController::class, 'index'])->name('pertanyaan-survey.index');
+        Route::get('pertanyaan-survey/create', [PertanyaanController::class, 'create'])->name('pertanyaan-survey.create');
+        Route::post('pertanyaan-survey/create', [PertanyaanController::class, 'store'])->name('pertanyaan-survey.store');
+        Route::get('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'edit'])->name('pertanyaan-survey.edit');
+        Route::patch('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'update'])->name('pertanyaan-survey.update');
+        Route::delete('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'destroy'])->name('pertanyaan-survey.destroy');
     });
 });
 
