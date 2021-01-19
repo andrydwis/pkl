@@ -211,49 +211,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex align-items-center mb-5">
-                    <div class="col-sm-6 text-primary">
-                        <h1 style="text-align: center; font-size: 75px; ">
-                            Visi
-                        </h1>
-                    </div>
-                    <br>
-                    <div class="col-sm-6">
-                        <div class="card bg-white shadow rounded">
-                            <div class="card-body">
-                                <p>
-                                    Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran
-                                    gelap
-                                    narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang
-                                    berkualitas dan
-                                    kompetitif di segala bidang.
-                                </p>
-                            </div>
+            </div>
+        </section>
+        <!-- End About Us Section -->
+
+        <!-- ======= Visi Misi Section ======= -->
+        <section id="about" class="about section-bg">
+            <div class="row d-flex align-items-center mb-5">
+                <div class="col-sm-6 text-primary">
+                    <h1 style="text-align: center; font-size: 75px; ">
+                        Visi
+                    </h1>
+                </div>
+                <br>
+                <div class="col-sm-6 text-primary">
+                    <h1 style="text-align: center; font-size: 75px; ">
+                        Misi
+                    </h1>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-white shadow rounded">
+                        <div class="card-body">
+                            <p>
+                                Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang
+                                dengan
+                                melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan,
+                                Pemberantasan
+                                serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex align-items-center mb-5">
-                    <div class="col-sm-6 text-primary">
-                        <h1 style="text-align: center; font-size: 75px; ">
-                            Misi
-                        </h1>
-                    </div>
-                    <br>
-                    <div class="col-sm-6">
-                        <div class="card bg-white shadow rounded">
-                            <div class="card-body">
-                                <p>
-                                    Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang
-                                    dengan
-                                    melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan,
-                                    Pemberantasan
-                                    serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
-                                </p>
-                            </div>
+                <div class="col-sm-6">
+                    <div class="card bg-white shadow rounded">
+                        <div class="card-body">
+                            <p>
+                                Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran
+                                gelap
+                                narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang
+                                berkualitas dan
+                                kompetitif di segala bidang.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
         <!-- End About Us Section -->
 
@@ -279,7 +282,7 @@
                             <div class="email">
                                 <i class="icofont-envelope"></i>
                                 <h4>Email:</h4>
-                                <p>info@example.com</p>
+                                <p>bnnkota_malang@bnn.go.id</p>
                             </div>
 
                             <div class="phone">

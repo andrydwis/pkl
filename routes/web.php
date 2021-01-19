@@ -42,6 +42,8 @@ Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'st
 Route::get('survey', [SurveyController::class, 'index'])->name('survey.index');
 Route::post('survey', [SurveyController::class, 'verify'])->name('survey.verify');
 
+Route::view('/survey1' , 'survey.create');
+
 Route::middleware(['auth'])->group(function () {
     //dashboard
     Route::get('dashboard', DashboardController::class)->name('dashboard');
