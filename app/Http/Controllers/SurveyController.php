@@ -14,6 +14,7 @@ class SurveyController extends Controller
         return view('survey.index');
     }
 
+
     public function verify(Request $request)
     {
         $request->validate([
