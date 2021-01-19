@@ -2,28 +2,28 @@
 
 namespace App\Notifications;
 
-use App\Mail\PengaduanMail;
-use App\Models\Pengaduan;
+use App\Mail\RehabilitasiPribadiMail;
+use App\Models\RehabilitasiPribadi;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewPengaduan extends Notification implements ShouldQueue
+class NewRehabilitasiPribadi extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $pengaduan;
+    public $rehabilitasiPribadi;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Pengaduan $pengaduan)
+    public function __construct(RehabilitasiPribadi $rehabilitasiPribadi)
     {
         //
-        $this->pengaduan = $pengaduan;
+        $this->rehabilitasiPribadi = $rehabilitasiPribadi;
     }
 
     /**
@@ -45,7 +45,7 @@ class NewPengaduan extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new PengaduanMail($this->pengaduan))->to($notifiable->email);  
+        return (new RehabilitasiPribadiMail($this->rehabilitasiInstansi))->to($notifiable->email);  
     }
 
     /**

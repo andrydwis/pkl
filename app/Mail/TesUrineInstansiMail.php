@@ -2,25 +2,26 @@
 
 namespace App\Mail;
 
-use App\Models\Skhpn;
+use App\Models\TesUrineInstansi;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SkhpnMail extends Mailable
+class TesUrineInstansiMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $skhpn;
+    public $tesUrineInstansi;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Skhpn $skhpn)
+    public function __construct(TesUrineInstansi $tesUrineInstansi)
     {
-        $this->skhpn = $skhpn;
+        //
+        $this->tesUrineInstansi = $tesUrineInstansi;
     }
 
     /**
@@ -31,8 +32,8 @@ class SkhpnMail extends Mailable
     public function build()
     {
         return $this->view('email.template')->with([
-            'type' => 'SKHPN',
-            'nama_lengkap' => $this->skhpn->nama_lengkap
+            'type' => 'Tes Urine Instansi',
+            'nama_lengkap' => $this->tesUrineInstansi->nama_lengkap
         ]);;
     }
 }

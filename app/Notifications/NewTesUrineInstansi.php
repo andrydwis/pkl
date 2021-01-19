@@ -2,28 +2,28 @@
 
 namespace App\Notifications;
 
-use App\Mail\PengaduanMail;
-use App\Models\Pengaduan;
+use App\Mail\TesUrineInstansiMail;
+use App\Models\TesUrineInstansi;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewPengaduan extends Notification implements ShouldQueue
+class NewTesUrineInstansi extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $pengaduan;
+    public $tesUrineInstansi;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Pengaduan $pengaduan)
+    public function __construct(TesUrineInstansi $tesUrineInstansi)
     {
         //
-        $this->pengaduan = $pengaduan;
+        $this->tesUrineInstansi = $tesUrineInstansi;
     }
 
     /**
@@ -45,7 +45,7 @@ class NewPengaduan extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new PengaduanMail($this->pengaduan))->to($notifiable->email);  
+        return (new TesUrineInstansiMail($this->tesUrineInstansi))->to($notifiable->email);  
     }
 
     /**
