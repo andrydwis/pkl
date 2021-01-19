@@ -45,7 +45,7 @@ class NewRehabilitasiPribadi extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new RehabilitasiPribadiMail($this->rehabilitasiInstansi))->to($notifiable->email);  
+        return (new RehabilitasiPribadiMail($this->rehabilitasiPribadi))->to($notifiable->email);  
     }
 
     /**
