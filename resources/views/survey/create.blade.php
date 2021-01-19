@@ -22,40 +22,30 @@
                                     <label for="Pengaduan Masyarakat">1. Bagaimana dengan pelayanan pengaduan
                                         masyarakat</label>
                                     <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios1" value="option1">
-                                            <label class="form-check-label" for="exampleRadios1">
-                                                Sangat Puas
-                                            </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Sangat Puas</label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                                Puas
-                                            </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio2" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">Puas</label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios3" value="option3">
-                                            <label class="form-check-label" for="exampleRadios3">
-                                                Cukup Puas
-                                            </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio3" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio3">Cukup Puas</label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios4" value="option4">
-                                            <label class="form-check-label" for="exampleRadios4">
-                                                Kurang Puas
-                                            </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio4" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio4">Kurang Puas</label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios5" value="option5">
-                                            <label class="form-check-label" for="exampleRadios5">
-                                                Tidak Puas
-                                            </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio5" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio5">Tidak Puas</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
