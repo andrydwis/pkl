@@ -10,11 +10,17 @@
             <a href="{{ route('data-skhpn.index') }}" class="btn btn-primary">Kembali</a>
         </div>
         <div class="card-body">
-            <form method="POST" action="">
+            <form method="POST" action="{{route('data-skhpn.process', ['skhpn' => $skhpn])}}">
                 @csrf
+                <input type="hidden" name="nomer" value="{{$nomer}}">
                 <div class="form-group">
                     <label for="nomer_surat">Nomer Surat</label>
-                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? '' }}" autofocus>
+                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}" autofocus>
+                    @error('nomer_surat')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="nomer_ktp">Nomer KTP / NIK</label>
@@ -82,7 +88,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
-                    <input id="pekerjaan" type="text" class="form-control @error('pekerjaan'){{'is-invalid'}}@enderror" name="pekerjaan" value="{{old('pekerjaan') ?? ''}}">
+                    <input id="pekerjaan" type="text" class="form-control @error('pekerjaan'){{'is-invalid'}}@enderror" name="pekerjaan" value="{{old('pekerjaan') ?? $skhpn->pekerjaan}}">
                     @error('pekerjaan')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -91,7 +97,7 @@
                 </div>
                 <div class="form-group">
                     <label for="keperluan">Keperluan</label>
-                    <textarea name="keperluan" id="keperluan" class="form-control @error('keperluan'){{'is-invalid'}}@enderror">{{old('keperluan') ?? ''}}</textarea>
+                    <textarea name="keperluan" id="keperluan" class="form-control @error('keperluan'){{'is-invalid'}}@enderror">{{old('keperluan') ?? $skhpn->keperluan}}</textarea>
                     @error('keperluan')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -102,8 +108,8 @@
                     <label for="hasil_tes">Hasil Tes</label>
                     <select name="hasil_tes" id="hasil_tes" class="form-control @error('hasil_tes'){{'is-invalid'}}@enderror">
                         <option value="" @if(old('hasil_tes')==null){{'selected'}}@endif disabled>-- Pilih Hasil --</option>
-                        <option value="TIDAK TERINDIKASI" @if(old('hasil_tes')=='TIDAK TERINDIKASI' ){{'selected'}}@endif>TIDAK TERINDIKASI</option>
-                        <option value="TERINDIKASI" @if(old('hasil_tes')=='TERINDIKASI' ){{'selected'}}@endif>TERINDIKASI</option>
+                        <option value="TIDAK TERINDIKASI" @if(old('hasil_tes')=='TIDAK TERINDIKASI' ){{'selected'}}@elseif($detail && $detail->hasil_tes == 'TIDAK TERINDIKASI'){{'selected'}}@endif>TIDAK TERINDIKASI</option>
+                        <option value="TERINDIKASI" @if(old('hasil_tes')=='TERINDIKASI' ){{'selected'}}@elseif($detail && $detail->hasil_tes == 'TERINDIKASI'){{'selected'}}@endif>TERINDIKASI</option>
                     </select>
                     @error('hasil_tes')
                     <div class="invalid-feedback">
@@ -112,9 +118,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="dast-10">DAST-10</label>
-                    <input id="dast-10" type="text" class="form-control @error('dast-10'){{'is-invalid'}}@enderror" name="dast-10" value="{{old('dast-10') ?? ''}}" placeholder="Score 0 ( tidak ada masalah )">
-                    @error('dast-10')
+                    <label for="dast_10">DAST-10</label>
+                    <input id="dast_10" type="text" class="form-control @error('dast_10'){{'is-invalid'}}@enderror" name="dast_10" value="{{old('dast_10') ?? $detail->dast_10 ?? ''}}" placeholder="Score 0 ( tidak ada masalah )">
+                    @error('dast_10')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
@@ -151,6 +157,12 @@
                         <input type="checkbox" name="thc" class="custom-switch-input">
                         <span class="custom-switch-indicator"></span>
                         <span class="custom-switch-description">THC</span>
+                    </label>
+                    <br>
+                    <label class="custom-switch mt-2">
+                        <input type="checkbox" name="benzodiazepine" class="custom-switch-input">
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Benzodiazepine</span>
                     </label>
                 </div>
                 <div class="form-group">

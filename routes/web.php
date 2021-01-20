@@ -44,8 +44,6 @@ Route::get('survey/{token}', [SurveyController::class, 'answerView'])->name('sur
 Route::post('survey/{token}', [SurveyController::class, 'answer'])->name('survey.answer');
 Route::post('survey', [SurveyController::class, 'verify'])->name('survey.verify');
 
-Route::get('download', [SkhpnController::class, 'word']);
-
 Route::middleware(['auth'])->group(function () {
     //dashboard
     Route::get('dashboard', DashboardController::class)->name('dashboard');
@@ -109,7 +107,7 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('data-skhpn/{skhpn}', [SkhpnController::class, 'destroy'])->name('data-skhpn.destroy');
         Route::post('data-skhpn/export', [SkhpnController::class, 'export'])->name('data-skhpn.export');
         Route::get('data-skhpn/{skhpn}/process', [SkhpnController::class, 'processView'])->name('data-skhpn.process-view');
-        //Route::post('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'process'])->name('data-sosialisasi.process');
+        Route::post('data-skhpn/{skhpn}/process', [SkhpnController::class, 'process'])->name('data-skhpn.process');
 
         Route::get('data-permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'index'])->name('data-permohonan-tes-urine-instansi.index');
         Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'show'])->name('data-permohonan-tes-urine-instansi.show');
