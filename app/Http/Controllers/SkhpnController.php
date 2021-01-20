@@ -182,7 +182,6 @@ class SkhpnController extends Controller
         $templateProcessor = new TemplateProcessor($template);
 
         $templateProcessor->setValue('nama_lengkap', 'Andry Dwi S');
-        $templateProcessor->setValue('nim', '0123');
 
         $filename = 'output.docx';
         header("Content-Description: File Transfer");

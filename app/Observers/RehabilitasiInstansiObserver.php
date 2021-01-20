@@ -24,7 +24,7 @@ class RehabilitasiInstansiObserver
             $user->notify(new NewRehabilitasiInstansi($rehabilitasiInstansi));
         }
 
-        $token = 'BNN/' . Str::random(5);
+        $token = 'BNN-' . Str::random(5);
 
         $survey = new Survey();
         $survey->token = $token;

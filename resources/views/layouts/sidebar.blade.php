@@ -46,9 +46,10 @@
                 <a href="{{route('data-permohonan-tes-urine-instansi.index')}}"><i class="fas fa-file-medical"></i><span>Data Tes Urine Instansi</span></a>
             </li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Data Survey</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-poll"></i> <span>Data Survey</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{route('pertanyaan-survey.index')}}">Data Pertanyaan Survey</a></li>
+                    <li><a class="nav-link" href="{{route('pertanyaan-survey.index')}}"><span>Data Pertanyaan Survey</span></a></li>
+                    <li><a class="nav-link" href="{{route('survey.statistic')}}"><span>Statistik Survey</span></a></li>
                 </ul>
             </li>
             @endif
