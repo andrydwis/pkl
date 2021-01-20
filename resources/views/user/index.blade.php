@@ -218,18 +218,10 @@
         <!-- ======= Visi Misi Section ======= -->
         <section id="about" class="about section-bg">
             <div class="row d-flex align-items-center mb-5">
-                <div class="col-sm-6 text-primary">
-                    <h1 style="text-align: center; font-size: 75px; ">
-                        Visi
-                    </h1>
-                </div>
-                <br>
-                <div class="col-sm-6 text-primary">
-                    <h1 style="text-align: center; font-size: 75px; ">
-                        Misi
-                    </h1>
-                </div>
                 <div class="col-sm-6">
+                    <div class="section-title">
+                        <h2>Visi</h2>
+                    </div>
                     <div class="card bg-white shadow rounded">
                         <div class="card-body">
                             <p>
@@ -242,7 +234,11 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="col-sm-6">
+                    <div class="section-title">
+                        <h2>Misi</h2>
+                    </div>
                     <div class="card bg-white shadow rounded">
                         <div class="card-body">
                             <p>
@@ -256,7 +252,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
         <!-- End About Us Section -->
 
