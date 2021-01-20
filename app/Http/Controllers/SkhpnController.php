@@ -175,6 +175,15 @@ class SkhpnController extends Controller
         return Excel::download(new SkhpnExport($request->tanggal_dari . ' 00:00:00', $request->tanggal_sampai . ' 23:59:59'), 'skhpn ' . $request->tanggal_dari . ' - ' . $request->tanggal_sampai . '.xlsx');
     }
 
+    public function processView(Skhpn $skhpn)
+    {
+        $data = [
+            'skhpn' => $skhpn,
+        ];
+
+        return view('skhpn.process', $data);
+    }
+
     public function word()
     {
         $template = public_path('template/template.docx');
