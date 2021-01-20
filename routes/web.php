@@ -40,9 +40,11 @@ Route::get('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'cre
 Route::post('rehabilitasi-instansi', [RehabilitasiInstansiController::class, 'store'])->name('rehabilitasi-instansi.store');
 
 Route::get('survey', [SurveyController::class, 'index'])->name('survey.index');
+Route::get('survey/{token}', [SurveyController::class, 'answerView'])->name('survey.answer-view');
+Route::post('survey/{token}', [SurveyController::class, 'answer'])->name('survey.answer');
 Route::post('survey', [SurveyController::class, 'verify'])->name('survey.verify');
 
-Route::view('/survey1' , 'survey.create');
+Route::get('download', [SkhpnController::class, 'word']);
 
 Route::middleware(['auth'])->group(function () {
     //dashboard
@@ -120,6 +122,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'edit'])->name('pertanyaan-survey.edit');
         Route::patch('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'update'])->name('pertanyaan-survey.update');
         Route::delete('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'destroy'])->name('pertanyaan-survey.destroy');
+
+        Route::get('survey-statistic', [SurveyController::class, 'statistic'])->name('survey.statistic');
     });
 });
 

@@ -24,7 +24,7 @@ class SosialisasiObserver
             $user->notify(new NewSosialisasi($sosialisasi));
         }
 
-        $token = 'BNN/' . Str::random(5);
+        $token = 'BNN-' . Str::random(5);
 
         $survey = new Survey();
         $survey->token = $token;

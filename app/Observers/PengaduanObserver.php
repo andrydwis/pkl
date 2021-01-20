@@ -25,7 +25,7 @@ class PengaduanObserver
             $user->notify(new NewPengaduan($pengaduan));
         }
 
-        $token = 'BNN/' . Str::random(5);
+        $token = 'BNN-' . Str::random(5);
 
         $survey = new Survey();
         $survey->token = $token;

@@ -25,7 +25,7 @@ class SkhpnObserver
             $user->notify(new NewSkhpn($skhpn));
         }
 
-        $token = 'BNN/' . Str::random(5);
+        $token = 'BNN-' . Str::random(5);
 
         $survey = new Survey();
         $survey->token = $token;

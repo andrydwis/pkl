@@ -25,7 +25,7 @@ class TesUrineInstansiObserver
             $user->notify(new NewTesUrineInstansi($tesUrineInstansi));
         }
 
-        $token = 'BNN/' . Str::random(5);
+        $token = 'BNN-' . Str::random(5);
 
         $survey = new Survey();
         $survey->token = $token;
