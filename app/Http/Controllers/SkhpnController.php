@@ -252,7 +252,7 @@ class SkhpnController extends Controller
         $templateProcessor->setValue('pekerjaan', $request->pekerjaan);
         $templateProcessor->setValue('alamat', $request->alamat);
         $templateProcessor->setValue('dast_10', $request->dast_10);
-        $templateProcessor->setValue('hasil_test', $request->hasil_tes);
+        $templateProcessor->setValue('hasil_tes', $request->hasil_tes);
         $templateProcessor->setValue('nama_lengkap', $request->nama_lengkap);
         $templateProcessor->setValue('keperluan', $request->keperluan);
         $templateProcessor->setValue('tanggal_terbit', Carbon::now()->isoFormat('D MMMM Y'));
@@ -300,8 +300,10 @@ class SkhpnController extends Controller
         header('Content-Transfer-Encoding: binary');
         header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
         header('Expires: 0');
+        ob_clean();
         $templateProcessor->saveAs('php://output');
-
+        exit;
+        
         return back();
     }
 }
