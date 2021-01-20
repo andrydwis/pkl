@@ -19,7 +19,7 @@ class RehabilitasiPribadiObserver
     public function created(RehabilitasiPribadi $rehabilitasiPribadi)
     {
         //
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu', 'rehabilitasi'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewRehabilitasiPribadi($rehabilitasiPribadi));

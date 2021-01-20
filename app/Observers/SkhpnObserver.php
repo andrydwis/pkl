@@ -19,7 +19,7 @@ class SkhpnObserver
     public function created(Skhpn $skhpn)
     {
         //
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu', 'rehabilitasi'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewSkhpn($skhpn));

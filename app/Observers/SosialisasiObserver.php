@@ -18,7 +18,7 @@ class SosialisasiObserver
      */
     public function created(Sosialisasi $sosialisasi)
     {
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu', 'p2m'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewSosialisasi($sosialisasi));
