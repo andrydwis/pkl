@@ -110,7 +110,7 @@
                     @else
                     <div class="alert alert-dark show fade">
                         <div class="alert-body">
-                        Lampiran Surat Undangan tidak dicantumkan
+                            Lampiran Surat Undangan tidak dicantumkan
                         </div>
                     </div>
                     @endif
