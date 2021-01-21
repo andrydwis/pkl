@@ -45,9 +45,6 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
                     <h1>Badan Narkotika Nasional Kota Malang</h1>
-                    <h2>
-                        We are team of talanted designers making websites with Bootstrap
-                    </h2>
                     <div class="d-lg-flex">
                         <a href="https://bnn.go.id/" class="btn-get-started scrollto">Web BNN Pusat</a>
                         <a href="https://www.youtube.com/watch?v=c0-5Oxb5oyE" class="venobox btn-watch-video"
@@ -90,7 +87,6 @@
                 <div class="section-title">
                     <h2>Layanan</h2>
                 </div>
-
                 <div class="row">
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box" id="pengaduan-masyarakat">
@@ -100,7 +96,6 @@
                             </h2>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                         data-aos-delay="200">
                         <div class="icon-box" id="permohonan-sosialisasi">
@@ -110,7 +105,6 @@
                             </h2>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitasi-pribadi">
@@ -120,7 +114,6 @@
                             </h2>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
                         <div class="icon-box" id="permohonan-rehabilitasi-instansi">
@@ -130,7 +123,6 @@
                             </h2>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="500">
                         <div class="icon-box" id="skhpn">
@@ -140,7 +132,6 @@
                             </h2>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="500">
                         <div class="icon-box" id="permohonan-tes-urine-mandiri">
@@ -152,7 +143,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="600">
                         <div class="icon-box" id="survey-kepuasan-pasien">
@@ -217,41 +207,39 @@
 
         <!-- ======= Visi Misi Section ======= -->
         <section id="about" class="about section-bg">
-            <div class="row d-flex align-items-center mb-5">
-                <div class="col-sm-6 text-primary">
-                    <h1 style="text-align: center; font-size: 75px; ">
-                        Visi
-                    </h1>
-                </div>
-                <br>
-                <div class="col-sm-6 text-primary">
-                    <h1 style="text-align: center; font-size: 75px; ">
-                        Misi
-                    </h1>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-white shadow rounded">
-                        <div class="card-body">
-                            <p>
-                                Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang
-                                dengan
-                                melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan,
-                                Pemberantasan
-                                serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
-                            </p>
+            <div class="container" data-aos="fade-up">
+                <div class="row d-flex align-items-start">
+                    <div class="col-sm-6">
+                        <div class="section-title">
+                            <h2>Visi</h2>
+                        </div>
+                        <div class="card bg-white shadow rounded">
+                            <div class="card-body d-flex align-items-center" style="height: 250px;">
+                                <p class="">
+                                    Bersama instansi pemerintah daerah, swasta, dan komponen masyarakat di Kota Malang
+                                    dengan
+                                    melaksanakan Pencegahan, Pemberdayaan masyarakat, Penjangkauan dan pendampingan,
+                                    Pemberantasan
+                                    serta di dukung tata kelola pemerintahan yang akuntabel dalam rangka P4GN.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-white shadow rounded">
-                        <div class="card-body">
-                            <p>
-                                Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran
-                                gelap
-                                narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang
-                                berkualitas dan
-                                kompetitif di segala bidang.
-                            </p>
+                    <br>
+                    <div class="col-sm-6">
+                        <div class="section-title">
+                            <h2>Misi</h2>
+                        </div>
+                        <div class="card bg-white shadow rounded">
+                            <div class="card-body d-flex align-items-center" style="height: 250px;">
+                                <p>
+                                    Mewujudkan Masyarakat Kota Malang yang sehat, bebas dari penyalagunaan dan peredaran
+                                    gelap
+                                    narkotika, dalam rangka mendukung terciptanya sumber daya manusia Indonesia yang
+                                    berkualitas dan
+                                    kompetitif di segala bidang.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

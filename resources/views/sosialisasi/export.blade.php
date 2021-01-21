@@ -10,8 +10,8 @@
             <th>Nama Pemohon</th>
             <th>No HP Pemohon</th>
             <th>Jumlah Peserta</th>
-            <th>Tema Kegiatan</th>     
-            <th>Status</th>       
+            <th>Tema Kegiatan</th>
+            <th>Status</th>
             <th>Keterangan</th>
         </tr>
     </thead>

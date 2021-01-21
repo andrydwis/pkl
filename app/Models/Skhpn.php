@@ -21,4 +21,9 @@ class Skhpn extends Model
         'tanggal_permohonan',
         'keperluan'
     ];
+
+    public function detail()
+    {
+        return $this->hasOne(SkhpnDetail::class);
+    }
 }

@@ -19,7 +19,7 @@ class PengaduanObserver
     public function created(Pengaduan $pengaduan)
     {
         //
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewPengaduan($pengaduan));

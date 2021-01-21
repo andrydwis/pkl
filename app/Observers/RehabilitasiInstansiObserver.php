@@ -18,7 +18,7 @@ class RehabilitasiInstansiObserver
      */
     public function created(RehabilitasiInstansi $rehabilitasiInstansi)
     {
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu', 'rehabilitasi'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewRehabilitasiInstansi($rehabilitasiInstansi));

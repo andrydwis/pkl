@@ -38,23 +38,29 @@
                                     </div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                    <input id="tempat_lahir" type="text" class="form-control @error('tempat_lahir'){{'is-invalid'}}@enderror" name="tempat_lahir" value="{{old('tempat_lahir') ?? ''}}">
-                                    @error('tempat_lahir')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="tempat_lahir">Tempat Lahir</label>
+                                            <input id="tempat_lahir" type="text" class="form-control @error('tempat_lahir'){{'is-invalid'}}@enderror" name="tempat_lahir" value="{{old('tempat_lahir') ?? ''}}">
+                                            @error('tempat_lahir')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
                                     </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="ttl">Tanggal Lahir</label>
-                                    <input id="ttl" type="date" class="form-control @error('ttl'){{'is-invalid'}}@enderror" name="ttl" value="{{old('ttl') ?? ''}}">
-                                    @error('ttl')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="ttl">Tanggal Lahir</label>
+                                            <input id="ttl" type="date" class="form-control @error('ttl'){{'is-invalid'}}@enderror" name="ttl" value="{{old('ttl') ?? ''}}">
+                                            @error('ttl')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
                                     </div>
-                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="jenis_kelamin">Jenis Kelamin</label>

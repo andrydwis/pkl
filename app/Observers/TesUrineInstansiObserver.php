@@ -19,7 +19,7 @@ class TesUrineInstansiObserver
      */
     public function created(TesUrineInstansi $tesUrineInstansi)
     {
-        $users = User::where('role', 'tu')->get();
+        $users = User::whereIn('role', ['tu', 'p2m'])->get();
 
         foreach ($users as $user) {
             $user->notify(new NewTesUrineInstansi($tesUrineInstansi));
