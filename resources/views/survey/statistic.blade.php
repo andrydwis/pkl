@@ -11,33 +11,14 @@
         <div class="card-body">
             <div class="row">
                 @foreach($stats as $stat)
-                <div class="col-sm-4">
+                <div class="col-sm-6">
 
                     <div class="card card-primary">
                         <div class="card-header flex-row justify-content-between">
                             <h4>{{$stat->pertanyaan}}</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group">
-                                <label for="">Sangat Puas</label>
-                                <button class="btn btn-light">{{$stat->jawabans->where('jawaban', 5)->count()}}</button>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Puas</label>
-                                <button class="btn btn-light">{{$stat->jawabans->where('jawaban', 4)->count()}}</button>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Cukup Puas</label>
-                                <button class="btn btn-light">{{$stat->jawabans->where('jawaban', 3)->count()}}</button>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Kurang Puas</label>
-                                <button class="btn btn-light">{{$stat->jawabans->where('jawaban', 2)->count()}}</button>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Tidak Puas</label>
-                                <button class="btn btn-light">{{$stat->jawabans->where('jawaban', 1)->count()}}</button>
-                            </div>
+                            <canvas class="mt-5" id="{{$stat->id}}"></canvas>
                         </div>
                     </div>
                 </div>
@@ -46,4 +27,57 @@
         </div>
     </div>
 </div>
+@endsection
+@section('customJS')
+@foreach ($stats as $stat)
+@php
+$sangat_puas = $stat->jawabans->where('jawaban', 5)->count();
+$puas = $stat->jawabans->where('jawaban', 4)->count();
+$cukup_puas = $stat->jawabans->where('jawaban', 3)->count();
+$kurang_puas = $stat->jawabans->where('jawaban', 2)->count();
+$tidak_puas = $stat->jawabans->where('jawaban', 1)->count();
+
+@endphp
+<script>
+    console.log({{$stat->pertanyaans}});
+    var ctx = document.getElementById('{{$stat->id}}').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Sangat Puas', 'Puas', 'Cukup Puas', 'Kurang Puas', 'Tidak Puas'],
+            datasets: [{
+                label: '# of Survey',
+                data: [{{$sangat_puas}}, {{$puas}}, {{$cukup_puas}}, {{$kurang_puas}}, {{$tidak_puas}}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+@endforeach
+
 @endsection

@@ -79,9 +79,14 @@ class SurveyController extends Controller
     public function statistic()
     {
         $data = [
-            'stats' => Pertanyaan::with('jawabans')->get()
+            'stats' => Pertanyaan::with('jawabans')->get(),
+            'survey' => Jawaban::get(),
+            'jumlah' => Pertanyaan::with('jawabans')->count(),
         ];
-        
+
+        // ['stats'][0]->jawabans[0];
+        //return $data;
+        // ['stats'][0]->jawabans->count();
         return view('survey.statistic', $data);
     }
 }

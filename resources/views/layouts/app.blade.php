@@ -48,6 +48,8 @@
 
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    <!-- Chart JS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
     <!-- CustomJS -->
     @yield('customJS')
