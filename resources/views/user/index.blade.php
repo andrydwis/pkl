@@ -16,9 +16,37 @@
             height: auto;
         }
 
-        .carousel-cell {
-            width: 50%;
-            padding: 1rem;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .carousel-image {
+            display: block;
+            height: 300px;
+            /* set min-width, allow images to set cell width */
+            min-width: 150px;
+            max-width: 100%;
+            margin-right: 10px;
+            /* vertically center */
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .carousel.is-fullscreen .carousel-image {
+            height: auto;
+            max-height: 100%;
         }
 
         .icon {
@@ -54,22 +82,19 @@
                 </div>
                 <!-- ======= SOP Services ======= -->
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="carousel" data-flickity='{ "autoPlay": true }'>
-                        <div class="carousel-cell">
-                            <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
-                        </div>
-                        <div class="carousel-cell">
-                            <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
-                        </div>
-                        <div class="carousel-cell">
-                            <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
-                        </div>
-                        <div class="carousel-cell">
-                            <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
-                        </div>
-                        <div class="carousel-cell">
-                            <a href="assets/img/rehab_rawat_jalan.jpeg"><img src="assets/img/rehab_rawat_jalan.jpeg"></a>
-                        </div>
+                    <div class="carousel" data-flickity='{ "autoPlay": true, "lazyLoad": 2 }'>
+                        <img class="carousel-image" data-flickity-lazyload="assets/img/rehab_TAT.jpeg">
+                        <img class="carousel-image" data-flickity-lazyload="assets/img/kegiatan.jpeg">
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/720/540/?image=56" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/800/500/?image=1084" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/720/540/?image=1080" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/640/640/?image=1074" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/720/540/?image=1069" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/800/500/?image=1062" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/720/540/?image=1002" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/640/640/?image=935" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/720/540/?image=855" />
+                        <img class="carousel-image" data-flickity-lazyload="https://picsum.photos/640/640/?image=824" />
                     </div>
                 </div>
                 <!-- End SOP Services Section -->
