@@ -1472,14 +1472,10 @@
                                                                                         -ms-text-size-adjust: 100%;
                                                                                         border-width: 0px;
                                                                                         border: 0px;
-                                                                                      " data-hs-link-id="0"><img src="https://upload.wikimedia.org/wikipedia/id/c/cf/Logo_BNN.png" class="hs-image-widget" style="
-                                                                                          vertical-align: bottom;
-                                                                                          -ms-interpolation-mode: bicubic;
-                                                                                          max-height: 67px;
-                                                                                          max-width: 302px;
-                                                                                          border-width: 0px;
-                                                                                          border: 0px;
-                                                                                        " width="302" srcset="" sizes="(max-width: 302px) 100vw, 302px" /></a>
+                                                                                      " data-hs-link-id="0">
+                                                                                      <img src="https://upload.wikimedia.org/wikipedia/id/c/cf/Logo_BNN.png" alt="LOGO BNN" style="width:50%; height:50%; margin-bottom: 25px; position:static"/>
+                                                                                      
+                                                                                        </a>
                                                                                 </div>
                                                                               </div>
                                                                               <!--end layout-widget-wrapper -->

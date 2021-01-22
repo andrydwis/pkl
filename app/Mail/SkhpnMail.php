@@ -30,7 +30,7 @@ class SkhpnMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.template')->with([
+        return $this->view('email.template')->priority(1)->with([
             'type' => 'SKHPN',
             'nama_lengkap' => $this->skhpn->nama_lengkap
         ]);;

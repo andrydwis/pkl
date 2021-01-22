@@ -31,7 +31,7 @@ class RehabilitasiPribadiMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.template')->with([
+        return $this->view('email.template')->priority(1)->with([
             'type' => 'Rehabilitasi Pribadi',
             'nama_lengkap' => $this->rehabilitasiPribadi->nama_lengkap
         ]);;

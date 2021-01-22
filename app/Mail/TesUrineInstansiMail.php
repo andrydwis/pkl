@@ -31,7 +31,7 @@ class TesUrineInstansiMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.template')->with([
+        return $this->view('email.template')->priority(1)->with([
             'type' => 'Tes Urine Instansi',
             'nama_lengkap' => $this->tesUrineInstansi->nama_pemohon
         ]);;

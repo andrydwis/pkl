@@ -31,7 +31,7 @@ class SosialisasiMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.template')->with([
+        return $this->view('email.template')->priority(1)->with([
             'type' => 'Sosialisasi',
             'nama_lengkap' => $this->sosialisasi->nama_pemohon
         ]);;
