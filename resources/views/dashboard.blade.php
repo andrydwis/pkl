@@ -156,7 +156,7 @@
             <div class="card card-statistic-2">
                 <div class="card-stats">
                     <div class="card-stats-title">
-                        Rangkuman Data Rehabilitasi SKHPN
+                        Rangkuman Data SKHPN
                     </div>
                     <div class="card-stats-items">
                         <div class="card-stats-item">
@@ -178,7 +178,7 @@
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Total Rehabilitasi SKHPN</h4>
+                        <h4>Total SKHPN</h4>
                     </div>
                     <div class="card-body">
                         {{$skhpn['total_all']}}

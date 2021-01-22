@@ -26,7 +26,7 @@ class SkhpnController extends Controller
     {
         //
         $data = [
-            'skhpns' => Skhpn::all()
+            'skhpns' => Skhpn::orderBy('id', 'desc')->get()
         ];
 
         return view('skhpn.index', $data);

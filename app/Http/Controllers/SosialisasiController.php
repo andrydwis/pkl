@@ -21,7 +21,7 @@ class SosialisasiController extends Controller
     public function index()
     {
         $data = [
-            'sosialisasis' => Sosialisasi::all()
+            'sosialisasis' => Sosialisasi::orderBy('id', 'desc')->get()
         ];
 
         // return $data;
