@@ -17,7 +17,7 @@ class PertanyaanController extends Controller
     {
         //
         $data = [
-            'pertanyaans' => Pertanyaan::all()
+            'pertanyaans' => Pertanyaan::orderBy('id', 'desc')->get()
         ];
 
         return view('pertanyaan.index', $data);

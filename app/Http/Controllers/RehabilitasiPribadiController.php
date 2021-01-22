@@ -19,7 +19,7 @@ class RehabilitasiPribadiController extends Controller
     {
         //
         $data = [
-            'rehabilitasis' => RehabilitasiPribadi::all()
+            'rehabilitasis' => RehabilitasiPribadi::orderBy('id', 'desc')->get()
         ];
 
         return view('rehabilitasi-pribadi.index', $data);
