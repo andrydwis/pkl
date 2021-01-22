@@ -60,9 +60,15 @@ class SurveyController extends Controller
 
     public function answer($token, Request $request)
     {
-        $verify = Survey::where('token', $token)->first();
-        $verify->status = 'used';
-        $verify->save();
+        $jumlah = Pertanyaan::all()->count();
+
+        $request->validate([
+            'jawaban' => ['required', 'array', 'min:'.$jumlah],
+        ]);
+
+        // $verify = Survey::where('token', $token)->first();
+        // $verify->status = 'used';
+        // $verify->save();
         
         foreach($request->jawaban as $key => $value){
             $jawaban = new Jawaban();

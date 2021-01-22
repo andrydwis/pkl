@@ -18,7 +18,7 @@ class RehabilitasiInstansiController extends Controller
     public function index()
     {
         $data = [
-            'rehabilitasis' => RehabilitasiInstansi::all(),
+            'rehabilitasis' => RehabilitasiInstansi::orderBy('id', 'desc')->get()
         ];
 
         return view('rehabilitasi-instansi.index', $data);

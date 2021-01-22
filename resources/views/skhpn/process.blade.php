@@ -166,6 +166,48 @@
                     </label>
                 </div>
                 <div class="form-group">
+                    <label for="kepala_bnn">Kepala BNN</label>
+                    <select name="kepala_bnn" id="kepala_bnn" class="form-control @error('kepala_bnn'){{'is-invalid'}}@enderror">
+                        <option value="" @if(old('kepala_bnn')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        @foreach($kepala_bnns as $kepala_bnn)
+                        <option value="{{$kepala_bnn->id}}" @if(old('kepala_bnn')==$kepala_bnn->id){{'selected'}}@endif>{{$kepala_bnn->nama_lengkap}}</option>
+                        @endforeach
+                    </select>
+                    @error('kepala_bnn')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="dokter_pemeriksa">Dokter Pemeriksa</label>
+                    <select name="dokter_pemeriksa" id="dokter_pemeriksa" class="form-control @error('dokter_pemeriksa'){{'is-invalid'}}@enderror">
+                        <option value="" @if(old('dokter_pemeriksa')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        @foreach($dokter_pemeriksas as $dokter_pemeriksa)
+                        <option value="{{$dokter_pemeriksa->id}}" @if(old('dokter_pemeriksa')==$dokter_pemeriksa->id){{'selected'}}@endif>{{$dokter_pemeriksa->nama_lengkap}}</option>
+                        @endforeach
+                    </select>
+                    @error('dokter_pemeriksa')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="petugas_pemeriksa">Petugas Pemeriksa</label>
+                    <select name="petugas_pemeriksa" id="petugas_pemeriksa" class="form-control @error('petugas_pemeriksa'){{'is-invalid'}}@enderror">
+                        <option value="" @if(old('petugas_pemeriksa')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        @foreach($petugas_pemeriksas as $petugas_pemeriksa)
+                        <option value="{{$petugas_pemeriksa->id}}" @if(old('petugas_pemeriksa')==$petugas_pemeriksa->id){{'selected'}}@endif>{{$petugas_pemeriksa->nama_lengkap}}</option>
+                        @endforeach
+                    </select>
+                    @error('petugas_pemeriksa')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
                         Proses
                     </button>

@@ -39,8 +39,14 @@
             <li>
                 <a href="{{route('data-rehabilitasi-instansi.index')}}"><i class="fas fa-hospital-alt"></i><span>Data Rehabilitasi Instansi</span></a>
             </li>
-            <li>
-                <a href="{{route('data-skhpn.index')}}"><i class="fas fa-file-invoice"></i><span>Data SKHPN</span></a>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-invoice"></i> <span>Data SKHPN</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route('data-skhpn.index')}}"><span>Data SKHPN</span></a></li>
+                    <li><a class="nav-link" href="{{route('data-kepala-bnn.index')}}"><span>Data Kepala BNN</span></a></li>
+                    <li><a class="nav-link" href="{{route('data-dokter-pemeriksa.index')}}"><span>Data Dokter Pemeriksa</span></a></li>
+                    <li><a class="nav-link" href="{{route('data-petugas-pemeriksa.index')}}"><span>Data Petugas Pemeriksa</span></a></li>
+                </ul>
             </li>
             <li>
                 <a href="{{route('data-permohonan-tes-urine-instansi.index')}}"><i class="fas fa-file-medical"></i><span>Data Tes Urine Instansi</span></a>

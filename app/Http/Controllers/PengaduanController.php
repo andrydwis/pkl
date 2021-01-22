@@ -22,7 +22,7 @@ class PengaduanController extends Controller
     {
         //
         $data = [
-            'pengaduans' => Pengaduan::all()->sortByDesc('id')
+            'pengaduans' => Pengaduan::orderBy('id', 'desc')->get()
         ];
 
         return view('pengaduan.index', $data);

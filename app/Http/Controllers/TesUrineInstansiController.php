@@ -18,7 +18,7 @@ class TesUrineInstansiController extends Controller
     public function index()
     {
         $data = [
-            'tes_urine_instansis' => TesUrineInstansi::all()
+            'tes_urine_instansis' => TesUrineInstansi::orderBy('id', 'desc')->get()
         ];
 
         return view('tes-urine-instansi.index', $data);
