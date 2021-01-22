@@ -72,6 +72,5 @@ class DatabaseSeeder extends Seeder
             'pertanyaan' => 'Bagaimana dengan pelayanan permohonan tes urine instansi?',
         ]);
             
-        
     }
 }

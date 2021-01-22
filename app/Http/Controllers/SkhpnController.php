@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Exports\SkhpnExport;
+use App\Models\DokterPemeriksaUser;
+use App\Models\KepalaBnnUser;
+use App\Models\PetugasPemeriksaUser;
 use App\Models\Skhpn;
 use App\Models\SkhpnDetail;
 use Carbon\Carbon;
@@ -200,6 +203,9 @@ class SkhpnController extends Controller
             'nomer_surat' => $nomer_surat,
             'skhpn' => $skhpn,
             'detail' => $skhpnDetail,
+            'kepala_bnns' => KepalaBnnUser::all(),
+            'dokter_pemeriksas' => DokterPemeriksaUser::all(),
+            'petugas_pemeriksas' => PetugasPemeriksaUser::all()
         ];
 
         return view('skhpn.process', $data);
@@ -216,7 +222,10 @@ class SkhpnController extends Controller
             'alamat' => ['required'],
             'keperluan' => ['required'],
             'hasil_tes' => ['required'],
-            'dast_10' => ['required']
+            'dast_10' => ['required'],
+            'kepala_bnn' => ['required'],
+            'dokter_pemeriksa' => ['required'],
+            'petugas_pemeriksa' => ['required']
         ]);
 
         $check = SkhpnDetail::where('nomer_surat', $request->nomer_surat)->first();
@@ -225,6 +234,9 @@ class SkhpnController extends Controller
             $check->hasil_tes = $request->hasil_tes;
             $check->dast_10 =  $request->dast_10;
             $check->tanggal_terbit = Carbon::now()->isoFormat('Y-M-D');
+            $check->kepala_bnn_id = $request->kepala_bnn;
+            $check->dokter_pemeriksa_id = $request->dokter_pemeriksa;
+            $check->petugas_pemeriksa_id = $request->petugas_pemeriksa;
             $check->save();
         } else {
             $detail =  new SkhpnDetail();
@@ -235,6 +247,9 @@ class SkhpnController extends Controller
             $detail->hasil_tes = $request->hasil_tes;
             $detail->dast_10 =  $request->dast_10;
             $detail->tanggal_terbit = Carbon::now()->isoFormat('Y-M-D');
+            $detail->kepala_bnn_id = $request->kepala_bnn;
+            $detail->dokter_pemeriksa_id = $request->dokter_pemeriksa;
+            $detail->petugas_pemeriksa_id = $request->petugas_pemeriksa;
             $detail->save();
         }
 

@@ -42,6 +42,11 @@
                                         <input type="radio" id="jawaban5-{{$pertanyaan->id}}" name="jawaban[{{$pertanyaan->id}}]w" class="custom-control-input" value=1>
                                         <label class="custom-control-label" for="jawaban5-{{$pertanyaan->id}}">Tidak Puas</label>
                                     </div>
+                                    @error('jawaban')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                 </div>
                                 @endforeach
                                 <div class="form-group">

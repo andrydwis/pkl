@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DokterPemeriksaUserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KepalaBnnUserController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\PetugasPemeriksaUserController;
 use App\Http\Controllers\RehabilitasiPribadiController;
 use App\Http\Controllers\RehabilitasiInstansiController;
 use App\Http\Controllers\SkhpnController;
@@ -108,6 +111,27 @@ Route::middleware(['auth'])->group(function () {
         Route::post('data-skhpn/export', [SkhpnController::class, 'export'])->name('data-skhpn.export');
         Route::get('data-skhpn/{skhpn}/process', [SkhpnController::class, 'processView'])->name('data-skhpn.process-view');
         Route::post('data-skhpn/{skhpn}/process', [SkhpnController::class, 'process'])->name('data-skhpn.process');
+
+        Route::get('data-kepala-bnn', [KepalaBnnUserController::class, 'index'])->name('data-kepala-bnn.index');
+        Route::get('data-kepala-bnn/create', [KepalaBnnUserController::class, 'create'])->name('data-kepala-bnn.create');
+        Route::post('data-kepala-bnn/create', [KepalaBnnUserController::class, 'store'])->name('data-kepala-bnn.store');
+        Route::get('data-kepala-bnn/{kepalaBnnUser}/edit', [KepalaBnnUserController::class, 'edit'])->name('data-kepala-bnn.edit');
+        Route::patch('data-kepala-bnn/{kepalaBnnUser}/edit', [KepalaBnnUserController::class, 'update'])->name('data-kepala-bnn.update');
+        Route::delete('data-kepala-bnn/{kepalaBnnUser}', [KepalaBnnUserController::class, 'destroy'])->name('data-kepala-bnn.destroy');
+
+        Route::get('data-dokter-pemeriksa', [DokterPemeriksaUserController::class, 'index'])->name('data-dokter-pemeriksa.index');
+        Route::get('data-dokter-pemeriksa/create', [DokterPemeriksaUserController::class, 'create'])->name('data-dokter-pemeriksa.create');
+        Route::post('data-dokter-pemeriksa/create', [DokterPemeriksaUserController::class, 'store'])->name('data-dokter-pemeriksa.store');
+        Route::get('data-dokter-pemeriksa/{dokterPemeriksaUser}/edit', [DokterPemeriksaUserController::class, 'edit'])->name('data-dokter-pemeriksa.edit');
+        Route::patch('data-dokter-pemeriksa/{dokterPemeriksaUser}/edit', [DokterPemeriksaUserController::class, 'update'])->name('data-dokter-pemeriksa.update');
+        Route::delete('data-dokter-pemeriksa/{dokterPemeriksaUser}', [DokterPemeriksaUserController::class, 'destroy'])->name('data-dokter-pemeriksa.destroy');
+
+        Route::get('data-petugas-pemeriksa', [PetugasPemeriksaUserController::class, 'index'])->name('data-petugas-pemeriksa.index');
+        Route::get('data-petugas-pemeriksa/create', [PetugasPemeriksaUserController::class, 'create'])->name('data-petugas-pemeriksa.create');
+        Route::post('data-petugas-pemeriksa/create', [PetugasPemeriksaUserController::class, 'store'])->name('data-petugas-pemeriksa.store');
+        Route::get('data-petugas-pemeriksa/{petugasPemeriksaUser}/edit', [PetugasPemeriksaUserController::class, 'edit'])->name('data-petugas-pemeriksa.edit');
+        Route::patch('data-petugas-pemeriksa/{petugasPemeriksaUser}/edit', [PetugasPemeriksaUserController::class, 'update'])->name('data-petugas-pemeriksa.update');
+        Route::delete('data-petugas-pemeriksa/{petugasPemeriksaUser}', [PetugasPemeriksaUserController::class, 'destroy'])->name('data-petugas-pemeriksa.destroy');
 
         Route::get('data-permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'index'])->name('data-permohonan-tes-urine-instansi.index');
         Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'show'])->name('data-permohonan-tes-urine-instansi.show');
