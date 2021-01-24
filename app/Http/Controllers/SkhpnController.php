@@ -228,8 +228,9 @@ class SkhpnController extends Controller
             'petugas_pemeriksa' => ['required']
         ]);
 
-        $check = SkhpnDetail::where('nomer_surat', $request->nomer_surat)->first();
+        $check = SkhpnDetail::find($request->id);
         if ($check) {
+            $check->nomer = $request->nomer;
             $check->nomer_surat = $request->nomer_surat;
             $check->hasil_tes = $request->hasil_tes;
             $check->dast_10 =  $request->dast_10;
@@ -272,41 +273,54 @@ class SkhpnController extends Controller
         $templateProcessor->setValue('keperluan', $request->keperluan);
         $templateProcessor->setValue('tanggal_terbit', Carbon::now()->isoFormat('D MMMM Y'));
 
-        if($request->has('amphetamine')){
+        if ($request->has('amphetamine')) {
             $templateProcessor->setValue('amphetamine', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('amphetamine', '- ( Negatif )');
         }
 
-        if($request->has('methaphetamine')){
+        if ($request->has('methaphetamine')) {
             $templateProcessor->setValue('methaphetamine', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('methaphetamine', '- ( Negatif )');
         }
 
-        if($request->has('cocaine')){
+        if ($request->has('cocaine')) {
             $templateProcessor->setValue('cocaine', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('cocaine', '- ( Negatif )');
         }
 
-        if($request->has('morphine')){
+        if ($request->has('morphine')) {
             $templateProcessor->setValue('morphine', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('morphine', '- ( Negatif )');
         }
 
-        if($request->has('thc')){
+        if ($request->has('thc')) {
             $templateProcessor->setValue('thc', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('thc', '- ( Negatif )');
         }
 
-        if($request->has('benzodiazepine')){
+        if ($request->has('benzodiazepine')) {
             $templateProcessor->setValue('benzodiazepine', '+ ( Positif )');
-        }else{
+        } else {
             $templateProcessor->setValue('benzodiazepine', '- ( Negatif )');
         }
+
+        $kepala_bnn = KepalaBnnUser::find($request->kepala_bnn);
+        $templateProcessor->setValue('nama_kepala_bnn', $kepala_bnn->nama_lengkap);
+        $templateProcessor->setValue('nrp_kepala_bnn', $kepala_bnn->nrp);
+
+        $dokter_pemeriksa = DokterPemeriksaUser::find($request->dokter_pemeriksa);
+        $templateProcessor->setValue('nama_dokter_pemeriksa', $dokter_pemeriksa->nama_lengkap);
+        $templateProcessor->setValue('sip_dokter_pemeriksa', $dokter_pemeriksa->sip);
+        $templateProcessor->setValue('nip_dokter_pemeriksa', $dokter_pemeriksa->nip);
+
+        $petugas_pemeriksa = PetugasPemeriksaUser::find($request->petugas_pemeriksa);
+        $templateProcessor->setValue('nama_petugas_pemeriksa', $petugas_pemeriksa->nama_lengkap);
+        $templateProcessor->setValue('sip_petugas_pemeriksa', $petugas_pemeriksa->sip);
 
         $filename = $request->nomer_surat . '.docx';
         header("Content-Description: File Transfer");
@@ -318,7 +332,7 @@ class SkhpnController extends Controller
         ob_clean();
         $templateProcessor->saveAs('php://output');
         exit;
-        
+
         return back();
     }
 }

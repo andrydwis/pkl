@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\UpdateProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokterPemeriksaUserController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KepalaBnnUserController;
 use App\Http\Controllers\PengaduanController;
@@ -60,17 +61,23 @@ Route::middleware(['auth'])->group(function () {
     Route::view('setting', 'init.setting')->name('setting');
 
     Route::middleware(['admin'])->group(function () {
-        //admin
         Route::get('users', [UserController::class, 'index'])->name('users.index');
         Route::get('users/{user:name}', [UserController::class, 'edit'])->name('users.edit');
         Route::patch('users/{user:name}', [UserController::class, 'update'])->name('users.update');
         Route::get('users/{user:name}/reset', [UserController::class, 'resetView'])->name('users.reset-view');
         Route::put('users/{user:name}/reset', [UserController::class, 'reset'])->name('users.reset');
         Route::delete('users/{user:name}', [UserController::class, 'destroy'])->name('users.destroy');
+
+        Route::get('galeri', [GalleryController::class, 'index'])->name('galeri.index');
+        Route::get('galeri/create', [GalleryController::class, 'create'])->name('galeri.create');
+        Route::post('galeri/create', [GalleryController::class, 'store'])->name('galeri.store');
+        Route::get('galeri/{gallery}', [GalleryController::class, 'show'])->name('galeri.show');
+        Route::get('galeri/{gallery}/edit', [GalleryController::class, 'edit'])->name('galeri.edit');
+        Route::patch('galeri/{gallery}', [GalleryController::class, 'update'])->name('galeri.update');
+        Route::delete('galeri/{gallery}', [GalleryController::class, 'destroy'])->name('galeri.destroy');
     });
 
     Route::middleware(['tu'])->group(function () {
-        //tu
         Route::get('data-pengaduan', [PengaduanController::class, 'index'])->name('data-pengaduan.index');
         Route::get('data-pengaduan/{pengaduan}', [PengaduanController::class, 'show'])->name('data-pengaduan.show');
         Route::get('data-pengaduan/{pengaduan}/edit', [PengaduanController::class, 'edit'])->name('data-pengaduan.edit');
@@ -80,6 +87,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-pengaduan/{pengaduan}/process', [PengaduanController::class, 'processView'])->name('data-pengaduan.process-view');
         Route::post('data-pengaduan/{pengaduan}/process', [PengaduanController::class, 'process'])->name('data-pengaduan.process');
 
+        Route::get('pertanyaan-survey', [PertanyaanController::class, 'index'])->name('pertanyaan-survey.index');
+        Route::get('pertanyaan-survey/create', [PertanyaanController::class, 'create'])->name('pertanyaan-survey.create');
+        Route::post('pertanyaan-survey/create', [PertanyaanController::class, 'store'])->name('pertanyaan-survey.store');
+        Route::get('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'edit'])->name('pertanyaan-survey.edit');
+        Route::patch('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'update'])->name('pertanyaan-survey.update');
+        Route::delete('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'destroy'])->name('pertanyaan-survey.destroy');
+
+        Route::get('survey-statistic', [SurveyController::class, 'statistic'])->name('survey.statistic');
+    });
+
+    Route::middleware(['tu', 'p2m'])->group(function () {
         Route::get('data-sosialisasi', [SosialisasiController::class, 'index'])->name('data-sosialisasi.index');
         Route::get('data-sosialisasi/{sosialisasi}', [SosialisasiController::class, 'show'])->name('data-sosialisasi.show');
         Route::get('data-sosialisasi/{sosialisasi}/edit', [SosialisasiController::class, 'edit'])->name('data-sosialisasi.edit');
@@ -89,6 +107,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'processView'])->name('data-sosialisasi.process-view');
         Route::post('data-sosialisasi/{sosialisasi}/process', [SosialisasiController::class, 'process'])->name('data-sosialisasi.process');
 
+        Route::get('data-permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'index'])->name('data-permohonan-tes-urine-instansi.index');
+        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'show'])->name('data-permohonan-tes-urine-instansi.show');
+        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}/edit', [TesUrineInstansiController::class, 'edit'])->name('data-permohonan-tes-urine-instansi.edit');
+        Route::patch('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'update'])->name('data-permohonan-tes-urine-instansi.update');
+        Route::delete('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'destroy'])->name('data-permohonan-tes-urine-instansi.destroy');
+        Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
+    });
+
+    Route::middleware(['tu', 'rehabilitasi'])->group(function () {
         Route::get('data-rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'index'])->name('data-rehabilitasi-pribadi.index');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'show'])->name('data-rehabilitasi-pribadi.show');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}/edit', [RehabilitasiPribadiController::class, 'edit'])->name('data-rehabilitasi-pribadi.edit');
@@ -132,22 +159,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-petugas-pemeriksa/{petugasPemeriksaUser}/edit', [PetugasPemeriksaUserController::class, 'edit'])->name('data-petugas-pemeriksa.edit');
         Route::patch('data-petugas-pemeriksa/{petugasPemeriksaUser}/edit', [PetugasPemeriksaUserController::class, 'update'])->name('data-petugas-pemeriksa.update');
         Route::delete('data-petugas-pemeriksa/{petugasPemeriksaUser}', [PetugasPemeriksaUserController::class, 'destroy'])->name('data-petugas-pemeriksa.destroy');
-
-        Route::get('data-permohonan-tes-urine-instansi', [TesUrineInstansiController::class, 'index'])->name('data-permohonan-tes-urine-instansi.index');
-        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'show'])->name('data-permohonan-tes-urine-instansi.show');
-        Route::get('data-permohonan-tes-urine-instansi/{tesUrineInstansi}/edit', [TesUrineInstansiController::class, 'edit'])->name('data-permohonan-tes-urine-instansi.edit');
-        Route::patch('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'update'])->name('data-permohonan-tes-urine-instansi.update');
-        Route::delete('data-permohonan-tes-urine-instansi/{tesUrineInstansi}', [TesUrineInstansiController::class, 'destroy'])->name('data-permohonan-tes-urine-instansi.destroy');
-        Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
-
-        Route::get('pertanyaan-survey', [PertanyaanController::class, 'index'])->name('pertanyaan-survey.index');
-        Route::get('pertanyaan-survey/create', [PertanyaanController::class, 'create'])->name('pertanyaan-survey.create');
-        Route::post('pertanyaan-survey/create', [PertanyaanController::class, 'store'])->name('pertanyaan-survey.store');
-        Route::get('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'edit'])->name('pertanyaan-survey.edit');
-        Route::patch('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'update'])->name('pertanyaan-survey.update');
-        Route::delete('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'destroy'])->name('pertanyaan-survey.destroy');
-
-        Route::get('survey-statistic', [SurveyController::class, 'statistic'])->name('survey.statistic');
     });
 });
 

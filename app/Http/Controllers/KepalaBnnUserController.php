@@ -17,7 +17,7 @@ class KepalaBnnUserController extends Controller
     {
         //
         $data = [
-            'users' => KepalaBnnUser::all(),
+            'users' => KepalaBnnUser::orderBy('id', 'desc')->get()
         ];
 
         return view('kepala-bnn.index', $data);
@@ -53,7 +53,7 @@ class KepalaBnnUserController extends Controller
         $user->nrp = $request->nrp;
         $user->save();
 
-        Alert::success('Data Kepala Bnn ' . $user->nama_lengkap . ' berhasil dibuat');
+        Alert::success('Data Kepala BNN ' . $user->nama_lengkap . ' berhasil dibuat');
 
         return back();
     }
@@ -104,7 +104,7 @@ class KepalaBnnUserController extends Controller
         $kepalaBnnUser->nrp = $request->nrp;
         $kepalaBnnUser->save();
 
-        Alert::success('Data Kepala Bnn ' . $kepalaBnnUser->nama_lengkap . ' berhasil diupdate');
+        Alert::success('Data Kepala BNN ' . $kepalaBnnUser->nama_lengkap . ' berhasil diupdate');
 
         return back();
     }
@@ -118,7 +118,7 @@ class KepalaBnnUserController extends Controller
     public function destroy(KepalaBnnUser $kepalaBnnUser)
     {
         //
-        Alert::success('Data Kepala Bnn ' . $kepalaBnnUser->nama_lengkap . ' berhasil dihapus');
+        Alert::success('Data Kepala BNN ' . $kepalaBnnUser->nama_lengkap . ' berhasil dihapus');
 
         $kepalaBnnUser->delete();
 

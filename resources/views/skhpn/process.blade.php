@@ -12,10 +12,24 @@
         <div class="card-body">
             <form method="POST" action="{{route('data-skhpn.process', ['skhpn' => $skhpn])}}">
                 @csrf
+
+                @if($detail)
+                <input type="hidden" name="id" value="{{$detail->id}}">
+                <div class="form-group">
+                    <label for="nomer">Nomer Urut</label>
+                    <input id="nomer" type="text" class="form-control @error('nomer'){{ 'is-invalid' }}@enderror" name="nomer" value="{{ old('nomer') ?? $detail->nomer }}" autofocus>
+                    @error('nomer')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+                @else
                 <input type="hidden" name="nomer" value="{{$nomer}}">
+                @endif
                 <div class="form-group">
                     <label for="nomer_surat">Nomer Surat</label>
-                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}" autofocus>
+                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}"readonly>
                     @error('nomer_surat')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -119,7 +133,7 @@
                 </div>
                 <div class="form-group">
                     <label for="dast_10">DAST-10</label>
-                    <input id="dast_10" type="text" class="form-control @error('dast_10'){{'is-invalid'}}@enderror" name="dast_10" value="{{old('dast_10') ?? $detail->dast_10 ?? ''}}" placeholder="Score 0 ( tidak ada masalah )">
+                    <input id="dast_10" type="text" class="form-control @error('dast_10'){{'is-invalid'}}@enderror" name="dast_10" value="{{old('dast_10') ?? $detail->dast_10 ?? 'Score 0 ( tidak ada masalah )'}}" placeholder="Score 0 ( tidak ada masalah )">
                     @error('dast_10')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -168,9 +182,9 @@
                 <div class="form-group">
                     <label for="kepala_bnn">Kepala BNN</label>
                     <select name="kepala_bnn" id="kepala_bnn" class="form-control @error('kepala_bnn'){{'is-invalid'}}@enderror">
-                        <option value="" @if(old('kepala_bnn')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        <option value="" @if(old('kepala_bnn')==null){{'selected'}}@elseif($detail && $detail->kepala_bnn_id==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
                         @foreach($kepala_bnns as $kepala_bnn)
-                        <option value="{{$kepala_bnn->id}}" @if(old('kepala_bnn')==$kepala_bnn->id){{'selected'}}@endif>{{$kepala_bnn->nama_lengkap}}</option>
+                        <option value="{{$kepala_bnn->id}}" @if(old('kepala_bnn')==$kepala_bnn->id){{'selected'}}@elseif($detail && $detail->kepala_bnn_id==$kepala_bnn->id){{'selected'}}@endif>{{$kepala_bnn->nama_lengkap}}</option>
                         @endforeach
                     </select>
                     @error('kepala_bnn')
@@ -182,9 +196,9 @@
                 <div class="form-group">
                     <label for="dokter_pemeriksa">Dokter Pemeriksa</label>
                     <select name="dokter_pemeriksa" id="dokter_pemeriksa" class="form-control @error('dokter_pemeriksa'){{'is-invalid'}}@enderror">
-                        <option value="" @if(old('dokter_pemeriksa')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        <option value="" @if(old('dokter_pemeriksa')==null){{'selected'}}@elseif($detail && $detail->dokter_pemeriksa_id==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
                         @foreach($dokter_pemeriksas as $dokter_pemeriksa)
-                        <option value="{{$dokter_pemeriksa->id}}" @if(old('dokter_pemeriksa')==$dokter_pemeriksa->id){{'selected'}}@endif>{{$dokter_pemeriksa->nama_lengkap}}</option>
+                        <option value="{{$dokter_pemeriksa->id}}" @if(old('dokter_pemeriksa')==$dokter_pemeriksa->id){{'selected'}}@elseif($detail && $detail->dokter_pemeriksa_id==$dokter_pemeriksa->id){{'selected'}}@endif>{{$dokter_pemeriksa->nama_lengkap}}</option>
                         @endforeach
                     </select>
                     @error('dokter_pemeriksa')
@@ -196,9 +210,9 @@
                 <div class="form-group">
                     <label for="petugas_pemeriksa">Petugas Pemeriksa</label>
                     <select name="petugas_pemeriksa" id="petugas_pemeriksa" class="form-control @error('petugas_pemeriksa'){{'is-invalid'}}@enderror">
-                        <option value="" @if(old('petugas_pemeriksa')==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
+                        <option value="" @if(old('petugas_pemeriksa')==null){{'selected'}}@elseif($detail && $detail->petugas_pemeriksa_id==null){{'selected'}}@endif disabled>-- Pilih Data --</option>
                         @foreach($petugas_pemeriksas as $petugas_pemeriksa)
-                        <option value="{{$petugas_pemeriksa->id}}" @if(old('petugas_pemeriksa')==$petugas_pemeriksa->id){{'selected'}}@endif>{{$petugas_pemeriksa->nama_lengkap}}</option>
+                        <option value="{{$petugas_pemeriksa->id}}" @if(old('petugas_pemeriksa')==$petugas_pemeriksa->id){{'selected'}}@elseif($detail && $detail->petugas_pemeriksa_id==$petugas_pemeriksa->id){{'selected'}}@endif>{{$petugas_pemeriksa->nama_lengkap}}</option>
                         @endforeach
                     </select>
                     @error('petugas_pemeriksa')

@@ -33,8 +33,8 @@
                 <button type="submit" class="btn btn-primary btn-lg btn-block">
                     Kirim
                 </button>
+            </form>
         </div>
-        </form>
     </div>
 </div>
 </div>

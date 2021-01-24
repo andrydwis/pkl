@@ -22,9 +22,9 @@ class CreateSkhpnDetailsTable extends Migration
             $table->string('hasil_tes');
             $table->string('dast_10');
             $table->date('tanggal_terbit');
-            $table->foreignId('kepala_bnn_id')->constrained('kepala_bnn_users')->onDelete('cascade');
-            $table->foreignId('dokter_pemeriksa_id')->constrained('dokter_pemeriksa_users')->onDelete('cascade');
-            $table->foreignId('petugas_pemeriksa_id')->constrained('petugas_pemeriksa_users')->onDelete('cascade');
+            $table->foreignId('kepala_bnn_id')->nullable()->constrained('kepala_bnn_users')->onDelete('set null');
+            $table->foreignId('dokter_pemeriksa_id')->nullable()->constrained('dokter_pemeriksa_users')->onDelete('set null');
+            $table->foreignId('petugas_pemeriksa_id')->nullable()->constrained('petugas_pemeriksa_users')->onDelete('set null');
             $table->timestamps();
         });
     }

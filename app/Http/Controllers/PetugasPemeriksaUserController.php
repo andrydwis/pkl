@@ -17,7 +17,7 @@ class PetugasPemeriksaUserController extends Controller
     {
         //
         $data = [
-            'users' => PetugasPemeriksaUser::all(),
+            'users' => PetugasPemeriksaUser::orderBy('id', 'desc')->get()
         ];
 
         return view('petugas-pemeriksa.index', $data);

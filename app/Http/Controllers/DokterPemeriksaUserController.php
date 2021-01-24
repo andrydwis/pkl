@@ -17,7 +17,7 @@ class DokterPemeriksaUserController extends Controller
     {
         //
         $data = [
-            'users' => DokterPemeriksaUser::all(),
+            'users' => DokterPemeriksaUser::orderBy('id', 'desc')->get()
         ];
 
         return view('dokter-pemeriksa.index', $data);

@@ -6,6 +6,7 @@ use App\Models\Jawaban;
 use App\Models\Pertanyaan;
 use App\Models\Survey;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SurveyController extends Controller
@@ -62,13 +63,22 @@ class SurveyController extends Controller
     {
         $jumlah = Pertanyaan::all()->count();
 
-        $request->validate([
+        $rules = [
             'jawaban' => ['required', 'array', 'min:'.$jumlah],
+        ];
+
+        $messages = [
+            'jawaban.min' => 'Seluruh pertanyaan wajib diisi',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages, [
         ]);
 
-        // $verify = Survey::where('token', $token)->first();
-        // $verify->status = 'used';
-        // $verify->save();
+        $validator->validate();
+
+        $verify = Survey::where('token', $token)->first();
+        $verify->status = 'used';
+        $verify->save();
         
         foreach($request->jawaban as $key => $value){
             $jawaban = new Jawaban();

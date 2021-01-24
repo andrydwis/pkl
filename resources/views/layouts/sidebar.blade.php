@@ -25,14 +25,21 @@
             <li>
                 <a href="{{route('users.index')}}"><i class="fas fa-users"></i><span>Pegawai</span></a>
             </li>
+            <li>
+                <a href="{{route('galeri.index')}}"><i class="fas fa-image"></i><span>Galeri</span></a>
+            </li>
             @endif
             @if(auth()->user()->role == 'tu')
             <li>
                 <a href="{{route('data-pengaduan.index')}}"><i class="fas fa-bullhorn"></i><span>Data Pengaduan</span></a>
             </li>
+            @endif
+            @if(auth()->user()->role == 'tu' || auth()->user()->role == 'sosialisasi')
             <li>
                 <a href="{{route('data-sosialisasi.index')}}"><i class="fas fa-chalkboard-teacher"></i><span>Data Sosialisasi</span></a>
             </li>
+            @endif
+            @if(auth()->user()->role == 'tu' || auth()->user()->role == 'rehabilitasi')
             <li>
                 <a href="{{route('data-rehabilitasi-pribadi.index')}}"><i class="fas fa-ambulance"></i><span>Data Rehabilitasi Pribadi</span></a>
             </li>
@@ -48,9 +55,13 @@
                     <li><a class="nav-link" href="{{route('data-petugas-pemeriksa.index')}}"><span>Data Petugas Pemeriksa</span></a></li>
                 </ul>
             </li>
+            @endif
+            @if(auth()->user()->role == 'tu' || auth()->user()->role == 'p2m')
             <li>
                 <a href="{{route('data-permohonan-tes-urine-instansi.index')}}"><i class="fas fa-file-medical"></i><span>Data Tes Urine Instansi</span></a>
             </li>
+            @endif
+            @if(auth()->user()->role == 'tu')
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-poll"></i> <span>Data Survey</span></a>
                 <ul class="dropdown-menu">
