@@ -29,7 +29,7 @@
                 @endif
                 <div class="form-group">
                     <label for="nomer_surat">Nomer Surat</label>
-                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}"readonly>
+                    <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}" @if(!$detail){{'readonly'}}@endif>
                     @error('nomer_surat')
                     <div class="invalid-feedback">
                         {{$message}}

@@ -16,7 +16,7 @@ class rehabilitasi
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role != 'rehabilitasi') {
+        if (!in_array(auth()->user()->role, ['tu', 'rehabilitasi'])) {
             return redirect()->route('dashboard');
         }
         

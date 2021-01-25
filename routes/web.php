@@ -97,7 +97,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('survey-statistic', [SurveyController::class, 'statistic'])->name('survey.statistic');
     });
 
-    Route::middleware(['tu', 'p2m'])->group(function () {
+    Route::middleware(['p2m'])->group(function () {
         Route::get('data-sosialisasi', [SosialisasiController::class, 'index'])->name('data-sosialisasi.index');
         Route::get('data-sosialisasi/{sosialisasi}', [SosialisasiController::class, 'show'])->name('data-sosialisasi.show');
         Route::get('data-sosialisasi/{sosialisasi}/edit', [SosialisasiController::class, 'edit'])->name('data-sosialisasi.edit');
@@ -115,7 +115,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('data-permohonan-tes-urine-instansi/export', [TesUrineInstansiController::class, 'export'])->name('data-permohonan-tes-urine-instansi.export');
     });
 
-    Route::middleware(['tu', 'rehabilitasi'])->group(function () {
+    Route::middleware(['rehabilitasi'])->group(function () {
         Route::get('data-rehabilitasi-pribadi', [RehabilitasiPribadiController::class, 'index'])->name('data-rehabilitasi-pribadi.index');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}', [RehabilitasiPribadiController::class, 'show'])->name('data-rehabilitasi-pribadi.show');
         Route::get('data-rehabilitasi-pribadi/{rehabilitasiPribadi}/edit', [RehabilitasiPribadiController::class, 'edit'])->name('data-rehabilitasi-pribadi.edit');
