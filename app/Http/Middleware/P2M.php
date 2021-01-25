@@ -16,7 +16,7 @@ class p2m
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role != 'p2m') {
+        if (!in_array(auth()->user()->role, ['tu', 'p2m'])) {
             return redirect()->route('dashboard');
         }
 
