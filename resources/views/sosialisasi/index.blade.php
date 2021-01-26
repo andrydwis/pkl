@@ -1,11 +1,10 @@
-
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
     <h1>Data Sosialisasi</h1>
 </div>
 <div class="section-body">
-<div class="card card-primary">
+    <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
             <h4>Export Data</h4>
         </div>
@@ -58,7 +57,7 @@
                         <th>Nama Penyelenggara</th>
                         <th>Tanggal</th>
                         <th>Tempat</th>
-                        <th>Nama Pemohon</th>
+                        <th>Status</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
@@ -70,7 +69,15 @@
                         <td>{{$sosialisasi->nama_penyelenggara}}</td>
                         <td>{{ date('d-m-Y', strtotime($sosialisasi->tangal)) }}</td>
                         <td>{{$sosialisasi->tempat}}</td>
-                        <td>{{$sosialisasi->nama_pemohon}}</td>
+                        <td>
+                            @if($sosialisasi->status=='diajukan')
+                            <span class="badge badge-pill badge-primary">{{$sosialisasi->status}}</span>
+                            @elseif($sosialisasi->status=='diterima')
+                            <span class="badge badge-pill badge-success">{{$sosialisasi->status}}</span>
+                            @elseif($sosialisasi->status=='ditolak')
+                            <span class="badge badge-pill badge-danger">{{$sosialisasi->status}}</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{route('data-sosialisasi.show', ['sosialisasi' => $sosialisasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
                             <a href="{{route('data-sosialisasi.edit', ['sosialisasi' => $sosialisasi])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>

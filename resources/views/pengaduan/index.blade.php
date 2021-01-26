@@ -55,9 +55,9 @@
                         <th>No</th>
                         <th>Nomer KTP</th>
                         <th>Nama Lengkap</th>
-                        <th>Tanggal Lahir</th>
                         <th>Alamat</th>
                         <th>Telepon</th>
+                        <th>Status</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
@@ -67,9 +67,17 @@
                         <td>{{$loop->index+1}}</td>
                         <td>{{$pengaduan->nomer_ktp}}</td>
                         <td>{{$pengaduan->nama_lengkap}}</td>
-                        <td>{{ date('d-m-Y', strtotime($pengaduan->ttl)) }}</td>
                         <td>{{$pengaduan->alamat}}</td>
                         <td>{{$pengaduan->telepon}}</td>
+                        <td>
+                            @if($pengaduan->status=='diajukan')
+                            <span class="badge badge-pill badge-primary">{{$pengaduan->status}}</span>
+                            @elseif($pengaduan->status=='diterima')
+                            <span class="badge badge-pill badge-success">{{$pengaduan->status}}</span>
+                            @elseif($pengaduan->status=='ditolak')
+                            <span class="badge badge-pill badge-danger">{{$pengaduan->status}}</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{route('data-pengaduan.show', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-exclamation"></i></a>
                             <a href="{{route('data-pengaduan.edit', ['pengaduan' => $pengaduan])}}" class="btn btn-primary btn-icon"><i class="fas fa-edit"></i></a>

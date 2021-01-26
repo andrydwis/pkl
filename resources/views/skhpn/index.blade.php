@@ -53,7 +53,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomer KTP</th>
+                        <th>Nomer Surat</th>
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Telepon</th>
@@ -64,7 +64,13 @@
                     @foreach ($skhpns as $skhpn)
                     <tr>
                         <td>{{ $loop->index + 1 }}</td>
-                        <td>{{ $skhpn->nomer_ktp }}</td>
+                        <td>
+                            @if($skhpn->detail)
+                            <span class="badge badge-pill badge-primary">{{ $skhpn->detail->nomer_surat }}</span>
+                            @else
+                            <span class="badge badge-pill badge-danger">Belum diproses</span>
+                            @endif
+                        </td>
                         <td>{{ $skhpn->nama_lengkap }}</td>
                         <td>{{ $skhpn->alamat }}</td>
                         <td>{{ $skhpn->telepon }}</td>

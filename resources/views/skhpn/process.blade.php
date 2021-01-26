@@ -28,7 +28,7 @@
                 <input type="hidden" name="nomer" value="{{$nomer}}">
                 @endif
                 <div class="form-group">
-                    <label for="nomer_surat">Nomer Surat</label>
+                    <label for="nomer_surat">Nomer Surat @if($skhpn->detail)<sup class="text-danger">* Jika mengganti nomer surat harap ganti nomer urut diatas</sup>@endif</label>
                     <input id="nomer_surat" type="text" class="form-control @error('nomer_surat'){{ 'is-invalid' }}@enderror" name="nomer_surat" value="{{ old('nomer_surat') ?? $detail->nomer_surat ?? $nomer_surat }}" @if(!$detail){{'readonly'}}@endif>
                     @error('nomer_surat')
                     <div class="invalid-feedback">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="form-group">
                     <label for="dast_10">DAST-10</label>
-                    <input id="dast_10" type="text" class="form-control @error('dast_10'){{'is-invalid'}}@enderror" name="dast_10" value="{{old('dast_10') ?? $detail->dast_10 ?? 'Score 0 ( tidak ada masalah )'}}" placeholder="Score 0 ( tidak ada masalah )">
+                    <input id="dast_10" type="text" class="form-control @error('dast_10'){{'is-invalid'}}@enderror" name="dast_10" value="{{old('dast_10') ?? $detail->dast_10 ?? 'Score 0 ( tidak ada masalah )'}}" placeholder="Score 0 - 10">
                     @error('dast_10')
                     <div class="invalid-feedback">
                         {{$message}}
