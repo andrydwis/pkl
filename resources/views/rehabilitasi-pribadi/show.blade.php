@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="section-header">
-    <h1>Data Rhabilitasi Pribadi</h1>
+    <h1>Data Rehabilitasi Pribadi</h1>
 </div>
 <div class="section-body">
     <div class="card card-primary">
