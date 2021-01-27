@@ -46,7 +46,7 @@ class SosialisasiController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->file('lampiran_surat_undangan' != null)) {
+        if ($request->file('lampiran_surat_permohonan' != null)) {
             $request->validate([
                 'kategori' => ['required'],
                 'nama_penyelenggara' => ['required'],
@@ -57,7 +57,7 @@ class SosialisasiController extends Controller
                 'no_hp_pemohon' => ['required'],
                 'jumlah_peserta' => ['required'],
                 'tema_kegiatan'  => ['required'],
-                'lampiran_surat_undangan' => ['mimes:jpg,png,pdf', 'max:2048']
+                'lampiran_surat_permohonan' => ['mimes:jpg,png,pdf', 'max:2048']
             ]);
         } else {
             $request->validate([
@@ -83,10 +83,10 @@ class SosialisasiController extends Controller
         $sosialisasi->no_hp_pemohon = $request->no_hp_pemohon;
         $sosialisasi->jumlah_peserta = $request->jumlah_peserta;
         $sosialisasi->tema_kegiatan = $request->tema_kegiatan;
-        if ($request->file('lampiran_surat_undangan') != null) {
-            $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_undangan')->extension());
+        if ($request->file('lampiran_surat_permohonan') != null) {
+            $sosialisasi->lampiran_surat_permohonan = $request->file('lampiran_surat_permohonan')->storeAs('lampiran_surat_permohonan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_permohonan')->extension());
         } else {
-            $sosialisasi->lampiran_surat_undangan = null;
+            $sosialisasi->lampiran_surat_permohonan = null;
         }
         $sosialisasi->save();
 
@@ -134,7 +134,7 @@ class SosialisasiController extends Controller
      */
     public function update(Request $request, Sosialisasi $sosialisasi)
     {
-        if ($request->file('lampiran_surat_undangan' != null)) {
+        if ($request->file('lampiran_surat_permohonan' != null)) {
             $request->validate([
                 'kategori' => ['required'],
                 'nama_penyelenggara' => ['required'],
@@ -145,7 +145,7 @@ class SosialisasiController extends Controller
                 'no_hp_pemohon' => ['required'],
                 'jumlah_peserta' => ['required'],
                 'tema_kegiatan'  => ['required'],
-                'lampiran_surat_undangan' => ['mimes:jpg,png,pdf', 'max:2048']
+                'lampiran_surat_permohonan' => ['mimes:jpg,png,pdf', 'max:2048']
             ]);
         } else {
             $request->validate([
@@ -171,18 +171,18 @@ class SosialisasiController extends Controller
         $sosialisasi->jumlah_peserta = $request->jumlah_peserta;
         $sosialisasi->tema_kegiatan = $request->tema_kegiatan;
 
-        if ($request->lampiran_surat_undangan) {
-            if ($sosialisasi->lampiran_surat_undangan != null) {
-                Storage::delete($sosialisasi->lampiran_surat_undangan);
-                $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_undangan')->extension());
+        if ($request->lampiran_surat_permohonan) {
+            if ($sosialisasi->lampiran_surat_permohonan != null) {
+                Storage::delete($sosialisasi->lampiran_surat_permohonan);
+                $sosialisasi->lampiran_surat_permohonan = $request->file('lampiran_surat_permohonan')->storeAs('lampiran_surat_permohonan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_permohonan')->extension());
             } else {
-                $sosialisasi->lampiran_surat_undangan = $request->lampiran_surat_undangan;
+                $sosialisasi->lampiran_surat_permohonan = $request->lampiran_surat_permohonan;
             }
         } else {
-            if ($request->file('lampiran_surat_undangan') != null) {
-                $sosialisasi->lampiran_surat_undangan = $request->file('lampiran_surat_undangan')->storeAs('lampiran_surat_undangan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_undangan')->extension());
+            if ($request->file('lampiran_surat_permohonan') != null) {
+                $sosialisasi->lampiran_surat_permohonan = $request->file('lampiran_surat_permohonan')->storeAs('lampiran_surat_permohonan', 'permohonan_sosialisasi' . '_' . Str::slug($request->nama_pemohon) . '_' . Carbon::now()->toDateString() . '.' . $request->file('lampiran_surat_permohonan')->extension());
             } else {
-                $sosialisasi->lampiran_surat_undangan = null;
+                $sosialisasi->lampiran_surat_permohonan = null;
             }
         }
         $sosialisasi->status = 'diajukan';
@@ -201,8 +201,8 @@ class SosialisasiController extends Controller
      */
     public function destroy(Sosialisasi $sosialisasi)
     {
-        if ($sosialisasi->lampiran_surat_undangan) {
-            Storage::delete($sosialisasi->lampiran_surat_undangan);
+        if ($sosialisasi->lampiran_surat_permohonan) {
+            Storage::delete($sosialisasi->lampiran_surat_permohonan);
             $sosialisasi->delete();
         } else {
             $sosialisasi->delete();
