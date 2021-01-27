@@ -67,7 +67,7 @@ class RehabilitasiPribadiController extends Controller
 
         Alert::success('Rehabilitasi pribadi berhasil diajukan');
 
-        return back();
+        return redirect()->route('survey.index');
     }
 
     /**

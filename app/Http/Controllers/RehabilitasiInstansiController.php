@@ -62,7 +62,7 @@ class RehabilitasiInstansiController extends Controller
 
         Alert::success('Rehabilitasi instansi berhasil diajukan');
 
-        return back();
+        return redirect()->route('survey.index');
     }
 
     /**

@@ -98,7 +98,7 @@ class PengaduanController extends Controller
 
         Alert::success('Pengaduan berhasil diajukan');
 
-        return back();
+        return redirect()->route('survey.index');
     }
 
     /**

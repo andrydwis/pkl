@@ -68,7 +68,7 @@ class TesUrineInstansiController extends Controller
 
         Alert::success('Tes urine instansi berhasil diajukan');
         
-        return back();
+        return redirect()->route('survey.index');
     }
 
     /**

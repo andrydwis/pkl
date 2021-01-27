@@ -92,7 +92,7 @@ class SosialisasiController extends Controller
 
         Alert::success('Sosialisasi berhasil diajukan');
 
-        return back();
+        return redirect();
     }
 
     /**
@@ -210,7 +210,7 @@ class SosialisasiController extends Controller
 
         Alert::success('Sosialisasi berhasil dihapus');
 
-        return redirect()->back();
+        return redirect()->route('survey.index');
     }
 
     public function export(Request $request)

@@ -10,8 +10,7 @@
 
 <main id="main">
     <section id="form" class="d-flex justify-content-center">
-        <div class="container">
-            @include('layouts.alert')
+        <div class="container">            
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-8">
                     <div class="card card-primary">

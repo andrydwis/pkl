@@ -80,7 +80,7 @@ class SkhpnController extends Controller
 
         Alert::success('SKHPN berhasil diajukan');
 
-        return back();
+        return redirect()->route('survey.index');
     }
 
     /**
