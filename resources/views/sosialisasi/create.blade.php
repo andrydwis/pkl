@@ -110,9 +110,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="lampiran_surat_undangan">Lampiran Surat Undangan</label>
-                                    <input id="lampiran_surat_undangan" type="file" class="form-control @error('lampiran_surat_undangan'){{ 'is-invalid' }}@enderror" name="lampiran_surat_undangan">
-                                    @error('lampiran_surat_undangan')
+                                    <label for="lampiran_surat_permohonan">Lampiran Surat Permohonan</label>
+                                    <input id="lampiran_surat_permohonan" type="file" class="form-control @error('lampiran_surat_permohonan'){{ 'is-invalid' }}@enderror" name="lampiran_surat_permohonan">
+                                    @error('lampiran_surat_permohonan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

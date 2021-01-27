@@ -46,8 +46,8 @@
                     <textarea id="tema_kegiatan" type="text" class="form-control" name="tema_kegiatan" readonly>{{$sosialisasi->tema_kegiatan}}</textarea>
                 </div>                
                 <div class="form-group">
-                    <label for="lampiran_surat_undangan">Lampiran Surat Undangan</label>
-                    @if($sosialisasi->lampiran_surat_undangan)
+                    <label for="lampiran_surat_permohonan">Lampiran Surat permohonan</label>
+                    @if($sosialisasi->lampiran_surat_permohonan)
                     <br> 
                     ada                   
                     @else

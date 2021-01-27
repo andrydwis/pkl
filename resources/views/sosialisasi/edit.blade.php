@@ -103,19 +103,19 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="lampiran_surat_undangan">Lampiran Surat Undangan</label>
-                    @if($sosialisasi->lampiran_surat_undangan)
+                    <label for="lampiran_surat_permohonan">Lampiran Surat permohonan</label>
+                    @if($sosialisasi->lampiran_surat_permohonan)
                     <br>
-                    <img src="{{asset('storage/'.$sosialisasi->lampiran_surat_undangan)}}" alt="" class="rounded mx-auto d-block img-fluid img-thumbnail">
+                    <img src="{{asset('storage/'.$sosialisasi->lampiran_surat_permohonan)}}" alt="" class="rounded mx-auto d-block img-fluid img-thumbnail">
                     @else
                     <div class="alert alert-dark show fade">
                         <div class="alert-body">
-                            Lampiran Surat Undangan tidak dicantumkan
+                            Lampiran Surat permohonan tidak dicantumkan
                         </div>
                     </div>
                     @endif
-                    <input id="lampiran_surat_undangan" type="file" class="form-control @error('lampiran_surat_undangan'){{'is-invalid'}}@enderror" name="lampiran_surat_undangan">
-                    @error('lampiran_surat_undangan')
+                    <input id="lampiran_surat_permohonan" type="file" class="form-control @error('lampiran_surat_permohonan'){{'is-invalid'}}@enderror" name="lampiran_surat_permohonan">
+                    @error('lampiran_surat_permohonan')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>

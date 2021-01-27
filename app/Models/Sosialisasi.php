@@ -19,6 +19,6 @@ class Sosialisasi extends Model
         'no_hp_pemohon',
         'jumlah_peserta',
         'tema_kegiatan',
-        'lampiran_surat_undangan',
+        'lampiran_surat_permohonan',
     ];
 }
