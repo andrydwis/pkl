@@ -95,6 +95,9 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('pertanyaan-survey/{pertanyaan}', [PertanyaanController::class, 'destroy'])->name('pertanyaan-survey.destroy');
 
         Route::get('survey-statistic', [SurveyController::class, 'statistic'])->name('survey.statistic');
+        Route::get('survey-statistic/export', [SurveyController::class, 'export'])->name('survey.statistic-export');
+        Route::post('survey-statistic-specific', [SurveyController::class, 'statisticSpecific'])->name('survey.statistic-specific');
+        Route::get('survey-statistic-specific/{tanggal_dari}/{tanggal_sampai}', [SurveyController::class, 'exportSpecific'])->name('survey.statistic-specific-export');
     });
 
     Route::middleware(['p2m'])->group(function () {
