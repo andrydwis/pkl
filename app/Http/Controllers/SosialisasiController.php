@@ -92,7 +92,7 @@ class SosialisasiController extends Controller
 
         Alert::success('Sosialisasi berhasil diajukan');
 
-        return redirect();
+        return redirect()->route('survey.index');
     }
 
     /**
