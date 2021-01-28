@@ -4,10 +4,10 @@
     <aside id="sidebar-wrapper">
         <!-- sidebar brand -->
         <div class="sidebar-brand">
-            <a href="index.html">BNN Kota Malang</a>
+            <a href="{{route('dashboard')}}">BNN Kota Malang</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">BNN</a>
+            <a href="{{route('dashboard')}}">BNN</a>
         </div>
         <!-- sidebar menu -->
         <ul class="sidebar-menu">
@@ -34,7 +34,7 @@
                 <a href="{{route('data-pengaduan.index')}}"><i class="fas fa-bullhorn"></i><span>Data Pengaduan</span></a>
             </li>
             @endif
-            @if(auth()->user()->role == 'tu' || auth()->user()->role == 'sosialisasi')
+            @if(auth()->user()->role == 'tu' || auth()->user()->role == 'p2m')
             <li>
                 <a href="{{route('data-sosialisasi.index')}}"><i class="fas fa-chalkboard-teacher"></i><span>Data Sosialisasi</span></a>
             </li>
