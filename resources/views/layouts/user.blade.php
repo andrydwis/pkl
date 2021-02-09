@@ -72,7 +72,7 @@
                                         Narkotika)</a></li>
                                 <li><a href="{{ route('permohonan-tes-urine-instansi.create') }}">Permohonan Tes Urine
                                         Instansi</a></li>
-                                <li><a href="{{ route('survey.index') }}">Survey Kepuasan Pasien</a></li>
+                                <li><a href="{{ route('survey.index') }}">Survey Kepuasan Pelayanan</a></li>
                             </ul>
                             {{--
                         <li><a href="#sop-services">Alur SOP Layanan</a></li> --}}
