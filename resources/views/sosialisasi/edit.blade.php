@@ -106,11 +106,11 @@
                     <label for="lampiran_surat_permohonan">Lampiran Surat permohonan</label>
                     @if($sosialisasi->lampiran_surat_permohonan)
                     <br>
-                    <img src="{{asset('storage/'.$sosialisasi->lampiran_surat_permohonan)}}" alt="" class="rounded mx-auto d-block img-fluid img-thumbnail">
+                    <a href="{{asset('storage/'.$sosialisasi->lampiran_surat_permohonan)}}" class="btn btn-primary btn-icon"><i class="fas fa-download"></i>  Download</a>
                     @else
                     <div class="alert alert-dark show fade">
                         <div class="alert-body">
-                            Lampiran Surat permohonan tidak dicantumkan
+                            Lampiran surat permohonan tidak dicantumkan
                         </div>
                     </div>
                     @endif

@@ -4,7 +4,7 @@
     <h1>Data Sosialisasi</h1>
 </div>
 <div class="section-body">
-    
+
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
             <h4>Detail data</h4>
@@ -44,16 +44,16 @@
                 <div class="form-group">
                     <label for="tema_kegiatan">Tema Kegiatan</label>
                     <textarea id="tema_kegiatan" type="text" class="form-control" name="tema_kegiatan" readonly>{{$sosialisasi->tema_kegiatan}}</textarea>
-                </div>                
+                </div>
                 <div class="form-group">
-                    <label for="lampiran_surat_permohonan">Lampiran Surat permohonan</label>
+                    <label for="lampiran_surat_permohonan">Lampiran Surat Permohonan</label>
                     @if($sosialisasi->lampiran_surat_permohonan)
-                    <br> 
-                    ada                   
+                    <br>
+                    <a href="{{asset('storage/'.$sosialisasi->lampiran_surat_permohonan)}}" class="btn btn-primary btn-icon"><i class="fas fa-download"></i> Download</a> 
                     @else
                     <div class="alert alert-dark show fade">
                         <div class="alert-body">
-                            Foto bukti kejadian tidak dicantumkan
+                            Lampiran surat permohonan tidak dicantumkan
                         </div>
                     </div>
                     @endif

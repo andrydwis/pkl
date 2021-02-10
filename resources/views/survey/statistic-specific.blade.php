@@ -6,8 +6,11 @@
 <div class="section-body">
     <div class="card card-primary">
         <div class="card-header flex-row justify-content-between">
-            <h4>Statistik Keseluruhan</h4>
-            <a href="{{ route('survey.statistic-export') }}" class="btn btn-primary">Export</a>
+            <h4>Statistik Spesifik {{ date('d-m-Y', strtotime($tanggal_dari)) }} sampai {{ date('d-m-Y', strtotime($tanggal_sampai)) }}</h4>
+            <div class="btn-group-vertical">
+                <a href="{{ route('survey.statistic-specific-export', ['tanggal_dari' => $tanggal_dari, 'tanggal_sampai' => $tanggal_sampai]) }}" class="btn btn-primary">Export</a>
+                <a href="{{ route('survey.statistic') }}" class="btn btn-primary">Kembali</a>
+            </div>
         </div>
         <div class="card-body">
             <div class="alert alert-primary" role="alert">
@@ -29,55 +32,16 @@
             </div>
         </div>
     </div>
-    <div class="card card-primary">
-        <div class="card-header flex-row justify-content-between">
-            <h4>Statistik Spesifik</h4>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{route('survey.statistic-specific')}}">
-                @csrf
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="tanggal_dari">Tanggal dari</label>
-                            <input id="tanggal_dari" type="date" class="form-control @error('tanggal_dari'){{'is-invalid'}}@enderror" name="tanggal_dari" value="{{old('tanggal_dari') ?? ''}}">
-                            @error('tanggal_dari')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="tanggal_sampai">Tanggal sampai</label>
-                            <input id="tanggal_sampai" type="date" class="form-control @error('tanggal_sampai'){{'is-invalid'}}@enderror" name="tanggal_sampai" value="{{old('tanggal_dari') ?? ''}}">
-                            @error('tanggal_sampai')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
-                        Cek
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 @endsection
 @section('customJS')
 @foreach ($stats as $stat)
 @php
-$sangat_puas = $stat->jawabans->where('jawaban', 5)->count();
-$puas = $stat->jawabans->where('jawaban', 4)->count();
-$cukup_puas = $stat->jawabans->where('jawaban', 3)->count();
-$kurang_puas = $stat->jawabans->where('jawaban', 2)->count();
-$tidak_puas = $stat->jawabans->where('jawaban', 1)->count();
+$sangat_puas = $stat->jawabans->where('jawaban', 5)->whereBetween('created_at', [$tanggal_dari , $tanggal_sampai])->count();
+$puas = $stat->jawabans->where('jawaban', 4)->whereBetween('created_at', [$tanggal_dari , $tanggal_sampai])->count();
+$cukup_puas = $stat->jawabans->where('jawaban', 3)->whereBetween('created_at', [$tanggal_dari , $tanggal_sampai])->count();
+$kurang_puas = $stat->jawabans->where('jawaban', 2)->whereBetween('created_at', [$tanggal_dari , $tanggal_sampai])->count();
+$tidak_puas = $stat->jawabans->where('jawaban', 1)->whereBetween('created_at', [$tanggal_dari , $tanggal_sampai])->count();
 @endphp
 <script>
     console.log({{$stat->pertanyaans}});

@@ -161,10 +161,10 @@
                     </div>
                     <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="600">
-                        <div class="icon-box" id="survey-kepuasan-pasien">
+                        <div class="icon-box" id="survey-kepuasan-pelayanan">
                             <div class="icon"><i class="fas fa-chart-pie"></i></div>
                             <h2 style="text-align: center;">
-                                <a href="{{ route('survey.index') }}">Survey Kepuasan Pasien</a>
+                                <a href="{{ route('survey.index') }}">Survey Kepuasan Pelayanan</a>
                             </h2>
                         </div>
                     </div>

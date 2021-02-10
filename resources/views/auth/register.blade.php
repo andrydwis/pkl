@@ -63,6 +63,7 @@
                             <label for="role">Role</label>
                             <select name="role" id="role" class="form-control @error('role'){{'is-invalid'}}@enderror">
                                 <option value="" selected disabled>-- Pilih Role --</option>
+                                <option value="admin">Admin</option>
                                 <option value="tu">TU</option>
                                 <option value="p2m">P2M</option>
                                 <option value="rehabilitasi">Rehabilitasi</option>

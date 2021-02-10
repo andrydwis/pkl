@@ -46,6 +46,7 @@
                             <label for="role">Role</label>
                             <select name="role" id="role" class="form-control @error('role'){{'is-invalid'}}@enderror">
                                 <option value="" @if(old('role')==null){{'selected'}}@endif disabled>-- Pilih Role --</option>
+                                <option value="admin" @if(old('role')=='admin' ){{'selected'}}@elseif($user->role == 'admin'){{'selected'}}@endif>Admin</option>
                                 <option value="tu" @if(old('role')=='tu' ){{'selected'}}@elseif($user->role == 'tu'){{'selected'}}@endif>TU</option>
                                 <option value="p2m" @if(old('role')=='p2m' ){{'selected'}}@elseif($user->role == 'p2m'){{'selected'}}@endif>P2M</option>
                                 <option value="rehabilitasi" @if(old('role')=='rehabilitasi' ){{'selected'}}@elseif($user->role == 'rehabilitasi'){{'selected'}}@endif>Rehabilitasi</option>
