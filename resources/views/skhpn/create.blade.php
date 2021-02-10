@@ -9,7 +9,6 @@
     </section>
     <!-- End Hero -->
 
-<<<<<<< HEAD
 <main id="main">
     <section id="form" class="d-flex justify-content-center">
         <div class="container">
@@ -36,30 +35,6 @@
                                     @error('nama_lengkap')
                                     <div class="invalid-feedback">
                                         {{$message}}
-=======
-    <main id="main">
-        <section id="form" class="d-flex justify-content-center">
-            <div class="container">
-                @include('layouts.alert')
-                <div class="row justify-content-center">
-                    <div class="col-12 col-sm-8">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                            </div>
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('skhpn.store') }}">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="nomer_ktp">Nomer KTP / NIK</label>
-                                        <input id="nomer_ktp" type="number"
-                                            class="form-control @error('nomer_ktp'){{ 'is-invalid' }}@enderror"
-                                            name="nomer_ktp" value="{{ old('nomer_ktp') ?? '' }}" autofocus>
-                                        @error('nomer_ktp')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
->>>>>>> 3ea47b40aff7b6000b4f699fd74059798e9ffdb7
                                     </div>
                                     <div class="form-group">
                                         <label for="nama_lengkap">Nama Lengkap</label>
